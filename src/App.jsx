@@ -1,6 +1,3 @@
-git add .
-git commit -m "Update portfolio"
-git push
 import React from 'react';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
