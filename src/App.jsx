@@ -18,7 +18,7 @@ export default function App() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/gallery-images/logo.jpg" alt="Exquisite Cars" style={{height: '150px'}} />
+            <img src="/gallery-images/logoo.png" alt="Exquisite Cars" style={{height: '150px'}} />
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
@@ -36,8 +36,13 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="hero" style={{backgroundImage: "url('/aston-martin-db11.jpg')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
-        <div className="hero-overlay"></div>
+      <section id="home" className="hero">
+        <div className="hero-video-container">
+          <video autoPlay muted loop playsInline className="hero-video">
+            <source src="/gallery-images/hero.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-overlay"></div>
+        </div>
 
         <div className="hero-content" style={{opacity: 1, transform: 'none'}}>
           <div className="hero-text">
@@ -419,7 +424,7 @@ export default function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src="/gallery-images/logo.jpg" alt="Exquisite Cars" style={{height: '90px'}} />
+              <img src="/gallery-images/logoo.png" alt="Exquisite Cars" style={{height: '90px'}} />
             </div>
 
             <nav className="footer-nav">
