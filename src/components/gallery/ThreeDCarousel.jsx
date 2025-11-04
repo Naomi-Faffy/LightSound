@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -124,7 +125,7 @@ export default function ThreeDCarousel({ images, onImageClick }) {
                     <img
                       src={image.url}
                       alt={`Gallery image ${index + 1}`}
-                      className="w-full h-full object-cover cursor-pointer"
+                      className="w-full h-full object-contain cursor-pointer"
                       style={{
                         filter: isCurrent ? "brightness(1)" : "brightness(0.7)",
                       }}
