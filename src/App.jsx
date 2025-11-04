@@ -18,7 +18,7 @@ export default function App() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/logo.jpg" alt="Exquisite Cars" />
+            <img src="/logo-new.png" alt="Exquisite Cars" style={{height: '150px'}} />
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
@@ -419,7 +419,7 @@ export default function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src="/logo.jpg" alt="Exquisite Cars" style={{height: '30px'}} />
+              <img src="/logo-new.png" alt="Exquisite Cars" style={{height: '90px'}} />
             </div>
 
             <nav className="footer-nav">
