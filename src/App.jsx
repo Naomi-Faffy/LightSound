@@ -1,7 +1,10 @@
 import React from 'react';
 import './styles.css';
+import { useExquisiteCarsInteractions } from './script.js';
 
 export default function App() {
+  useExquisiteCarsInteractions();
+
   return (
     <div className="App">
       {/* WhatsApp Floating Chat */}
