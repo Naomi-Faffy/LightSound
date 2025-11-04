@@ -1259,3 +1259,227 @@ body {
 }
 
 .form-group-glass input,
+.form-group-glass textarea,
+.form-group-glass select {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    border: 2px solid rgba(26, 54, 93, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--luxury-navy);
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-group-glass input:focus,
+.form-group-glass textarea:focus,
+.form-group-glass select:focus {
+    border-color: var(--exquisite-green);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 3px rgba(46, 170, 95, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group-glass textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group-glass select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a365d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+    padding-right: 50px;
+}
+
+/* Submit Button */
+.submit-btn-glass {
+    width: 100%;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, var(--exquisite-green), #60a5fa);
+    border: none;
+    border-radius: 12px;
+    color: var(--pure-white);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(46, 170, 95, 0.3);
+}
+
+.submit-btn-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.submit-btn-glass:hover::before {
+    left: 100%;
+}
+
+.submit-btn-glass:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(96, 165, 250, 0.4);
+    background: linear-gradient(135deg, #60a5fa, var(--exquisite-green));
+}
+
+.submit-btn-glass:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(46, 170, 95, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 80px 0;
+        --container-padding: 0 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .services-grid,
+    .media-partners-glass,
+    .testimonials-glass-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-glass-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-main-title {
+        font-size: 36px;
+    }
+
+    .trust-main-title,
+    .services-main-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+    }
+
+    .glass-card,
+    .contact-info-glass,
+    .contact-form-glass {
+        padding: 30px 20px;
+    }
+
+    .contact-main-title {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .whatsapp-chat,
+    .hero-video,
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .section-title,
+    .section-subtitle,
+    .car-model,
+    .car-price,
+    .glass-card-title,
+    .glass-card-description {
+        color: black !important;
+    }
+}
