@@ -117,7 +117,7 @@ export default function GalleryModal({ images, selectedIndex, onClose, onNavigat
             >
               <ChevronLeft className="w-6 h-6" />
             </Button>
-
+            
             <div className="text-white text-sm font-medium">
               {currentIndex + 1} / {images.length}
             </div>

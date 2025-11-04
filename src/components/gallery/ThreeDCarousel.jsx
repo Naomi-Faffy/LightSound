@@ -11,14 +11,14 @@ export default function ThreeDCarousel({ images }) {
   const getVisibleImages = () => {
     const visible = [];
     const positions = [-2, -1, 0, 1, 2]; // Center is 0, sides are -2,-1,1,2
-
+    
     positions.forEach((pos) => {
       let index = currentIndex + pos;
       if (index < 0) index = images.length + index;
       if (index >= images.length) index = index - images.length;
       visible.push({ image: images[index], position: pos, index });
     });
-
+    
     return visible;
   };
 
@@ -74,7 +74,7 @@ export default function ThreeDCarousel({ images }) {
           <AnimatePresence initial={false}>
             {visibleImages.map(({ image, position, index }) => {
               const isCurrent = position === 0;
-
+              
               // Calculate transform values based on position
               const getTransform = () => {
                 if (position === 0) {
@@ -116,8 +116,8 @@ export default function ThreeDCarousel({ images }) {
                       isCurrent ? "w-[280px] h-[360px] md:w-[400px] md:h-[480px]" : "w-[240px] h-[320px] md:w-[360px] md:h-[440px]"
                     }`}
                     style={{
-                      boxShadow: isCurrent
-                        ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+                      boxShadow: isCurrent 
+                        ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)" 
                         : "0 10px 30px -5px rgba(0, 0, 0, 0.3)",
                     }}
                   >
