@@ -120,36 +120,6 @@ export default function App() {
               <div className="testimonial-quote">
                 <i className="fas fa-quote-left"></i>
               </div>
-              <h3 className="partner-title">BLOOMBERG</h3>
-              <p className="partner-description">"The pinnacle of premium dealership experience"</p>
-            </div>
-
-            <div className="partner-glass-card">
-              <div className="partner-icon">
-                <i className="fas fa-trophy"></i>
-              </div>
-              <h3 className="partner-title">ROBB REPORT</h3>
-              <p className="partner-description">"Curating the world's most exceptional vehicles"</p>
-            </div>
-          </div>
-
-          {/* Testimonials Glass Cards */}
-          <div className="testimonials-glass-grid">
-            <div className="testimonial-glass-card">
-              <div className="testimonial-quote">
-                <i className="fas fa-quote-left"></i>
-              </div>
-              <p className="testimonial-text">"Exquisite Cars transformed my vision into reality. The attention to detail and personalized service exceeded my expectations. Truly a world-class experience."</p>
-              <div className="testimonial-author">
-                <strong>Alexander Rothschild</strong>
-                <span>Private Equity Executive</span>
-              </div>
-            </div>
-
-            <div className="testimonial-glass-card">
-              <div className="testimonial-quote">
-                <i className="fas fa-quote-left"></i>
-              </div>
               <p className="testimonial-text">"From selection to delivery, every moment was flawless. The team's expertise and dedication to excellence is unmatched in the luxury automotive industry."</p>
               <div className="testimonial-author">
                 <strong>Victoria Pemberton</strong>
