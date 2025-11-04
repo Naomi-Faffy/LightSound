@@ -1,5 +1,5 @@
 // Exquisite Cars - Interactive Features
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 export const useExquisiteCarsInteractions = () => {
   useEffect(() => {
@@ -7,150 +7,134 @@ export const useExquisiteCarsInteractions = () => {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
+    const handleHamburgerClick = () => {
+      if (!hamburger || !navMenu) return;
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+
+      const spans = hamburger.querySelectorAll('span');
+      if (hamburger.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    };
+
     if (hamburger && navMenu) {
-      const handleHamburgerClick = function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-
-        // Animate hamburger lines
-        const spans = hamburger.querySelectorAll('span');
-        if (hamburger.classList.contains('active')) {
-          spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-          spans[1].style.opacity = '0';
-          spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-        } else {
-          spans[0].style.transform = 'none';
-          spans[1].style.opacity = '1';
-          spans[2].style.transform = 'none';
-        }
-      };
-
       hamburger.addEventListener('click', handleHamburgerClick);
-
-      // Close mobile menu when clicking on a link
-      document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('active');
-          const spans = hamburger.querySelectorAll('span');
-          spans[0].style.transform = 'none';
-          spans[1].style.opacity = '1';
-          spans[2].style.transform = 'none';
-        });
-      });
     }
+
+    const linkClickHandlers = [];
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      const handler = () => {
+        if (!hamburger || !navMenu) return;
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      };
+      link.addEventListener('click', handler);
+      linkClickHandlers.push({ link, handler });
+    });
 
     // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     let lastScrollY = window.scrollY;
 
-    const handleScroll = function() {
+    const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // Keep navbar transparent - no background changes
-
-      // Hide/show navbar on scroll
-      if (currentScrollY > lastScrollY && currentScrollY > 200) {
-        navbar.style.transform = 'translateY(-100%)';
-      } else {
-        navbar.style.transform = 'translateY(0)';
+      if (navbar) {
+        if (currentScrollY > lastScrollY && currentScrollY > 200) {
+          navbar.style.transform = 'translateY(-100%)';
+        } else {
+          navbar.style.transform = 'translateY(0)';
+        }
       }
-
       lastScrollY = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
 
     // Smooth Scrolling for Navigation Links
+    const smoothScrollHandlers = [];
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      const handler = (e) => {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = anchor.getAttribute('href');
+        if (!href) return;
+        const target = document.querySelector(href);
         if (target) {
           const offsetTop = target.offsetTop - 80;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
-      });
+      };
+      anchor.addEventListener('click', handler);
+      smoothScrollHandlers.push({ anchor, handler });
     });
 
     // Intersection Observer for Animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, observerOptions);
 
-    // Observe elements for animations
     const animatedElements = document.querySelectorAll('.glass-card, .car-card, .partner-glass-card, .testimonial-glass-card, .contact-info-glass, .contact-form-glass');
-    animatedElements.forEach(el => {
-      el.classList.add('fade-in');
-      observer.observe(el);
-    });
+    animatedElements.forEach(el => { el.classList.add('fade-in'); observer.observe(el); });
 
     // Car Collection Hover Effects
     const carCards = document.querySelectorAll('.car-card');
+    const carCardHandlers = [];
     carCards.forEach(card => {
       const overlay = card.querySelector('.car-overlay');
       const button = card.querySelector('.view-details');
 
-      card.addEventListener('mouseenter', function() {
-        overlay.style.opacity = '1';
-        button.style.transform = 'scale(1.05)';
-      });
+      const enterHandler = () => { if (overlay && button) { overlay.style.opacity = '1'; button.style.transform = 'scale(1.05)'; } };
+      const leaveHandler = () => { if (overlay && button) { overlay.style.opacity = '0'; button.style.transform = 'scale(1)'; } };
+      card.addEventListener('mouseenter', enterHandler);
+      card.addEventListener('mouseleave', leaveHandler);
+      carCardHandlers.push({ card, enterHandler, leaveHandler });
 
-      card.addEventListener('mouseleave', function() {
-        overlay.style.opacity = '0';
-        button.style.transform = 'scale(1)';
-      });
-
-      // View Details Button Click
       if (button) {
-        button.addEventListener('click', function() {
-          const carModel = card.querySelector('.car-model').textContent;
+        const detailsHandler = () => {
+          const modelEl = card.querySelector('.car-model');
+          const carModel = modelEl ? modelEl.textContent : 'this car';
           showCarDetails(carModel);
-        });
+        };
+        button.addEventListener('click', detailsHandler);
+        carCardHandlers.push({ card: button, detailsHandler });
       }
 
-      // Schedule Test Drive Button
       const testDriveBtn = card.querySelector('.car-action');
       if (testDriveBtn) {
-        testDriveBtn.addEventListener('click', function() {
-          const carModel = card.querySelector('.car-model').textContent;
+        const testHandler = () => {
+          const modelEl = card.querySelector('.car-model');
+          const carModel = modelEl ? modelEl.textContent : 'this car';
           scheduleTestDrive(carModel);
-        });
+        };
+        testDriveBtn.addEventListener('click', testHandler);
+        carCardHandlers.push({ card: testDriveBtn, testHandler });
       }
     });
 
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
-
+    let formSubmitHandler;
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
+      formSubmitHandler = (e) => {
         e.preventDefault();
-
-        // Get form data
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-
-        // Validate form
         if (validateForm(data)) {
-          // Show loading state
           const submitBtn = contactForm.querySelector('button[type="submit"]');
           const originalText = submitBtn.innerHTML;
           submitBtn.innerHTML = 'Sending...';
           submitBtn.disabled = true;
-
-          // Simulate form submission (replace with actual API call)
           setTimeout(() => {
             showSuccessMessage();
             contactForm.reset();
@@ -158,30 +142,17 @@ export const useExquisiteCarsInteractions = () => {
             submitBtn.disabled = false;
           }, 2000);
         }
-      });
+      };
+      contactForm.addEventListener('submit', formSubmitHandler);
     }
 
     // Form Validation
     function validateForm(data) {
       const errors = [];
-
-      if (!data.name || data.name.length < 2) {
-        errors.push('Name must be at least 2 characters long');
-      }
-
-      if (!data.email || !isValidEmail(data.email)) {
-        errors.push('Please enter a valid email address');
-      }
-
-      if (!data.interest) {
-        errors.push('Please select your service interest');
-      }
-
-      if (errors.length > 0) {
-        showErrorMessage(errors);
-        return false;
-      }
-
+      if (!data.name || data.name.length < 2) errors.push('Name must be at least 2 characters long');
+      if (!data.email || !isValidEmail(data.email)) errors.push('Please enter a valid email address');
+      if (!data.interest) errors.push('Please select your service interest');
+      if (errors.length > 0) { showErrorMessage(errors); return false; }
       return true;
     }
 
@@ -204,86 +175,60 @@ export const useExquisiteCarsInteractions = () => {
     function createMessage(text, type) {
       const messageDiv = document.createElement('div');
       messageDiv.className = `message ${type}`;
-      messageDiv.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 30px;
-        background: ${type === 'success' ? '#D4AF37' : '#dc3545'};
-        color: ${type === 'success' ? '#0A0A0A' : '#fff'};
-        padding: 20px 30px;
-        border-radius: 0;
-        z-index: 1001;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        transform: translateX(400px);
-        opacity: 0;
-        transition: all 0.3s ease;
-        max-width: 350px;
-        white-space: pre-line;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-      `;
+      messageDiv.style.cssText = `position: fixed; top: 100px; right: 30px; background: ${type === 'success' ? '#D4AF37' : '#dc3545'}; color: ${type === 'success' ? '#0A0A0A' : '#fff'}; padding: 20px 30px; border-radius: 0; z-index: 1001; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transform: translateX(400px); opacity: 0; transition: all 0.3s ease; max-width: 350px; white-space: pre-line; font-family: 'Montserrat', sans-serif; font-weight: 500; letter-spacing: 0.5px;`;
       messageDiv.textContent = text;
       return messageDiv;
     }
 
     function showMessage(messageDiv) {
       document.body.appendChild(messageDiv);
-
-      setTimeout(() => {
-        messageDiv.style.transform = 'translateX(0)';
-        messageDiv.style.opacity = '1';
-      }, 100);
-
+      setTimeout(() => { messageDiv.style.transform = 'translateX(0)'; messageDiv.style.opacity = '1'; }, 100);
       setTimeout(() => {
         messageDiv.style.transform = 'translateX(400px)';
         messageDiv.style.opacity = '0';
-        setTimeout(() => {
-          document.body.removeChild(messageDiv);
-        }, 300);
+        setTimeout(() => { if (messageDiv.parentNode) messageDiv.parentNode.removeChild(messageDiv); }, 300);
       }, 4000);
     }
 
-    // Car Details Modal (placeholder function)
-    function showCarDetails(carModel) {
-      alert(`Detailed information about ${carModel} would be displayed in a luxury modal. This is a demonstration.`);
-    }
-
-    // Schedule Test Drive (placeholder function)
-    function scheduleTestDrive(carModel) {
-      alert(`Scheduling a private test drive for ${carModel}. In a real implementation, this would open a booking system.`);
-    }
+    function showCarDetails(carModel) { alert(`Detailed information about ${carModel} would be displayed in a luxury modal. This is a demonstration.`); }
+    function scheduleTestDrive(carModel) { alert(`Scheduling a private test drive for ${carModel}. In a real implementation, this would open a booking system.`); }
 
     // Preloader
-    window.addEventListener('load', function() {
+    const handleLoad = () => {
       const preloader = document.querySelector('.preloader');
       if (preloader) {
         preloader.style.opacity = '0';
-        setTimeout(() => {
-          preloader.remove();
-        }, 500);
+        setTimeout(() => { preloader.remove(); }, 500);
       }
-
-      // Add loading class to elements for staggered animations
       const elements = document.querySelectorAll('.hero-content, .section-title, .car-card, .glass-card, .partner-glass-card, .testimonial-glass-card, .contact-info-glass, .contact-form-glass');
-      elements.forEach((el, index) => {
-        el.classList.add('loading');
-        el.style.animationDelay = `${index * 0.1}s`;
-      });
-    });
+      elements.forEach((el, index) => { el.classList.add('loading'); el.style.animationDelay = `${index * 0.1}s`; });
+
+      // Graceful hero video fallback if missing or fails to load
+      const heroVideo = document.querySelector('.hero-video');
+      if (heroVideo) {
+        const videoErrorHandler = () => {
+          const container = document.querySelector('.hero-video-container');
+          if (container) container.style.background = "url('/aston-martin-db11.jpg') center/cover no-repeat";
+          heroVideo.style.display = 'none';
+        };
+        heroVideo.addEventListener('error', videoErrorHandler);
+      } else {
+        const container = document.querySelector('.hero-video-container');
+        if (container) container.style.background = "url('/aston-martin-db11.jpg') center/cover no-repeat";
+      }
+    };
+
+    window.addEventListener('load', handleLoad);
 
     // Glass Cards Hover Animation
     const glassCards = document.querySelectorAll('.glass-card');
+    const glassCardHoverHandlers = [];
     glassCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-        this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.4)';
-      });
-
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-        this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
-      });
+      const enter = () => { card.style.transform = 'translateY(-10px) scale(1.02)'; card.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.4)'; };
+      const leave = () => { card.style.transform = 'translateY(0) scale(1)'; card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)'; };
+      card.addEventListener('mouseenter', enter);
+      card.addEventListener('mouseleave', leave);
+      glassCardHoverHandlers.push({ card, enter, leave });
     });
 
     // Partner Glass Cards Setup
@@ -292,16 +237,11 @@ export const useExquisiteCarsInteractions = () => {
       card.style.animationDelay = `${(index * 0.15) + 0.8}s`;
       card.style.animation = 'glassCardAppear 1s ease-out forwards';
       card.style.opacity = '0';
-
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px) scale(1.02)';
-        this.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.4)';
-      });
-
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-        this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)';
-      });
+      const enter = () => { card.style.transform = 'translateY(-8px) scale(1.02)'; card.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.4)'; };
+      const leave = () => { card.style.transform = 'translateY(0) scale(1)'; card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.2)'; };
+      card.addEventListener('mouseenter', enter);
+      card.addEventListener('mouseleave', leave);
+      glassCardHoverHandlers.push({ card, enter, leave });
     });
 
     // Testimonial Glass Cards Setup
@@ -310,33 +250,17 @@ export const useExquisiteCarsInteractions = () => {
       card.style.animationDelay = `${(index * 0.2) + 1.3}s`;
       card.style.animation = 'glassCardAppear 1.2s ease-out forwards';
       card.style.opacity = '0';
-
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-        this.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.4)';
-      });
-
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-        this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
-      });
+      const enter = () => { card.style.transform = 'translateY(-10px) scale(1.02)'; card.style.boxShadow = '0 35px 70px rgba(0, 0, 0, 0.4)'; };
+      const leave = () => { card.style.transform = 'translateY(0) scale(1)'; card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)'; };
+      card.addEventListener('mouseenter', enter);
+      card.addEventListener('mouseleave', leave);
+      glassCardHoverHandlers.push({ card, enter, leave });
     });
 
     // Testimonial Cards Rotation
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     let currentTestimonial = 0;
-
-    function rotateTestimonials() {
-      testimonialCards.forEach((card, index) => {
-        card.style.opacity = index === currentTestimonial ? '1' : '0.7';
-        card.style.transform = index === currentTestimonial ? 'scale(1.02)' : 'scale(1)';
-      });
-
-      currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-    }
-
-    // Testimonial Glass Cards Subtle Animation
-    function rotateTestimonialsGlass() {
+    const rotateTestimonialsGlass = () => {
       testimonialGlassCards.forEach((card, index) => {
         if (index === currentTestimonial) {
           card.style.transform = 'translateY(-5px) scale(1.01)';
@@ -346,44 +270,44 @@ export const useExquisiteCarsInteractions = () => {
           card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
         }
       });
-
       currentTestimonial = (currentTestimonial + 1) % testimonialGlassCards.length;
-    }
+    };
 
-    // Start testimonial glass cards rotation
+    let testimonialIntervalId;
     if (testimonialGlassCards.length > 1) {
-      setInterval(rotateTestimonialsGlass, 5000);
-      setTimeout(rotateTestimonialsGlass, 2000); // Initial call after animations
+      testimonialIntervalId = setInterval(rotateTestimonialsGlass, 5000);
+      setTimeout(rotateTestimonialsGlass, 2000);
     }
 
     // Contact Glass Cards Setup
     const contactGlassCards = document.querySelectorAll('.contact-info-glass, .contact-form-glass');
+    const contactCardHoverHandlers = [];
     contactGlassCards.forEach((card, index) => {
       card.style.animationDelay = `${(index * 0.3) + 2.0}s`;
-
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-12px) scale(1.02)';
-        this.style.boxShadow = '0 40px 80px rgba(0, 0, 0, 0.4)';
-      });
-
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-        this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)';
-      });
+      const enter = () => { card.style.transform = 'translateY(-12px) scale(1.02)'; card.style.boxShadow = '0 40px 80px rgba(0, 0, 0, 0.4)'; };
+      const leave = () => { card.style.transform = 'translateY(0) scale(1)'; card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.3)'; };
+      card.addEventListener('mouseenter', enter);
+      card.addEventListener('mouseleave', leave);
+      contactCardHoverHandlers.push({ card, enter, leave });
     });
 
     // Glass Form Input Focus Effects
     const glassInputs = document.querySelectorAll('.form-group-glass input, .form-group-glass select, .form-group-glass textarea');
+    const focusHandlers = [];
+    const blurHandlers = [];
     glassInputs.forEach(input => {
-      input.addEventListener('focus', function() {
-        this.parentElement.querySelector('.input-icon').style.color = '#60a5fa';
-        this.parentElement.querySelector('.input-icon').style.transform = 'scale(1.1)';
-      });
-
-      input.addEventListener('blur', function() {
-        this.parentElement.querySelector('.input-icon').style.color = '#2eaa5f';
-        this.parentElement.querySelector('.input-icon').style.transform = 'scale(1)';
-      });
+      const focusHandler = () => {
+        const icon = input.parentElement?.querySelector('.input-icon');
+        if (icon) { icon.style.color = '#60a5fa'; icon.style.transform = 'scale(1.1)'; }
+      };
+      const blurHandler = () => {
+        const icon = input.parentElement?.querySelector('.input-icon');
+        if (icon) { icon.style.color = '#2eaa5f'; icon.style.transform = 'scale(1)'; }
+      };
+      input.addEventListener('focus', focusHandler);
+      input.addEventListener('blur', blurHandler);
+      focusHandlers.push({ input, focusHandler });
+      blurHandlers.push({ input, blurHandler });
     });
 
     // Social Glass Links Animation
@@ -396,61 +320,62 @@ export const useExquisiteCarsInteractions = () => {
 
     // Performance Optimization
     let ticking = false;
-
-    function updateOnScroll() {
+    const updateOnScroll = () => {
       if (!ticking) {
-        requestAnimationFrame(function() {
-          // Perform scroll-based updates here
-          ticking = false;
-        });
+        requestAnimationFrame(() => { ticking = false; });
         ticking = true;
       }
-    }
+    };
 
     window.addEventListener('scroll', updateOnScroll);
 
     // Accessibility Enhancements
-    document.addEventListener('keydown', function(e) {
-      // Escape key closes mobile menu
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        hamburger.click();
+    const keydownHandler = (e) => {
+      if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active') && hamburger) {
+        handleHamburgerClick();
       }
-
-      // Enter key activates buttons
-      if (e.key === 'Enter' && e.target.classList.contains('car-action')) {
+      if (e.key === 'Enter' && e.target instanceof Element && e.target.classList.contains('car-action')) {
         e.target.click();
       }
-    });
-
-    // Add focus indicators for keyboard navigation
-    const focusableElements = document.querySelectorAll('a, button, input, select, textarea');
-    focusableElements.forEach(el => {
-      el.addEventListener('focus', function() {
-        this.style.outline = '2px solid #30A848';
-        this.style.outlineOffset = '2px';
-      });
-
-      el.addEventListener('blur', function() {
-        this.style.outline = 'none';
-      });
-    });
+    };
+    document.addEventListener('keydown', keydownHandler);
 
     // Initialize loading animations
-    setTimeout(() => {
+    const initLoadingTimeoutId = setTimeout(() => {
       const loadingElements = document.querySelectorAll('.loading');
-      loadingElements.forEach(el => {
-        el.classList.add('visible');
-      });
+      loadingElements.forEach(el => { el.classList.add('visible'); });
     }, 100);
 
     console.log('Exquisite Cars - Luxury experience initialized');
 
     // Cleanup function
     return () => {
+      if (hamburger) hamburger.removeEventListener('click', handleHamburgerClick);
+      linkClickHandlers.forEach(({ link, handler }) => link.removeEventListener('click', handler));
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('scroll', updateOnScroll);
-      window.removeEventListener('load', () => {});
-      document.removeEventListener('keydown', () => {});
+      if (observer) observer.disconnect();
+      carCardHandlers.forEach(({ card, enterHandler, leaveHandler, detailsHandler, testHandler }) => {
+        if (enterHandler) card.removeEventListener('mouseenter', enterHandler);
+        if (leaveHandler) card.removeEventListener('mouseleave', leaveHandler);
+        if (detailsHandler) card.removeEventListener('click', detailsHandler);
+        if (testHandler) card.removeEventListener('click', testHandler);
+      });
+      if (contactForm && formSubmitHandler) contactForm.removeEventListener('submit', formSubmitHandler);
+      glassCardHoverHandlers.forEach(({ card, enter, leave }) => {
+        card.removeEventListener('mouseenter', enter);
+        card.removeEventListener('mouseleave', leave);
+      });
+      contactCardHoverHandlers.forEach(({ card, enter, leave }) => {
+        card.removeEventListener('mouseenter', enter);
+        card.removeEventListener('mouseleave', leave);
+      });
+      focusHandlers.forEach(({ input, focusHandler }) => input.removeEventListener('focus', focusHandler));
+      blurHandlers.forEach(({ input, blurHandler }) => input.removeEventListener('blur', blurHandler));
+      document.removeEventListener('keydown', keydownHandler);
+      clearTimeout(initLoadingTimeoutId);
+      if (testimonialIntervalId) clearInterval(testimonialIntervalId);
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 };
