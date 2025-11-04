@@ -549,7 +549,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    max-width: 1200px;
+    max-width: 100%;
     width: 100%;
 }
 
@@ -733,7 +733,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1000px;
+    max-width: 100%;
     width: 100%;
     margin-bottom: 80px;
 }
@@ -822,7 +822,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1200px;
+    max-width: 100%;
     width: 100%;
 }
 
@@ -969,7 +969,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    max-width: 1400px;
+    max-width: 100%;
     width: 100%;
 }
 
@@ -1575,19 +1575,6 @@ body {
     color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     margin: 0;
-}
-
-/* Ensure proper alignment */
-body {
-    margin: 0;
-    padding: 0;
-    text-align: left; /* Reset any center alignment */
-}
-
-.container {
-    margin: 0 auto;
-    width: 100%;
-    max-width: var(--container-max-width);
 }
 
 /* Print Styles */
