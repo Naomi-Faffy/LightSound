@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
-import Gallery from './components/gallery/Gallery';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -23,7 +22,6 @@ export default function App() {
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#events">Events</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -54,26 +52,13 @@ export default function App() {
             <p className="hero-subtitle">Experience the world's most exclusive collection of luxury automobiles</p>
             <div className="hero-buttons">
               <a href="#contact" className="cta-button primary">Book a Viewing</a>
-              <a href="#events" className="cta-button secondary">Explore Events</a>
+              <a href="#services" className="cta-button secondary">Explore Services</a>
             </div>
           </div>
         </div>
 
         <div className="scroll-indicator">
           <div className="scroll-arrow"></div>
-        </div>
-      </section>
-
-      {/* Events Gallery */}
-      <section id="events" className="events">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Events Gallery</h2>
-            <p className="section-subtitle">Capturing memorable moments from our exclusive events and experiences</p>
-          </div>
-          <div className="gallery-container">
-            <Gallery />
-          </div>
         </div>
       </section>
 
@@ -330,7 +315,6 @@ export default function App() {
 
             <nav className="footer-nav">
               <a href="#home">Home</a>
-              <a href="#events">Events</a>
               <a href="#services">Services</a>
               <a href="#about">About</a>
               <a href="#contact">Contact</a>
