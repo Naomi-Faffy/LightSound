@@ -1,19 +1,27 @@
 import React from 'react';
+import './styles.css';
 
 export default function App() {
   return (
     <div className="App">
+      {/* WhatsApp Floating Chat */}
+      <div className="whatsapp-chat">
+        <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp Chat" rel="noopener noreferrer">
+          <i className="fab fa-whatsapp"></i>
+        </a>
+      </div>
+
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/logo.jpg" alt="Exquisite Motors Logo" />
+            <img src="/logo.jpg" alt="Exquisite Cars" />
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#collection">Collection</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#trust">Trust</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div className="hamburger">
@@ -27,279 +35,414 @@ export default function App() {
       {/* Hero Section */}
       <section id="home" className="hero">
         <div className="hero-video-container">
-          <video className="hero-video" autoPlay muted loop>
+          <video autoPlay muted loop playsInline className="hero-video">
             <source src="/hero-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
           <div className="hero-overlay"></div>
         </div>
+
         <div className="hero-content">
-          <h1 className="hero-title">
-            <span className="hero-line-1">Drive Prestige.</span>
-            <span className="hero-line-2">Live Exquisite.</span>
-          </h1>
-          <p className="hero-subtitle">Experience the world's most exclusive luxury automobiles</p>
-          <div className="hero-buttons">
-            <a href="#collection" className="cta-button primary">Explore Collection</a>
-            <a href="#contact" className="cta-button secondary">Get In Touch</a>
+          <div className="hero-text">
+            <h1 className="hero-title">
+              <span className="hero-line-1">Drive Prestige.</span>
+              <span className="hero-line-2">Live Exquisite.</span>
+            </h1>
+            <p className="hero-subtitle">Experience the world's most exclusive collection of luxury automobiles</p>
+            <div className="hero-buttons">
+              <a href="#contact" className="cta-button primary">Book a Viewing</a>
+              <a href="#collection" className="cta-button secondary">Explore Fleet</a>
+            </div>
           </div>
         </div>
+
         <div className="scroll-indicator">
           <div className="scroll-arrow"></div>
         </div>
       </section>
 
-      {/* Collection Section */}
+      {/* Elite Collection */}
       <section id="collection" className="collection">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Our Collection</h2>
-            <p className="section-subtitle">Discover the pinnacle of automotive excellence</p>
+            <h2 className="section-title">Current Inventory</h2>
+            <p className="section-subtitle">Fresh arrivals and premium vehicles available at Exquisite Cars</p>
           </div>
+
           <div className="collection-grid">
             <div className="car-card">
               <div className="car-image">
-                <img src="/aston-martin-db11.jpg" alt="Aston Martin DB11" />
+                <img src="/aston-martin-db11.jpg" alt="2022 Aston Martin DB11" loading="lazy" />
                 <div className="car-overlay">
                   <button className="view-details">View Details</button>
                 </div>
               </div>
               <div className="car-info">
-                <h3 className="car-model">Aston Martin DB11</h3>
-                <p className="car-class">Grand Tourer</p>
-                <p className="car-price">From $225,000</p>
-                <button className="car-action">Inquire Now</button>
+                <h3 className="car-model">2022 Aston Martin DB11</h3>
+                <p className="car-class">Sports Car Excellence</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
               </div>
             </div>
+
             <div className="car-card">
               <div className="car-image">
-                <img src="/landcruiser-lc300-showroom1.jpg" alt="Toyota Land Cruiser LC300" />
+                <img src="/toyota-prado-vx-r.jpg" alt="2024 Toyota Land Cruiser Prado VX-R" loading="lazy" />
                 <div className="car-overlay">
                   <button className="view-details">View Details</button>
                 </div>
               </div>
               <div className="car-info">
-                <h3 className="car-model">Toyota Land Cruiser LC300</h3>
-                <p className="car-class">SUV</p>
-                <p className="car-price">From $90,000</p>
-                <button className="car-action">Inquire Now</button>
+                <h3 className="car-model">2024 Toyota Land Cruiser Prado VX-R</h3>
+                <p className="car-class">Luxury Mid-Size SUV</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
               </div>
             </div>
+
             <div className="car-card">
               <div className="car-image">
-                <img src="/toyota-prado-vx-r.jpg" alt="Toyota Prado VX-R" />
+                <img src="/ford-ranger-raptor.jpg" alt="2023 Ford Ranger Raptor" loading="lazy" />
                 <div className="car-overlay">
                   <button className="view-details">View Details</button>
                 </div>
               </div>
               <div className="car-info">
-                <h3 className="car-model">Toyota Prado VX-R</h3>
-                <p className="car-class">SUV</p>
-                <p className="car-price">From $75,000</p>
-                <button className="car-action">Inquire Now</button>
+                <h3 className="car-model">2023 Ford Ranger Raptor</h3>
+                <p className="car-class">Performance Off-Road</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
+              </div>
+            </div>
+
+            <div className="car-card">
+              <div className="car-image">
+                <img src="/range-rover-hse.jpg" alt="2024 Range Rover HSE D350" loading="lazy" />
+                <div className="car-overlay">
+                  <button className="view-details">View Details</button>
+                </div>
+              </div>
+              <div className="car-info">
+                <h3 className="car-model">2024 Range Rover HSE D350</h3>
+                <p className="car-class">Luxury & Power</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
+              </div>
+            </div>
+
+            <div className="car-card">
+              <div className="car-image">
+                <img src="/toyota-landcruiser-79.jpg" alt="2024 Toyota Land Cruiser 79 Series" loading="lazy" />
+                <div className="car-overlay">
+                  <button className="view-details">View Details</button>
+                </div>
+              </div>
+              <div className="car-info">
+                <h3 className="car-model">2024 Toyota Land Cruiser 79 Series</h3>
+                <p className="car-class">Ultimate Off-Road</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
+              </div>
+            </div>
+
+            <div className="car-card">
+              <div className="car-image">
+                <img src="/mercedes-g63-amg.jpg" alt="2024 Mercedes-Benz G63 AMG" loading="lazy" />
+                <div className="car-overlay">
+                  <button className="view-details">View Details</button>
+                </div>
+              </div>
+              <div className="car-info">
+                <h3 className="car-model">2024 Mercedes-Benz G63 AMG</h3>
+                <p className="car-class">Magno Black Edition</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
+              </div>
+            </div>
+
+            <div className="car-card">
+              <div className="car-image">
+                <img src="/black-luxury-suv.jpg" alt="Luxury Performance SUV" loading="lazy" />
+                <div className="car-overlay">
+                  <button className="view-details">View Details</button>
+                </div>
+              </div>
+              <div className="car-info">
+                <h3 className="car-model">Premium Luxury SUV</h3>
+                <p className="car-class">Elite Performance</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
+              </div>
+            </div>
+
+            <div className="car-card">
+              <div className="car-image">
+                <img src="/toyota-hilux-gr-sport.jpg" alt="2024 Toyota Hilux GR-Sport" loading="lazy" />
+                <div className="car-overlay">
+                  <button className="view-details">View Details</button>
+                </div>
+              </div>
+              <div className="car-info">
+                <h3 className="car-model">2024 Toyota Hilux GR-Sport</h3>
+                <p className="car-class">Rugged & Stylish</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
+              </div>
+            </div>
+
+            <div className="car-card">
+              <div className="car-image">
+                <img src="/toyota-prado-white.jpg" alt="Toyota Land Cruiser Prado" loading="lazy" />
+                <div className="car-overlay">
+                  <button className="view-details">View Details</button>
+                </div>
+              </div>
+              <div className="car-info">
+                <h3 className="car-model">Toyota Land Cruiser Prado</h3>
+                <p className="car-class">Versatile Luxury</p>
+                <div className="car-price">Available on Request</div>
+                <button className="car-action">Schedule Test Drive</button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Why Choose Exquisite Cars */}
       <section id="services" className="services">
         <div className="services-overlay">
           <div className="services-header">
-            <h2 className="services-main-title">Exquisite Services</h2>
-            <p className="services-subtitle">Tailored experiences for discerning clients</p>
+            <h2 className="services-main-title">WHY CHOOSE EXQUISITE CARS</h2>
+            <p className="services-subtitle">Unparalleled service for the most discerning clients</p>
           </div>
+
           <div className="services-grid">
             <div className="glass-card">
               <div className="glass-icon">
-                <i className="fas fa-car"></i>
+                <i className="fas fa-gem"></i>
               </div>
-              <h3 className="glass-card-title">Vehicle Acquisition</h3>
-              <p className="glass-card-description">Personalized sourcing and procurement of your dream vehicle from global markets.</p>
+              <h3 className="glass-card-title">EXCLUSIVE INVENTORY</h3>
+              <p className="glass-card-description">Access to the world's rarest and most sought-after luxury vehicles. Our curated collection features limited editions and bespoke models unavailable elsewhere.</p>
             </div>
+
             <div className="glass-card">
               <div className="glass-icon">
-                <i className="fas fa-tools"></i>
+                <i className="fas fa-concierge-bell"></i>
               </div>
-              <h3 className="glass-card-title">Maintenance & Care</h3>
-              <p className="glass-card-description">Comprehensive maintenance services to keep your vehicle in pristine condition.</p>
+              <h3 className="glass-card-title">TAILORED SERVICES</h3>
+              <p className="glass-card-description">Private test drives, personalized consultations, and white-glove delivery. Experience our chauffeur services and VIP treatment tailored to your preferences.</p>
             </div>
+
             <div className="glass-card">
               <div className="glass-icon">
-                <i className="fas fa-shield-alt"></i>
+                <i className="fas fa-globe"></i>
               </div>
-              <h3 className="glass-card-title">Insurance Solutions</h3>
-              <p className="glass-card-description">Premium insurance coverage tailored to your luxury lifestyle and vehicle needs.</p>
+              <h3 className="glass-card-title">GLOBAL CLIENTELE</h3>
+              <p className="glass-card-description">Trusted by elite clients worldwide. Our international network ensures seamless service whether you're in New York, Monaco, Dubai, or Tokyo.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section id="trust" className="trust">
+      {/* Trust & Prestige */}
+      <section className="trust">
         <div className="trust-overlay">
           <div className="trust-header">
-            <h2 className="trust-main-title">Trusted By Excellence</h2>
-            <p className="trust-subtitle">Partnerships that define prestige</p>
+            <h2 className="trust-main-title">TRUSTED EXCELLENCE</h2>
+            <p className="trust-subtitle">Endorsed by the world's most prestigious publications and elite clientele</p>
           </div>
+
+          {/* Media Partners Glass Cards */}
           <div className="media-partners-glass">
             <div className="partner-glass-card">
               <div className="partner-icon">
-                <i className="fas fa-newspaper"></i>
+                <i className="fas fa-star"></i>
               </div>
-              <h3 className="partner-title">Media Partners</h3>
-              <p className="partner-description">Featured in leading automotive publications worldwide.</p>
+              <h3 className="partner-title">FORBES</h3>
+              <p className="partner-description">"Setting the standard for luxury automotive excellence"</p>
             </div>
+
             <div className="partner-glass-card">
               <div className="partner-icon">
-                <i className="fas fa-award"></i>
+                <i className="fas fa-crown"></i>
               </div>
-              <h3 className="partner-title">Awards & Recognition</h3>
-              <p className="partner-description">Multiple industry accolades for service excellence.</p>
+              <h3 className="partner-title">BLOOMBERG</h3>
+              <p className="partner-description">"The pinnacle of premium dealership experience"</p>
             </div>
+
             <div className="partner-glass-card">
               <div className="partner-icon">
-                <i className="fas fa-users"></i>
+                <i className="fas fa-trophy"></i>
               </div>
-              <h3 className="partner-title">Client Testimonials</h3>
-              <p className="partner-description">Hear from our satisfied clientele across the globe.</p>
+              <h3 className="partner-title">ROBB REPORT</h3>
+              <p className="partner-description">"Curating the world's most exceptional vehicles"</p>
             </div>
           </div>
+
+          {/* Testimonials Glass Cards */}
           <div className="testimonials-glass-grid">
             <div className="testimonial-glass-card">
               <div className="testimonial-quote">
                 <i className="fas fa-quote-left"></i>
               </div>
-              <p className="testimonial-text">"Exquisite Motors provided an unparalleled experience. Their attention to detail and commitment to excellence is unmatched."</p>
+              <p className="testimonial-text">"Exquisite Cars transformed my vision into reality. The attention to detail and personalized service exceeded my expectations. Truly a world-class experience."</p>
               <div className="testimonial-author">
-                <strong>John Smith</strong><br />
-                <span>CEO, Tech Innovations</span>
+                <strong>Alexander Rothschild</strong>
+                <span>Private Equity Executive</span>
               </div>
             </div>
+
             <div className="testimonial-glass-card">
               <div className="testimonial-quote">
                 <i className="fas fa-quote-left"></i>
               </div>
-              <p className="testimonial-text">"From selection to delivery, every step was handled with the utmost professionalism. Highly recommended."</p>
+              <p className="testimonial-text">"From selection to delivery, every moment was flawless. The team's expertise and dedication to excellence is unmatched in the luxury automotive industry."</p>
               <div className="testimonial-author">
-                <strong>Sarah Johnson</strong><br />
-                <span>Entrepreneur</span>
+                <strong>Victoria Pemberton</strong>
+                <span>Luxury Real Estate Developer</span>
               </div>
             </div>
+
             <div className="testimonial-glass-card">
               <div className="testimonial-quote">
                 <i className="fas fa-quote-left"></i>
               </div>
-              <p className="testimonial-text">"The team's expertise in luxury vehicles is evident. They made my dream car a reality."</p>
+              <p className="testimonial-text">"Having worked with many luxury dealers worldwide, Exquisite Cars stands alone. Their curated collection and white-glove service are simply extraordinary."</p>
               <div className="testimonial-author">
-                <strong>Michael Chen</strong><br />
-                <span>Business Executive</span>
+                <strong>Marcus Wellington</strong>
+                <span>Investment Banker</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Section with Glass Morphism */}
       <section id="contact" className="contact">
         <div className="contact-overlay">
           <div className="contact-header">
-            <h2 className="contact-main-title">Get In Touch</h2>
-            <p className="contact-subtitle">Let's discuss your automotive aspirations</p>
+            <h2 className="contact-main-title">BEGIN YOUR JOURNEY</h2>
+            <p className="contact-subtitle">Experience the pinnacle of automotive luxury with personalized service</p>
           </div>
+
           <div className="contact-glass-grid">
+            {/* Contact Information Glass Card */}
             <div className="contact-info-glass">
               <div className="contact-glass-header">
                 <div className="contact-icon">
-                  <i className="fas fa-map-marker-alt"></i>
+                  <i className="fas fa-concierge-bell"></i>
                 </div>
-                <h3 className="contact-glass-title">Visit Our Showroom</h3>
-                <p className="contact-glass-description">Experience luxury firsthand at our exclusive location.</p>
+                <h3 className="contact-glass-title">LUXURY CONCIERGE SERVICE</h3>
+                <p className="contact-glass-description">Our dedicated team provides white-glove service tailored to your discerning preferences</p>
               </div>
+
               <div className="contact-details-glass">
                 <div className="contact-item-glass">
                   <div className="contact-item-icon">
                     <i className="fas fa-phone"></i>
                   </div>
                   <div className="contact-item-content">
-                    <span className="contact-label">Phone</span>
-                    <span className="contact-value">+1 (555) 123-4567</span>
+                    <span className="contact-label">Exclusive Hotline</span>
+                    <span className="contact-value">+1 (555) 123-LUXURY</span>
                   </div>
                 </div>
+
                 <div className="contact-item-glass">
                   <div className="contact-item-icon">
                     <i className="fas fa-envelope"></i>
                   </div>
                   <div className="contact-item-content">
-                    <span className="contact-label">Email</span>
-                    <span className="contact-value">info@exquisitemotors.com</span>
+                    <span className="contact-label">Private Email</span>
+                    <span className="contact-value">concierge@exquisitecars.com</span>
                   </div>
                 </div>
+
+                <div className="contact-item-glass">
+                  <div className="contact-item-icon">
+                    <i className="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div className="contact-item-content">
+                    <span className="contact-label">Premier Location</span>
+                    <span className="contact-value">Beverly Hills, California</span>
+                  </div>
+                </div>
+
                 <div className="contact-item-glass">
                   <div className="contact-item-icon">
                     <i className="fas fa-clock"></i>
                   </div>
                   <div className="contact-item-content">
-                    <span className="contact-label">Hours</span>
-                    <span className="contact-value">Mon-Sat: 9AM-7PM</span>
+                    <span className="contact-label">Available Hours</span>
+                    <span className="contact-value">Mon-Sat: 9AM-7PM | Sun: By Appointment</span>
                   </div>
                 </div>
               </div>
+
               <div className="social-links-glass">
-                <a href="#" className="social-glass-link"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="social-glass-link"><i className="fab fa-instagram"></i></a>
-                <a href="#" className="social-glass-link"><i className="fab fa-twitter"></i></a>
-                <a href="#" className="social-glass-link"><i className="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram" className="social-glass-link">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn" className="social-glass-link">
+                  <i className="fab fa-linkedin"></i>
+                </a>
+                <a href="#" aria-label="YouTube" className="social-glass-link">
+                  <i className="fab fa-youtube"></i>
+                </a>
+                <a href="#" aria-label="Twitter" className="social-glass-link">
+                  <i className="fab fa-twitter"></i>
+                </a>
               </div>
             </div>
+
+            {/* Contact Form Glass Card */}
             <div className="contact-form-glass">
               <div className="form-glass-header">
                 <div className="form-icon">
-                  <i className="fas fa-envelope-open-text"></i>
+                  <i className="fas fa-paper-plane"></i>
                 </div>
-                <h3 className="form-glass-title">Send Us a Message</h3>
-                <p className="form-glass-description">We'll respond within 24 hours to discuss your inquiry.</p>
+                <h3 className="form-glass-title">PRIVATE CONSULTATION REQUEST</h3>
+                <p className="form-glass-description">Share your vision and we'll curate the perfect luxury automotive experience</p>
               </div>
-              <form>
+
+              <form className="contact-form" id="contactForm">
                 <div className="form-group-glass">
                   <div className="input-glass-container">
                     <i className="fas fa-user input-icon"></i>
-                    <input type="text" placeholder="Your Name" required />
+                    <input type="text" id="name" name="name" placeholder="Full Name" required />
                   </div>
                 </div>
+
                 <div className="form-group-glass">
                   <div className="input-glass-container">
                     <i className="fas fa-envelope input-icon"></i>
-                    <input type="email" placeholder="Your Email" required />
+                    <input type="email" id="email" name="email" placeholder="Email Address" required />
                   </div>
                 </div>
-                <div className="form-group-glass">
-                  <div className="input-glass-container">
-                    <i className="fas fa-phone input-icon"></i>
-                    <input type="tel" placeholder="Your Phone" />
-                  </div>
-                </div>
+
                 <div className="form-group-glass">
                   <div className="input-glass-container">
                     <i className="fas fa-car input-icon"></i>
-                    <select required>
-                      <option value="">Select Interest</option>
-                      <option value="purchase">Vehicle Purchase</option>
-                      <option value="service">Service Inquiry</option>
-                      <option value="trade">Trade-In</option>
-                      <option value="other">Other</option>
+                    <select id="interest" name="interest" required>
+                      <option value="">Service Interest</option>
+                      <option value="purchase">Luxury Vehicle Purchase</option>
+                      <option value="lease">Premium Lease Program</option>
+                      <option value="consultation">Private Consultation</option>
+                      <option value="testdrive">Exclusive Test Drive Experience</option>
+                      <option value="collection">Private Collection Viewing</option>
+                      <option value="customization">Bespoke Customization</option>
                     </select>
                   </div>
                 </div>
+
                 <div className="form-group-glass">
                   <div className="input-glass-container">
-                    <i className="fas fa-comment input-icon"></i>
-                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                    <i className="fas fa-comment-dots input-icon"></i>
+                    <textarea id="message" name="message" placeholder="Tell us about your luxury automotive vision..." rows="4"></textarea>
                   </div>
                 </div>
+
                 <button type="submit" className="glass-submit-button">
-                  Send Message <i className="fas fa-paper-plane"></i>
+                  <i className="fas fa-paper-plane"></i>
+                  <span>SUBMIT EXCLUSIVE INQUIRY</span>
                 </button>
               </form>
             </div>
@@ -312,34 +455,29 @@ export default function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src="/logo.jpg" alt="Exquisite Motors Logo" />
+              <img src="/logo.jpg" alt="Exquisite Cars" style={{height: '30px'}} />
             </div>
+
             <nav className="footer-nav">
               <a href="#home">Home</a>
               <a href="#collection">Collection</a>
               <a href="#services">Services</a>
-              <a href="#trust">Trust</a>
+              <a href="#about">About</a>
               <a href="#contact">Contact</a>
             </nav>
+
             <div className="footer-social">
-              <a href="#"><i className="fab fa-facebook-f"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+              <a href="#" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
+
           <div className="footer-bottom">
-            <p>&copy; 2024 Exquisite Motors. All rights reserved. | Drive Prestige. Live Exquisite.</p>
+            <p>&copy; 2024 Exquisite Cars. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>
-
-      {/* WhatsApp Chat Widget */}
-      <div className="whatsapp-chat">
-        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-whatsapp"></i>
-        </a>
-      </div>
     </div>
   );
 }
