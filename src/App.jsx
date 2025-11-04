@@ -36,22 +36,17 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="hero">
-        <div className="hero-video-container">
-          <video autoPlay muted loop playsInline className="hero-video">
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-          <div className="hero-overlay"></div>
-        </div>
+      <section id="home" className="hero" style={{backgroundImage: "url('/aston-martin-db11.jpg')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <div className="hero-overlay"></div>
 
-        <div className="hero-content">
+        <div className="hero-content" style={{opacity: 1, transform: 'none'}}>
           <div className="hero-text">
             <h1 className="hero-title">
-              <span className="hero-line-1">Drive Prestige.</span>
-              <span className="hero-line-2">Live Exquisite.</span>
+              <span className="hero-line-1" style={{opacity: 1, animation: 'none'}}>Drive Prestige.</span>
+              <span className="hero-line-2" style={{opacity: 1, animation: 'none'}}>Live Exquisite.</span>
             </h1>
-            <p className="hero-subtitle">Experience the world's most exclusive collection of luxury automobiles</p>
-            <div className="hero-buttons">
+            <p className="hero-subtitle" style={{opacity: 1, animation: 'none'}}>Experience the world's most exclusive collection of luxury automobiles</p>
+            <div className="hero-buttons" style={{opacity: 1, animation: 'none'}}>
               <a href="#contact" className="cta-button primary">Book a Viewing</a>
               <a href="#collection" className="cta-button secondary">Explore Fleet</a>
             </div>
@@ -288,7 +283,7 @@ export default function App() {
       {/* Contact Section with Glass Morphism */}
       <section id="contact" className="contact">
         <div className="contact-overlay">
-          <div className="contact-header">
+          <div className="contact-header" style={{opacity: 1}}>
             <h2 className="contact-main-title">BEGIN YOUR JOURNEY</h2>
             <p className="contact-subtitle">Experience the pinnacle of automotive luxury with personalized service</p>
           </div>
@@ -363,8 +358,8 @@ export default function App() {
             </div>
 
             {/* Contact Form Glass Card */}
-            <div className="contact-form-glass">
-              <div className="form-glass-header">
+            <div className="contact-form-glass" style={{opacity: 1}}>
+              <div className="form-glass-header" style={{opacity: 1}}>
                 <div className="form-icon">
                   <i className="fas fa-paper-plane"></i>
                 </div>
