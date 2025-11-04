@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
-import Services from './components/Services';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -63,10 +62,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services">
-        <Services />
-      </section>
+
 
       {/* Trust & Prestige */}
       <section className="trust">
