@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
+import Gallery from './components/gallery/Gallery';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -22,7 +23,7 @@ export default function App() {
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#collection">Collection</a></li>
+            <li><a href="#events">Events</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -53,7 +54,7 @@ export default function App() {
             <p className="hero-subtitle">Experience the world's most exclusive collection of luxury automobiles</p>
             <div className="hero-buttons">
               <a href="#contact" className="cta-button primary">Book a Viewing</a>
-              <a href="#collection" className="cta-button secondary">Explore Fleet</a>
+              <a href="#events" className="cta-button secondary">Explore Events</a>
             </div>
           </div>
         </div>
@@ -63,149 +64,15 @@ export default function App() {
         </div>
       </section>
 
-      {/* Elite Collection */}
-      <section id="collection" className="collection">
+      {/* Events Gallery */}
+      <section id="events" className="events">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Current Inventory</h2>
-            <p className="section-subtitle">Fresh arrivals and premium vehicles available at Exquisite Cars</p>
+            <h2 className="section-title">Events Gallery</h2>
+            <p className="section-subtitle">Capturing memorable moments from our exclusive events and experiences</p>
           </div>
-
-          <div className="collection-grid">
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/aston-martin-db11.jpg" alt="2022 Aston Martin DB11" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">2022 Aston Martin DB11</h3>
-                <p className="car-class">Sports Car Excellence</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/toyota-prado-vx-r.jpg" alt="2024 Toyota Land Cruiser Prado VX-R" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">2024 Toyota Land Cruiser Prado VX-R</h3>
-                <p className="car-class">Luxury Mid-Size SUV</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/ford-ranger-raptor.jpg" alt="2023 Ford Ranger Raptor" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">2023 Ford Ranger Raptor</h3>
-                <p className="car-class">Performance Off-Road</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/range-rover-hse.jpg" alt="2024 Range Rover HSE D350" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">2024 Range Rover HSE D350</h3>
-                <p className="car-class">Luxury & Power</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/toyota-landcruiser-79.jpg" alt="2024 Toyota Land Cruiser 79 Series" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">2024 Toyota Land Cruiser 79 Series</h3>
-                <p className="car-class">Ultimate Off-Road</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/mercedes-g63-amg.jpg" alt="2024 Mercedes-Benz G63 AMG" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">2024 Mercedes-Benz G63 AMG</h3>
-                <p className="car-class">Magno Black Edition</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/black-luxury-suv.jpg" alt="Luxury Performance SUV" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">Premium Luxury SUV</h3>
-                <p className="car-class">Elite Performance</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/toyota-hilux-gr-sport.jpg" alt="2024 Toyota Hilux GR-Sport" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">2024 Toyota Hilux GR-Sport</h3>
-                <p className="car-class">Rugged & Stylish</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/toyota-prado-white.jpg" alt="Toyota Land Cruiser Prado" loading="lazy" />
-                <div className="car-overlay">
-                  <button className="view-details">View Details</button>
-                </div>
-              </div>
-              <div className="car-info">
-                <h3 className="car-model">Toyota Land Cruiser Prado</h3>
-                <p className="car-class">Versatile Luxury</p>
-                <div className="car-price">Available on Request</div>
-                <button className="car-action">Schedule Test Drive</button>
-              </div>
-            </div>
+          <div className="gallery-container">
+            <Gallery />
           </div>
         </div>
       </section>
@@ -463,7 +330,7 @@ export default function App() {
 
             <nav className="footer-nav">
               <a href="#home">Home</a>
-              <a href="#collection">Collection</a>
+              <a href="#events">Events</a>
               <a href="#services">Services</a>
               <a href="#about">About</a>
               <a href="#contact">Contact</a>
