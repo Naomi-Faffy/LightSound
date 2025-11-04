@@ -116,18 +116,19 @@ export default function ThreeDCarousel({ images }) {
                       isCurrent ? "w-[280px] h-[360px] md:w-[400px] md:h-[480px]" : "w-[240px] h-[320px] md:w-[360px] md:h-[440px]"
                     }`}
                     style={{
-                      boxShadow: isCurrent 
-                        ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)" 
+                      boxShadow: isCurrent
+                        ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
                         : "0 10px 30px -5px rgba(0, 0, 0, 0.3)",
                     }}
                   >
                     <img
                       src={image.url}
                       alt={`Gallery image ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover cursor-pointer"
                       style={{
                         filter: isCurrent ? "brightness(1)" : "brightness(0.7)",
                       }}
+                      onClick={() => onImageClick && onImageClick(index)}
                     />
                   </div>
                 </motion.div>
