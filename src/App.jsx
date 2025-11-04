@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
+import Services from './components/Services';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -62,40 +63,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* Why Choose Exquisite Cars */}
-      <section id="services" className="services">
-        <div className="services-overlay">
-          <div className="services-header">
-            <h2 className="services-main-title">WHY CHOOSE EXQUISITE CARS</h2>
-            <p className="services-subtitle">Unparalleled service for the most discerning clients</p>
-          </div>
-
-          <div className="services-grid">
-            <div className="glass-card">
-              <div className="glass-icon">
-                <i className="fas fa-gem"></i>
-              </div>
-              <h3 className="glass-card-title">EXCLUSIVE INVENTORY</h3>
-              <p className="glass-card-description">Access to the world's rarest and most sought-after luxury vehicles. Our curated collection features limited editions and bespoke models unavailable elsewhere.</p>
-            </div>
-
-            <div className="glass-card">
-              <div className="glass-icon">
-                <i className="fas fa-concierge-bell"></i>
-              </div>
-              <h3 className="glass-card-title">TAILORED SERVICES</h3>
-              <p className="glass-card-description">Private test drives, personalized consultations, and white-glove delivery. Experience our chauffeur services and VIP treatment tailored to your preferences.</p>
-            </div>
-
-            <div className="glass-card">
-              <div className="glass-icon">
-                <i className="fas fa-globe"></i>
-              </div>
-              <h3 className="glass-card-title">GLOBAL CLIENTELE</h3>
-              <p className="glass-card-description">Trusted by elite clients worldwide. Our international network ensures seamless service whether you're in New York, Monaco, Dubai, or Tokyo.</p>
-            </div>
-          </div>
-        </div>
+      {/* Services Section */}
+      <section id="services">
+        <Services />
       </section>
 
       {/* Trust & Prestige */}
@@ -119,6 +89,36 @@ export default function App() {
             <div className="partner-glass-card">
               <div className="partner-icon">
                 <i className="fas fa-crown"></i>
+              </div>
+              <h3 className="partner-title">BLOOMBERG</h3>
+              <p className="partner-description">"The pinnacle of premium dealership experience"</p>
+            </div>
+
+            <div className="partner-glass-card">
+              <div className="partner-icon">
+                <i className="fas fa-trophy"></i>
+              </div>
+              <h3 className="partner-title">ROBB REPORT</h3>
+              <p className="partner-description">"Curating the world's most exceptional vehicles"</p>
+            </div>
+          </div>
+
+          {/* Testimonials Glass Cards */}
+          <div className="testimonials-glass-grid">
+            <div className="testimonial-glass-card">
+              <div className="testimonial-quote">
+                <i className="fas fa-quote-left"></i>
+              </div>
+              <p className="testimonial-text">"Exquisite Cars transformed my vision into reality. The attention to detail and personalized service exceeded my expectations. Truly a world-class experience."</p>
+              <div className="testimonial-author">
+                <strong>Alexander Rothschild</strong>
+                <span>Private Equity Executive</span>
+              </div>
+            </div>
+
+            <div className="testimonial-glass-card">
+              <div className="testimonial-quote">
+                <i className="fas fa-quote-left"></i>
               </div>
               <h3 className="partner-title">BLOOMBERG</h3>
               <p className="partner-description">"The pinnacle of premium dealership experience"</p>
