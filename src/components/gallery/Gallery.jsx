@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThreeDCarousel from "./ThreeDCarousel";
+import GalleryModal from "./GalleryModal";
 
 // Gallery images - using your uploaded event images
 const images = [
@@ -27,6 +28,20 @@ const images = [
 ];
 
 export default function Gallery() {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const handleNavigate = (index) => {
+    setSelectedImageIndex(index);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="px-6 py-12">
@@ -44,8 +59,19 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        <ThreeDCarousel images={images} />
+        <ThreeDCarousel images={images} onImageClick={handleImageClick} />
       </div>
+
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
+          <GalleryModal
+            images={images}
+            selectedIndex={selectedImageIndex}
+            onClose={handleCloseModal}
+            onNavigate={handleNavigate}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

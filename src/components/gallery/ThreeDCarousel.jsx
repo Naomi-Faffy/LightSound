@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
 
-export default function ThreeDCarousel({ images }) {
+export default function ThreeDCarousel({ images, onImageClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [thumbnailStartIndex, setThumbnailStartIndex] = useState(0);
   const THUMBNAILS_PER_VIEW = 5;
@@ -11,14 +11,14 @@ export default function ThreeDCarousel({ images }) {
   const getVisibleImages = () => {
     const visible = [];
     const positions = [-2, -1, 0, 1, 2]; // Center is 0, sides are -2,-1,1,2
-    
+
     positions.forEach((pos) => {
       let index = currentIndex + pos;
       if (index < 0) index = images.length + index;
       if (index >= images.length) index = index - images.length;
       visible.push({ image: images[index], position: pos, index });
     });
-    
+
     return visible;
   };
 
@@ -74,19 +74,19 @@ export default function ThreeDCarousel({ images }) {
           <AnimatePresence initial={false}>
             {visibleImages.map(({ image, position, index }) => {
               const isCurrent = position === 0;
-              
+
               // Calculate transform values based on position
               const getTransform = () => {
                 if (position === 0) {
                   return { x: 0, z: 0, rotateY: 0, scale: 1 };
                 } else if (position === -1) {
-                  return { x: -250, z: -400, rotateY: 25, scale: 0.75 };
+                  return { x: -200, z: -150, rotateY: 15, scale: 0.85 };
                 } else if (position === 1) {
-                  return { x: 250, z: -400, rotateY: -25, scale: 0.75 };
+                  return { x: 200, z: -150, rotateY: -15, scale: 0.85 };
                 } else if (position === -2) {
-                  return { x: -400, z: -600, rotateY: 35, scale: 0.6 };
+                  return { x: -350, z: -250, rotateY: 25, scale: 0.75 };
                 } else {
-                  return { x: 400, z: -600, rotateY: -35, scale: 0.6 };
+                  return { x: 350, z: -250, rotateY: -25, scale: 0.75 };
                 }
               };
 
