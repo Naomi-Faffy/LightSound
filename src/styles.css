@@ -123,7 +123,34 @@ body {
     display: flex;
     list-style: none;
     gap: 40px;
+    margin-left: auto; /* push menu to the right */
 }
+
+/* Navbar links color and behavior */
+.nav-menu a {
+    color: var(--pearl-white) !important;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--exquisite-green);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after { width: 100%; }
+.nav-menu a:hover { color: var(--exquisite-green) !important; }
 
 /* Smooth Scrolling Enhancement */
 @media (prefers-reduced-motion: no-preference) {
