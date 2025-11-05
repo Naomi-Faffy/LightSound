@@ -46,56 +46,6 @@ export default function Gallery() {
         zIndex: 1,
         padding: "3rem 1.5rem"
       }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{
-            textAlign: "center",
-            marginBottom: "3rem",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          {/* Glass morphism card for title */}
-          <div style={{
-            background: "rgba(255, 255, 255, 0.05)",
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
-            borderRadius: "20px",
-            padding: "1.5rem 3rem",
-            boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
-            maxWidth: "500px",
-            margin: "0 auto"
-          }}>
-            <h1 style={{
-              fontSize: "clamp(2rem, 4vw, 2.5rem)",
-              fontWeight: "bold",
-              background: "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #60a5fa 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              marginBottom: "0.75rem",
-              letterSpacing: "-0.02em",
-              textAlign: "center"
-            }}>
-              Gallery
-            </h1>
-            <p style={{
-              fontSize: "1rem",
-              color: "rgba(255, 255, 255, 0.8)",
-              maxWidth: "42rem",
-              margin: "0 auto",
-              textAlign: "center",
-              lineHeight: "1.75"
-            }}>
-              Explore our collection of stunning landscapes
-            </p>
-          </div>
-        </motion.div>
 
         <ThreeDCarousel images={images} />
       </div>
