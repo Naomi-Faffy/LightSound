@@ -55,23 +55,23 @@ export default function Services() {
       </div>
 
       {/* Services Section */}
-      <div className="relative max-w-[1600px] mx-auto px-8 py-24 md:py-40">
+      <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-24"
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-light text-[#F5F5F5] mb-6 tracking-wide">
+          <h2 className="text-4xl md:text-5xl font-light text-[#F5F5F5] mb-4 tracking-wide">
             Our Premium Services
           </h2>
-          <Badge className="bg-white/5 backdrop-blur-xl text-[#2A4CFF] border border-white/10 px-8 py-3 text-sm font-light uppercase tracking-[0.3em]">
+          <Badge className="bg-white/5 backdrop-blur-xl text-[#2A4CFF] border border-white/10 px-6 py-2 text-xs font-light uppercase tracking-[0.3em]">
             Excellence in Every Detail
           </Badge>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -81,22 +81,22 @@ export default function Services() {
               transition={{ delay: index * 0.15, duration: 0.8 }}
               whileHover={{ y: -8 }}
             >
-              <Card className="group h-full bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-[#2A4CFF]/60 transition-all duration-700 overflow-hidden shadow-2xl shadow-[#2A4CFF]/10 hover:shadow-[#2A4CFF]/40 rounded-3xl">
+              <Card className="group h-full bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-[#2A4CFF]/60 transition-all duration-700 overflow-hidden shadow-2xl shadow-[#2A4CFF]/10 hover:shadow-[#2A4CFF]/40 rounded-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
-                <CardContent className="relative p-12 flex flex-col items-center text-center min-h-[420px]">
+                <CardContent className="relative p-8 flex flex-col items-center text-center">
                   {/* Icon with luxury styling */}
-                  <div className="relative mb-10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/30 to-[#2A4CFF]/50 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700" />
-                    <div className="relative w-28 h-28 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-lg">
-                      <service.icon className="w-14 h-14 text-[#2A4CFF] group-hover:text-[#F5F5F5] transition-colors duration-700" strokeWidth={1.5} />
+                  <div className="relative mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/30 to-[#2A4CFF]/50 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-700" />
+                    <div className="relative w-20 h-20 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-lg">
+                      <service.icon className="w-10 h-10 text-[#2A4CFF] group-hover:text-[#F5F5F5] transition-colors duration-700" strokeWidth={1.5} />
                     </div>
                   </div>
 
-                  <h3 className="text-3xl font-light text-[#F5F5F5] mb-6 tracking-wide group-hover:text-[#2A4CFF] transition-colors duration-700">
+                  <h3 className="text-2xl font-light text-[#F5F5F5] mb-4 tracking-wide group-hover:text-[#2A4CFF] transition-colors duration-700">
                     {service.title}
                   </h3>
-                  <p className="text-[#F5F5F5]/70 leading-relaxed font-light text-lg group-hover:text-[#F5F5F5]/90 transition-colors duration-700">
+                  <p className="text-[#F5F5F5]/70 leading-relaxed font-light group-hover:text-[#F5F5F5]/90 transition-colors duration-700">
                     {service.description}
                   </p>
                 </CardContent>

@@ -6,22 +6,26 @@
 }
 
 :root {
-    /* Exquisite Brand Color Palette */
-    --exquisite-green: #1C355E;
-    --luxury-navy: #1C355E;
+    /* SOUNDLIGHT Mediatainment Brand Colors */
+    --brand-black: #000000;
+    --brand-blue: #2A4CFF;
+    --brand-light: #F5F5F5;
+    --brand-white: #FFFFFF;
+    
+    /* Legacy mappings updated to brand colors */
+    --exquisite-green: #2A4CFF;
+    --luxury-navy: #000000;
     --cool-white: #FFFFFF;
     --metallic-gray: #C5CDD7;
     --sleek-black: #000000;
-
-    /* Legacy color mappings for consistency */
     --jet-black: #000000;
-    --pearl-white: #F8F8F8;
+    --pearl-white: #F5F5F5;
     --pure-white: #FFFFFF;
-    --carbon-gray: #1C355E;
+    --carbon-gray: #000000;
 
     /* Additional Shades */
-    --soft-green: rgba(28, 53, 94, 0.1);
-    --soft-navy: rgba(28, 53, 94, 0.1);
+    --soft-green: rgba(42, 76, 255, 0.1);
+    --soft-navy: rgba(0, 0, 0, 0.1);
     --deep-black: rgba(0, 0, 0, 0.95);
     --light-gray: rgba(197, 205, 215, 0.3);
 
@@ -168,6 +172,36 @@ body {
     }
 }
 
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* Loading Animation */
 .loading {
     opacity: 0;
@@ -267,7 +301,7 @@ body {
 
 .hero-line-2 {
     display: block;
-    color: var(--exquisite-green);
+    color: var(--brand-blue);
     opacity: 0;
     animation: fadeInUp 1s ease 1s forwards;
 }
@@ -307,16 +341,16 @@ body {
 }
 
 .cta-button.primary {
-    background: var(--exquisite-green);
+    background: var(--brand-blue);
     color: var(--cool-white);
-    border-color: var(--exquisite-green);
+    border-color: var(--brand-blue);
 }
 
 .cta-button.primary:hover {
     background: transparent;
-    color: var(--exquisite-green);
+    color: var(--brand-blue);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(48, 168, 72, 0.3);
+    box-shadow: 0 10px 30px rgba(42, 76, 255, 0.3);
 }
 
 .cta-button.secondary {
@@ -344,7 +378,7 @@ body {
 .scroll-arrow {
     width: 2px;
     height: 40px;
-    background: var(--exquisite-green);
+    background: var(--brand-blue);
     margin: 0 auto;
     position: relative;
 }
@@ -356,8 +390,8 @@ body {
     left: -4px;
     width: 10px;
     height: 10px;
-    border-right: 2px solid var(--exquisite-green);
-    border-bottom: 2px solid var(--exquisite-green);
+    border-right: 2px solid var(--brand-blue);
+    border-bottom: 2px solid var(--brand-blue);
     transform: rotate(45deg);
     animation: bounce 2s infinite;
 }
@@ -385,7 +419,7 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 2px;
-    background: var(--exquisite-green);
+    background: var(--brand-blue);
 }
 
 .section-subtitle {
@@ -461,7 +495,7 @@ body {
 }
 
 .view-details {
-    background: var(--exquisite-green);
+    background: var(--brand-blue);
     color: var(--cool-white);
     border: none;
     padding: 15px 30px;
@@ -502,7 +536,7 @@ body {
 .car-price {
     font-size: 20px;
     font-weight: 700;
-    color: var(--exquisite-green);
+    color: var(--brand-blue);
     margin-bottom: 25px;
 }
 
@@ -579,7 +613,7 @@ body {
 
 .services-subtitle {
     font-size: 20px;
-    color: var(--exquisite-green);
+    color: var(--brand-blue);
     font-weight: 300;
     letter-spacing: 1px;
 }
@@ -666,7 +700,7 @@ body {
 .glass-icon {
     width: 80px;
     height: 80px;
-    background: var(--exquisite-green);
+    background: var(--brand-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -682,8 +716,8 @@ body {
 
 .glass-card:hover .glass-icon {
     transform: scale(1.1);
-    background: #2a8f5f;
-    box-shadow: 0 15px 30px rgba(46, 143, 95, 0.4);
+    background: var(--brand-blue);
+    box-shadow: 0 15px 30px rgba(42, 76, 255, 0.4);
 }
 
 .glass-card-title {
@@ -760,7 +794,7 @@ body {
 
 .trust-subtitle {
     font-size: 20px;
-    color: var(--exquisite-green);
+    color: var(--brand-blue);
     font-weight: 300;
     letter-spacing: 1px;
     max-width: 600px;
@@ -819,7 +853,7 @@ body {
 .partner-icon {
     width: 60px;
     height: 60px;
-    background: var(--exquisite-green);
+    background: var(--brand-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -835,7 +869,7 @@ body {
 
 .partner-glass-card:hover .partner-icon {
     transform: scale(1.1);
-    background: #2a8f5f;
+    background: var(--brand-blue);
 }
 
 .partner-title {
@@ -909,7 +943,7 @@ body {
 
 .testimonial-quote i {
     font-size: 36px;
-    color: var(--exquisite-green);
+    color: var(--brand-blue);
     opacity: 0.8;
 }
 
@@ -931,7 +965,7 @@ body {
 }
 
 .testimonial-author span {
-    color: var(--exquisite-green);
+    color: var(--brand-blue);
     font-size: 14px;
     font-weight: 300;
     text-transform: uppercase;
@@ -956,7 +990,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 54, 93, 0.05), rgba(46, 170, 95, 0.05), rgba(96, 165, 250, 0.05));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(42, 76, 255, 0.05), rgba(245, 245, 245, 0.05));
     z-index: 1;
 }
 
@@ -985,12 +1019,12 @@ body {
     letter-spacing: 3px;
     margin-bottom: 20px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(45deg, var(--luxury-navy), var(--exquisite-green), #60a5fa);
+    background: linear-gradient(45deg, var(--brand-black), var(--brand-blue), var(--brand-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     /* Fallback for browsers that don't support background-clip */
-    color: var(--luxury-navy);
+    color: var(--brand-black);
 }
 
 .contact-subtitle {
@@ -1034,7 +1068,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.1), rgba(167, 243, 208, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(42, 76, 255, 0.1), rgba(245, 245, 245, 0.1), transparent);
     transition: left 0.6s ease;
 }
 
@@ -1046,7 +1080,7 @@ body {
     transform: translateY(-12px) scale(1.02);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
     background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(96, 165, 250, 0.3);
+    border-color: rgba(42, 76, 255, 0.3);
 }
 
 .contact-glass-header {
@@ -1057,14 +1091,14 @@ body {
 .contact-icon {
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, var(--exquisite-green), #60a5fa);
+    background: var(--brand-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 25px;
     transition: all 0.4s ease;
-    box-shadow: 0 15px 30px rgba(46, 170, 95, 0.3);
+    box-shadow: 0 15px 30px rgba(42, 76, 255, 0.3);
 }
 
 .contact-icon i {
@@ -1074,8 +1108,8 @@ body {
 
 .contact-info-glass:hover .contact-icon {
     transform: scale(1.1) rotate(5deg);
-    background: linear-gradient(135deg, #60a5fa, var(--exquisite-green));
-    box-shadow: 0 20px 40px rgba(96, 165, 250, 0.4);
+    background: var(--brand-blue);
+    box-shadow: 0 20px 40px rgba(42, 76, 255, 0.4);
 }
 
 .contact-glass-title {
@@ -1116,14 +1150,14 @@ body {
 .contact-item-glass:hover {
     background: rgba(255, 255, 255, 0.6);
     transform: translateX(8px);
-    border-color: rgba(96, 165, 250, 0.3);
+    border-color: rgba(42, 76, 255, 0.3);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 .contact-item-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #1a365d, var(--exquisite-green));
+    background: var(--brand-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1182,11 +1216,11 @@ body {
 }
 
 .social-glass-link:hover {
-    background: linear-gradient(135deg, var(--exquisite-green), #60a5fa);
+    background: var(--brand-blue);
     border-color: transparent;
     color: var(--pure-white);
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 15px 30px rgba(96, 165, 250, 0.4);
+    box-shadow: 0 15px 30px rgba(42, 76, 255, 0.4);
 }
 
 .social-glass-link i {
@@ -1215,7 +1249,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(167, 243, 208, 0.1), rgba(96, 165, 250, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(245, 245, 245, 0.1), rgba(42, 76, 255, 0.1), transparent);
     transition: left 0.6s ease;
 }
 
@@ -1227,7 +1261,7 @@ body {
     transform: translateY(-12px) scale(1.02);
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
     background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(167, 243, 208, 0.3);
+    border-color: rgba(42, 76, 255, 0.3);
 }
 
 .form-glass-header {
@@ -1238,14 +1272,14 @@ body {
 .form-icon {
     width: 90px;
     height: 90px;
-    background: linear-gradient(135deg, var(--exquisite-green), #60a5fa);
+    background: var(--brand-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 25px;
     transition: all 0.4s ease;
-    box-shadow: 0 15px 30px rgba(46, 170, 95, 0.3);
+    box-shadow: 0 15px 30px rgba(42, 76, 255, 0.3);
 }
 
 .form-icon i {
@@ -1255,8 +1289,8 @@ body {
 
 .contact-form-glass:hover .form-icon {
     transform: scale(1.1) rotate(5deg);
-    background: linear-gradient(135deg, #60a5fa, var(--exquisite-green));
-    box-shadow: 0 20px 40px rgba(96, 165, 250, 0.4);
+    background: var(--brand-blue);
+    box-shadow: 0 20px 40px rgba(42, 76, 255, 0.4);
 }
 
 /* Reinforcements for footer and form inner content to ensure theme styling in production */
@@ -1279,7 +1313,7 @@ body {
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
-.footer-nav a:hover { color: var(--exquisite-green) !important; }
+.footer-nav a:hover { color: var(--brand-blue) !important; }
 .footer-social { display: flex; gap: 15px; }
 .footer-social a {
     width: 40px;
@@ -1294,8 +1328,8 @@ body {
     transition: all 0.3s ease;
 }
 .footer-social a:hover {
-    background: var(--exquisite-green);
-    border-color: var(--exquisite-green);
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
     color: var(--cool-white);
 }
 .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--light-gray); }
@@ -1330,9 +1364,10 @@ body {
     color: rgba(74, 85, 104, 0.7) !important;
 }
 .glass-submit-button {
-    background: linear-gradient(135deg, var(--exquisite-green), #60a5fa) !important;
+    background: var(--brand-blue) !important;
     color: var(--pure-white) !important;
 }
 .glass-submit-button:hover {
-    background: linear-gradient(135deg, #60a5fa, var(--exquisite-green)) !important;
+    background: var(--brand-blue) !important;
+    opacity: 0.9;
 }
