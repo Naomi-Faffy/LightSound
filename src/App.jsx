@@ -9,6 +9,7 @@ export default function App() {
 
   return (
     <div className="App">
+      <div>
       {/* WhatsApp Floating Chat */}
       <div className="whatsapp-chat">
         <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp Chat" rel="noopener noreferrer">
