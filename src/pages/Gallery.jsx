@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import ThreeDCarousel from "../components/gallery/ThreeDCarousel";
+import "../index.css";
 
 const images = [
   { id: 1, url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80", thumb: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=80" },
