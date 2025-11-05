@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ThreeDCarousel({ images, onImageClick }) {
@@ -151,64 +151,4 @@ export default function ThreeDCarousel({ images, onImageClick }) {
         <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30">
           <button
             onClick={handlePrev}
-            className="w-14 h-14 rounded-full bg-white/90 hover:bg-white shadow-xl text-slate-800 backdrop-blur-sm flex items-center justify-center"
-          >
-            <ChevronLeft className="w-7 h-7" />
-          </button>
-        </div>
-      </div>
-
-      {/* Thumbnail Strip */}
-      <div className="flex items-center justify-center gap-4 mt-12">
-        {/* Thumbnail Left Arrow */}
-        <button
-          onClick={handleThumbnailPrev}
-          disabled={thumbnailStartIndex === 0}
-          className="text-white hover:bg-white/10 disabled:opacity-30 p-2 rounded-full"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        {/* Thumbnails */}
-        <div className="flex gap-3">
-          {images
-            .slice(thumbnailStartIndex, thumbnailStartIndex + THUMBNAILS_PER_VIEW)
-            .map((image, idx) => {
-              const actualIndex = thumbnailStartIndex + idx;
-              const isActive = actualIndex === currentIndex;
-
-              return (
-                <button
-                  key={image.id}
-                  onClick={() => handleThumbnailClick(actualIndex)}
-                  className={`relative overflow-hidden rounded-xl transition-all duration-300 ${
-                    isActive
-                      ? "w-24 h-24 ring-4 ring-white scale-110"
-                      : "w-20 h-20 ring-2 ring-white/30 hover:ring-white/50"
-                  }`}
-                >
-                  <img
-                    src={image.thumb}
-                    alt={`Thumbnail ${actualIndex + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                  {!isActive && (
-                    <div className="absolute inset-0 bg-black/50" />
-                  )}
-                </button>
-              );
-            })}
-        </div>
-
-        {/* Thumbnail Right Arrow */}
-        <button
-          onClick={handleThumbnailNext}
-          disabled={thumbnailStartIndex >= images.length - THUMBNAILS_PER_VIEW}
-          className="text-white hover:bg-white/10 disabled:opacity-30 p-2 rounded-full"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
-    </div>
-  );
-}
+            className="w-14 h-14 rounded-full bg-white/90 hover:bg-white shadow-xl text
