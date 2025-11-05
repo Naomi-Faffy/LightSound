@@ -66,27 +66,27 @@ export default function Gallery() {
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
-            borderRadius: "24px",
-            padding: "2.5rem 4rem",
+            borderRadius: "20px",
+            padding: "1.5rem 3rem",
             boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
-            maxWidth: "800px",
+            maxWidth: "500px",
             margin: "0 auto"
           }}>
             <h1 style={{
-              fontSize: "clamp(2.5rem, 6vw, 4rem)",
+              fontSize: "clamp(2rem, 4vw, 2.5rem)",
               fontWeight: "bold",
               background: "linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #60a5fa 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              marginBottom: "1rem",
+              marginBottom: "0.75rem",
               letterSpacing: "-0.02em",
               textAlign: "center"
             }}>
-              Photo Gallery
+              Gallery
             </h1>
             <p style={{
-              fontSize: "1.125rem",
+              fontSize: "1rem",
               color: "rgba(255, 255, 255, 0.8)",
               maxWidth: "42rem",
               margin: "0 auto",

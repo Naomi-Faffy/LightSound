@@ -190,7 +190,17 @@ export default function ThreeDCarousel({ images }) {
           <Button
             onClick={handleNext}
             size="icon"
-            className="w-14 h-14 rounded-full bg-white/90 hover:bg-white shadow-xl text-slate-800 backdrop-blur-sm"
+            style={{
+              width: "3.5rem",
+              height: "3.5rem",
+              borderRadius: "9999px",
+              background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
+              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.3)",
+              border: "2px solid rgba(255, 255, 255, 0.2)",
+              color: "white",
+              backdropFilter: "blur(10px)"
+            }}
+            className="hover:scale-110 transition-transform duration-300"
           >
             <ChevronRight className="w-7 h-7" />
           </Button>
@@ -206,7 +216,17 @@ export default function ThreeDCarousel({ images }) {
           <Button
             onClick={handlePrev}
             size="icon"
-            className="w-14 h-14 rounded-full bg-white/90 hover:bg-white shadow-xl text-slate-800 backdrop-blur-sm"
+            style={{
+              width: "3.5rem",
+              height: "3.5rem",
+              borderRadius: "9999px",
+              background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
+              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.3)",
+              border: "2px solid rgba(255, 255, 255, 0.2)",
+              color: "white",
+              backdropFilter: "blur(10px)"
+            }}
+            className="hover:scale-110 transition-transform duration-300"
           >
             <ChevronLeft className="w-7 h-7" />
           </Button>
