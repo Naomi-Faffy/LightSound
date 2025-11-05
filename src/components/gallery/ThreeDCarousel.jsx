@@ -52,7 +52,7 @@ export default function ThreeDCarousel({ images }) {
     } else if (currentIndex >= thumbnailStartIndex + THUMBNAILS_PER_VIEW) {
       setThumbnailStartIndex(currentIndex - THUMBNAILS_PER_VIEW + 1);
     }
-  }, [currentIndex]);
+  }, [currentIndex, thumbnailStartIndex]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -67,8 +67,14 @@ export default function ThreeDCarousel({ images }) {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="relative h-[400px] md:h-[500px] mb-8 flex items-center justify-center">
-        <div className="relative w-full h-full flex items-center justify-center" style={{ perspective: "2000px" }}>
+      <div className="relative h-[400px] md:h-[500px] mb-8 flex items-center justify-center overflow-hidden">
+        <div 
+          className="relative w-full h-full flex items-center justify-center" 
+          style={{ 
+            perspective: "2000px",
+            perspectiveOrigin: "center center"
+          }}
+        >
           <AnimatePresence initial={false}>
             {visibleImages.map(({ image, position, index }) => {
               const isCurrent = position === 0;
@@ -102,10 +108,11 @@ export default function ThreeDCarousel({ images }) {
                   }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="absolute"
+                  className="absolute top-1/2 left-1/2"
                   style={{
                     transformStyle: "preserve-3d",
                     zIndex: isCurrent ? 20 : 10 - Math.abs(position),
+                    transform: "translate(-50%, -50%)",
                   }}
                 >
                   <div
