@@ -65,122 +65,128 @@ export default function ThreeDCarousel({ images }) {
 
   const visibleImages = getVisibleImages();
 
+  const getCardStyle = (position) => {
+    const isCurrent = position === 0;
+    
+    let transform = "";
+    let width = 280;
+    let height = 360;
+    let opacity = 1;
+    let zIndex = 10;
+    let filter = "brightness(0.7)";
+    
+    if (position === 0) {
+      transform = "translateX(-50%) translateY(-50%) translateZ(0px) rotateY(0deg) scale(1)";
+      width = 400;
+      height = 480;
+      zIndex = 20;
+      filter = "brightness(1)";
+    } else if (position === -1) {
+      transform = "translateX(-50%) translateY(-50%) translateX(-250px) translateZ(-400px) rotateY(25deg) scale(0.75)";
+      width = 360;
+      height = 440;
+      zIndex = 15;
+    } else if (position === 1) {
+      transform = "translateX(-50%) translateY(-50%) translateX(250px) translateZ(-400px) rotateY(-25deg) scale(0.75)";
+      width = 360;
+      height = 440;
+      zIndex = 15;
+    } else if (position === -2) {
+      transform = "translateX(-50%) translateY(-50%) translateX(-400px) translateZ(-600px) rotateY(35deg) scale(0.6)";
+      width = 320;
+      height = 400;
+      zIndex = 10;
+    } else if (position === 2) {
+      transform = "translateX(-50%) translateY(-50%) translateX(400px) translateZ(-600px) rotateY(-35deg) scale(0.6)";
+      width = 320;
+      height = 400;
+      zIndex = 10;
+    }
+    
+    return {
+      position: "absolute",
+      left: "50%",
+      top: "50%",
+      width: `${width}px`,
+      height: `${height}px`,
+      transform,
+      transformStyle: "preserve-3d",
+      zIndex,
+      opacity,
+      filter,
+      transition: "all 0.6s ease-in-out",
+    };
+  };
+
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="relative h-[400px] md:h-[500px] mb-8 flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ 
-            perspective: "2000px",
-          }}
-        >
-          <div className="relative w-full h-full flex items-center justify-center">
-            <AnimatePresence initial={false}>
-              {visibleImages.map(({ image, position, index }) => {
-                const isCurrent = position === 0;
-                
-                const getTransform = () => {
-                  if (position === 0) {
-                    return { 
-                      x: "0px", 
-                      z: 0, 
-                      rotateY: 0, 
-                      scale: 1,
-                      width: 400,
-                      height: 480
-                    };
-                  } else if (position === -1) {
-                    return { 
-                      x: "-250px", 
-                      z: -400, 
-                      rotateY: 25, 
-                      scale: 0.75,
-                      width: 360,
-                      height: 440
-                    };
-                  } else if (position === 1) {
-                    return { 
-                      x: "250px", 
-                      z: -400, 
-                      rotateY: -25, 
-                      scale: 0.75,
-                      width: 360,
-                      height: 440
-                    };
-                  } else if (position === -2) {
-                    return { 
-                      x: "-400px", 
-                      z: -600, 
-                      rotateY: 35, 
-                      scale: 0.6,
-                      width: 320,
-                      height: 400
-                    };
-                  } else {
-                    return { 
-                      x: "400px", 
-                      z: -600, 
-                      rotateY: -35, 
-                      scale: 0.6,
-                      width: 320,
-                      height: 400
-                    };
-                  }
-                };
-
-                const transform = getTransform();
-
-                return (
-                  <motion.div
-                    key={`${index}-${position}`}
-                    initial={{ opacity: 0 }}
-                    animate={{
-                      x: transform.x,
-                      z: transform.z,
-                      rotateY: transform.rotateY,
-                      scale: transform.scale,
-                      opacity: Math.abs(position) <= 2 ? 1 : 0,
-                    }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                    style={{
-                      position: "absolute",
-                      transformStyle: "preserve-3d",
-                      zIndex: isCurrent ? 20 : 10 - Math.abs(position),
-                      width: `${transform.width}px`,
-                      height: `${transform.height}px`,
-                      left: "50%",
-                      top: "50%",
-                      marginLeft: `-${transform.width / 2}px`,
-                      marginTop: `-${transform.height / 2}px`,
-                    }}
-                  >
-                    <div
-                      className="w-full h-full rounded-3xl overflow-hidden"
+    <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+      <div style={{ 
+        position: "relative", 
+        height: "500px", 
+        marginBottom: "2rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden"
+      }}>
+        <div style={{ 
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          perspective: "2000px",
+          perspectiveOrigin: "50% 50%"
+        }}>
+          <div style={{ 
+            position: "relative", 
+            width: "100%", 
+            height: "100%"
+          }}>
+            {visibleImages.map(({ image, position, index }) => {
+              const isCurrent = position === 0;
+              const cardStyle = getCardStyle(position);
+              
+              return (
+                <div
+                  key={`carousel-${index}`}
+                  style={cardStyle}
+                >
+                  <div style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "24px",
+                    overflow: "hidden",
+                    boxShadow: isCurrent 
+                      ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)" 
+                      : "0 10px 30px -5px rgba(0, 0, 0, 0.3)",
+                  }}>
+                    <img
+                      src={image.url}
+                      alt={`Gallery image ${index + 1}`}
                       style={{
-                        boxShadow: isCurrent 
-                          ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)" 
-                          : "0 10px 30px -5px rgba(0, 0, 0, 0.3)",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
+                        userSelect: "none",
+                        pointerEvents: "none"
                       }}
-                    >
-                      <img
-                        src={image.url}
-                        alt={`Gallery image ${index + 1}`}
-                        className="w-full h-full object-cover"
-                        style={{
-                          filter: isCurrent ? "brightness(1)" : "brightness(0.7)",
-                          pointerEvents: "none",
-                        }}
-                      />
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </AnimatePresence>
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30">
+        <div style={{
+          position: "absolute",
+          right: "2rem",
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 30
+        }}>
           <Button
             onClick={handleNext}
             size="icon"
@@ -190,7 +196,13 @@ export default function ThreeDCarousel({ images }) {
           </Button>
         </div>
 
-        <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30">
+        <div style={{
+          position: "absolute",
+          left: "2rem",
+          top: "50%",
+          transform: "translateY(-50%)",
+          zIndex: 30
+        }}>
           <Button
             onClick={handlePrev}
             size="icon"
