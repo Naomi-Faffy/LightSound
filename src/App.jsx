@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
-import Gallery from './pages/Gallery';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -23,7 +23,7 @@ export default function App() {
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+            <li><Link to="/gallery">Gallery</Link></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -54,7 +54,7 @@ export default function App() {
             <p className="hero-subtitle" style={{opacity: 1, animation: 'none'}}>Experience the world's most exclusive collection of luxury automobiles</p>
             <div className="hero-buttons" style={{opacity: 1, animation: 'none'}}>
               <a href="#contact" className="cta-button primary">Book a Viewing</a>
-              <a href="#gallery" className="cta-button secondary">Explore Gallery</a>
+              <Link to="/gallery" className="cta-button secondary">Explore Gallery</Link>
             </div>
           </div>
         </div>
@@ -63,13 +63,6 @@ export default function App() {
           <div className="scroll-arrow"></div>
         </div>
       </section>
-
-      {/* Gallery Section */}
-      <section id="gallery">
-        <Gallery />
-      </section>
-
-
 
       {/* Trust & Prestige */}
       <section className="trust">
