@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
+import Gallery from './pages/Gallery';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -62,6 +63,11 @@ export default function App() {
         <div className="scroll-indicator">
           <div className="scroll-arrow"></div>
         </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery">
+        <Gallery />
       </section>
 
       {/* Trust & Prestige */}

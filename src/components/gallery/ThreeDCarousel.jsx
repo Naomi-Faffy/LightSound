@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -213,18 +213,29 @@ export default function ThreeDCarousel({ images }) {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-4 mt-12">
+      <div style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "1rem",
+        marginTop: "3rem"
+      }}>
         <Button
           variant="ghost"
           size="icon"
           onClick={handleThumbnailPrev}
           disabled={thumbnailStartIndex === 0}
-          className="text-white hover:bg-white/10 disabled:opacity-30"
+          style={{
+            color: "white",
+            opacity: thumbnailStartIndex === 0 ? 0.3 : 1,
+            cursor: thumbnailStartIndex === 0 ? "not-allowed" : "pointer"
+          }}
+          className="hover:bg-white/10"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft style={{ width: "1.25rem", height: "1.25rem" }} />
         </Button>
 
-        <div className="flex gap-3">
+        <div style={{ display: "flex", gap: "0.75rem" }}>
           {images
             .slice(thumbnailStartIndex, thumbnailStartIndex + THUMBNAILS_PER_VIEW)
             .map((image, idx) => {
@@ -235,21 +246,36 @@ export default function ThreeDCarousel({ images }) {
                 <motion.button
                   key={image.id}
                   onClick={() => handleThumbnailClick(actualIndex)}
-                  className={`relative overflow-hidden rounded-xl transition-all duration-300 flex-shrink-0 ${
-                    isActive
-                      ? "w-24 h-24 ring-4 ring-white scale-110"
-                      : "w-20 h-20 ring-2 ring-white/30 hover:ring-white/50"
-                  }`}
+                  style={{
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "0.75rem",
+                    flexShrink: 0,
+                    width: isActive ? "6rem" : "5rem",
+                    height: isActive ? "6rem" : "5rem",
+                    border: isActive ? "4px solid white" : "2px solid rgba(255, 255, 255, 0.3)",
+                    cursor: "pointer",
+                    transition: "all 0.3s",
+                    transform: isActive ? "scale(1.1)" : "scale(1)"
+                  }}
                   whileHover={{ scale: isActive ? 1.1 : 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <img
                     src={image.thumb}
                     alt={`Thumbnail ${actualIndex + 1}`}
-                    className="w-full h-full object-cover"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover"
+                    }}
                   />
                   {!isActive && (
-                    <div className="absolute inset-0 bg-black/50" />
+                    <div style={{
+                      position: "absolute",
+                      inset: 0,
+                      backgroundColor: "rgba(0, 0, 0, 0.5)"
+                    }} />
                   )}
                 </motion.button>
               );
@@ -261,9 +287,14 @@ export default function ThreeDCarousel({ images }) {
           size="icon"
           onClick={handleThumbnailNext}
           disabled={thumbnailStartIndex >= images.length - THUMBNAILS_PER_VIEW}
-          className="text-white hover:bg-white/10 disabled:opacity-30"
+          style={{
+            color: "white",
+            opacity: thumbnailStartIndex >= images.length - THUMBNAILS_PER_VIEW ? 0.3 : 1,
+            cursor: thumbnailStartIndex >= images.length - THUMBNAILS_PER_VIEW ? "not-allowed" : "pointer"
+          }}
+          className="hover:bg-white/10"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight style={{ width: "1.25rem", height: "1.25rem" }} />
         </Button>
       </div>
     </div>
