@@ -46,7 +46,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#000000] relative overflow-hidden flex items-center py-16 md:py-20">
+    <div className="min-h-screen bg-[#000000] relative overflow-hidden flex items-center py-20 md:py-24 lg:py-32">
       {/* Luxury Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#2A4CFF]/20 rounded-full filter blur-[120px] animate-pulse" />
@@ -55,23 +55,23 @@ export default function Services() {
       </div>
 
       {/* Services Section */}
-      <div className="relative w-full max-w-[1400px] mx-auto px-6 lg:px-8">
+      <div className="relative w-full max-w-[1500px] mx-auto px-6 lg:px-10 xl:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 lg:mb-16"
+          className="text-center mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#F5F5F5] mb-4 tracking-wide">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#F5F5F5] mb-6 tracking-wide">
             Our Premium Services
           </h2>
-          <Badge className="bg-white/5 backdrop-blur-xl text-[#2A4CFF] border border-white/10 px-6 py-2 text-xs font-light uppercase tracking-[0.3em]">
+          <Badge className="bg-white/5 backdrop-blur-xl text-[#2A4CFF] border border-white/10 px-8 py-3 text-sm font-light uppercase tracking-[0.3em]">
             Excellence in Every Detail
           </Badge>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-12">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -81,22 +81,22 @@ export default function Services() {
               transition={{ delay: index * 0.15, duration: 0.8 }}
               whileHover={{ y: -8 }}
             >
-              <Card className="group h-full bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-[#2A4CFF]/60 transition-all duration-700 overflow-hidden shadow-2xl shadow-[#2A4CFF]/10 hover:shadow-[#2A4CFF]/40 rounded-2xl">
+              <Card className="group h-full bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-[#2A4CFF]/60 transition-all duration-700 overflow-hidden shadow-2xl shadow-[#2A4CFF]/10 hover:shadow-[#2A4CFF]/40 rounded-3xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
-                <CardContent className="relative p-6 lg:p-8 flex flex-col items-center text-center h-full">
+                <CardContent className="relative p-8 lg:p-10 xl:p-12 flex flex-col items-center text-center h-full justify-center">
                   {/* Icon with luxury styling */}
-                  <div className="relative mb-5 lg:mb-6">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/30 to-[#2A4CFF]/50 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-700" />
-                    <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-lg">
-                      <service.icon className="w-10 h-10 lg:w-12 lg:h-12 text-[#2A4CFF] group-hover:text-[#F5F5F5] transition-colors duration-700" strokeWidth={1.5} />
+                  <div className="relative mb-7 lg:mb-8">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/30 to-[#2A4CFF]/50 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700" />
+                    <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-lg">
+                      <service.icon className="w-12 h-12 lg:w-14 lg:h-14 text-[#2A4CFF] group-hover:text-[#F5F5F5] transition-colors duration-700" strokeWidth={1.5} />
                     </div>
                   </div>
 
-                  <h3 className="text-xl lg:text-2xl font-light text-[#F5F5F5] mb-3 lg:mb-4 tracking-wide group-hover:text-[#2A4CFF] transition-colors duration-700">
+                  <h3 className="text-2xl lg:text-3xl font-light text-[#F5F5F5] mb-5 lg:mb-6 tracking-wide group-hover:text-[#2A4CFF] transition-colors duration-700">
                     {service.title}
                   </h3>
-                  <p className="text-sm lg:text-base text-[#F5F5F5]/70 leading-relaxed font-light group-hover:text-[#F5F5F5]/90 transition-colors duration-700">
+                  <p className="text-base lg:text-lg text-[#F5F5F5]/70 leading-relaxed font-light group-hover:text-[#F5F5F5]/90 transition-colors duration-700">
                     {service.description}
                   </p>
                 </CardContent>
