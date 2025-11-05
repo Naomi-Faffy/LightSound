@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
+import Gallery from './pages/Gallery';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -64,69 +65,8 @@ export default function App() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="collection">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Our Gallery</h2>
-            <p className="section-subtitle">A glimpse into the world of Exquisite Cars and our curated events</p>
-          </div>
-
-          <div className="collection-grid">
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event1.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event2.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event3.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event4.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event5.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event6.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event7.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event8.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-
-            <div className="car-card">
-              <div className="car-image">
-                <img src="/gallery-images/event9.jpg" alt="Luxury Car Event" loading="lazy" />
-              </div>
-            </div>
-          </div>
-        </div>
+      <section id="gallery">
+        <Gallery />
       </section>
 
 
