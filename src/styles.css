@@ -7,7 +7,7 @@
 
 :root {
     /* Exquisite Brand Color Palette */
-    --exquisite-green: #30A848;
+    --exquisite-green: #1C355E;
     --luxury-navy: #1C355E;
     --cool-white: #FFFFFF;
     --metallic-gray: #C5CDD7;
@@ -20,7 +20,7 @@
     --carbon-gray: #1C355E;
 
     /* Additional Shades */
-    --soft-green: rgba(48, 168, 72, 0.1);
+    --soft-green: rgba(28, 53, 94, 0.1);
     --soft-navy: rgba(28, 53, 94, 0.1);
     --deep-black: rgba(0, 0, 0, 0.95);
     --light-gray: rgba(197, 205, 215, 0.3);

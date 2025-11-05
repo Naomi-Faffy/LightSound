@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
 import Gallery from './pages/Gallery';
+import Services from './pages/Services';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -68,6 +69,11 @@ export default function App() {
       {/* Gallery Section */}
       <section id="gallery">
         <Gallery />
+      </section>
+
+      {/* Services Section */}
+      <section id="services">
+        <Services />
       </section>
 
       {/* Trust & Prestige */}
