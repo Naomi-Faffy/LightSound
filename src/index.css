@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme inline {
+  /* SOUNDLIGHT Mediatainment Brand Colors */
+  --color-brand-black: #000000;
+  --color-brand-blue: #2A4CFF;
+  --color-brand-light: #F5F5F5;
+  --color-brand-white: #FFFFFF;
+}
