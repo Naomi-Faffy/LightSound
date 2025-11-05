@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ThreeDCarousel from "../components/gallery/ThreeDCarousel";
-import "../index.css";
 
 const images = [
   { id: 1, url: "/gallery-images/event1.jpg", thumb: "/gallery-images/event1.jpg" },
