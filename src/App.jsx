@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles.css';
 import { useExquisiteCarsInteractions } from './script.js';
 import Gallery from './pages/Gallery';
 import Services from './pages/Services';
