@@ -22,7 +22,7 @@ export default function App() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/gallery-images/logoo.png" alt="Sound Light" style={{height: 'clamp(120px, 20vw, 220px)'}} />
+            <img src="/gallery-images/logoo.png" alt="Sound Light" style={{height: 'clamp(60px, 12vw, 220px)'}} />
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
@@ -57,7 +57,7 @@ export default function App() {
             <p className="hero-subtitle" style={{opacity: 1, animation: 'none'}}>Cutting-edge lighting and premium sound for every event</p>
             <div className="hero-buttons" style={{opacity: 1, animation: 'none'}}>
               <a href="#contact" className="cta-button primary" style={{borderColor: '#2A4CFF'}}>Book Your Event</a>
-              <Link to="/gallery" className="cta-button secondary">View Our Work</Link>
+              <Link to="/gallery" className="cta-button secondary" style={{borderColor: '#2A4CFF'}}>View Our Work</Link>
             </div>
           </div>
         </div>

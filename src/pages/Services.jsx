@@ -59,7 +59,7 @@ export default function Services() {
         background: "linear-gradient(180deg, #000000 0%, #0a0e1f 50%, #000000 100%)",
         position: "relative",
         overflow: "hidden",
-        padding: "5rem 1.5rem",
+        padding: "clamp(2rem, 5vw, 5rem) 1.5rem",
       }}
     >
       {/* Glass morphism overlay effect */}

@@ -6,8 +6,34 @@ import { Button } from "@/components/ui/button";
 export default function GalleryModal({ images, selectedIndex, onClose, onNavigate }) {
   const [currentIndex, setCurrentIndex] = useState(selectedIndex);
   const [thumbnailStartIndex, setThumbnailStartIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const THUMBNAILS_PER_VIEW = 5;
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrevious();
+    }
+  };
 
   useEffect(() => {
     setCurrentIndex(selectedIndex);
@@ -90,19 +116,63 @@ export default function GalleryModal({ images, selectedIndex, onClose, onNavigat
         </div>
 
         <div className="relative">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
+          <div 
+            className="relative"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
-            <img
-              src={images[currentIndex].url}
-              alt={`Gallery image ${currentIndex + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
+            {/* Desktop/Tablet: Show single large image */}
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className="hidden md:block relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src={images[currentIndex].url}
+                alt={`Gallery image ${currentIndex + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Mobile: Show carousel with visible adjacent images */}
+            <div className="md:hidden relative h-[60vh] flex items-center justify-center overflow-visible">
+              <div className="relative w-full h-full flex items-center justify-center" style={{ perspective: "1000px" }}>
+                {[-1, 0, 1].map((offset) => {
+                  const index = (currentIndex + offset + images.length) % images.length;
+                  const isCenter = offset === 0;
+                  
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0 }}
+                      animate={{ 
+                        opacity: isCenter ? 1 : 0.4,
+                        scale: isCenter ? 1 : 0.75,
+                        x: `${offset * 85}%`,
+                        zIndex: isCenter ? 20 : 10,
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute rounded-2xl overflow-hidden shadow-2xl"
+                      style={{
+                        width: "85%",
+                        height: "90%",
+                        pointerEvents: isCenter ? "auto" : "none",
+                      }}
+                    >
+                      <img
+                        src={images[index].url}
+                        alt={`Gallery image ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
 
           <div className="flex justify-center items-center gap-4 mt-6">
             <Button
@@ -129,7 +199,7 @@ export default function GalleryModal({ images, selectedIndex, onClose, onNavigat
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center gap-3">
+        <div className="hidden md:flex relative items-center justify-center gap-3">
           <Button
             variant="ghost"
             size="icon"

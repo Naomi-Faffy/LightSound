@@ -5,6 +5,34 @@ import { Button } from "@/components/ui/button";
 
 export default function ThreeDCarousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+  };
 
   const getVisibleImages = () => {
     const visible = [];
@@ -98,15 +126,20 @@ export default function ThreeDCarousel({ images }) {
 
   return (
     <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1rem" }}>
-      <div style={{ 
-        position: "relative", 
-        height: "clamp(300px, 60vw, 500px)", 
-        marginBottom: "2rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        overflow: "hidden"
-      }}>
+      <div 
+        style={{ 
+          position: "relative", 
+          height: "clamp(300px, 60vw, 500px)", 
+          marginBottom: "2rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden"
+        }}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         <div style={{ 
           position: "absolute",
           inset: 0,
@@ -158,7 +191,7 @@ export default function ThreeDCarousel({ images }) {
           </div>
         </div>
 
-        <div style={{
+        <div className="carousel-nav-buttons" style={{
           position: "absolute",
           right: "clamp(0.5rem, 3vw, 2rem)",
           top: "50%",
@@ -186,7 +219,7 @@ export default function ThreeDCarousel({ images }) {
           </Button>
         </div>
 
-        <div style={{
+        <div className="carousel-nav-buttons" style={{
           position: "absolute",
           left: "clamp(0.5rem, 3vw, 2rem)",
           top: "50%",
@@ -220,14 +253,14 @@ export default function ThreeDCarousel({ images }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: "3rem",
+        marginTop: "clamp(1.5rem, 4vw, 3rem)",
         padding: "0 1rem"
       }}>
         <div className="music-bar-responsive" style={{
           display: "flex",
           alignItems: "center",
-          gap: "clamp(0.5rem, 3vw, 2rem)",
-          padding: "clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 5vw, 3rem)",
+          gap: "clamp(0.75rem, 2vw, 2rem)",
+          padding: "clamp(1.25rem, 3vw, 1.5rem) clamp(2rem, 4vw, 3rem)",
           borderRadius: "9999px",
           background: "rgba(255, 255, 255, 0.05)",
           backdropFilter: "blur(40px)",
@@ -236,8 +269,7 @@ export default function ThreeDCarousel({ images }) {
           boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
           maxWidth: "900px",
           width: "100%",
-          minHeight: "90px",
-          flexWrap: "wrap",
+          flexWrap: "nowrap",
           justifyContent: "center"
         }}>
           {/* Album Art Thumbnail */}
@@ -520,10 +552,14 @@ export default function ThreeDCarousel({ images }) {
 
       <style jsx>{`
         @media (max-width: 768px) {
+          .carousel-nav-buttons {
+            display: none !important;
+          }
+          
           .music-bar-responsive {
-            gap: 0.75rem !important;
-            padding: 1rem 1.5rem !important;
-            min-height: auto !important;
+            gap: 1rem !important;
+            padding: 1.25rem 1.5rem !important;
+            flex-wrap: wrap !important;
           }
           
           .additional-controls {
@@ -538,8 +574,8 @@ export default function ThreeDCarousel({ images }) {
         
         @media (max-width: 480px) {
           .music-bar-responsive {
-            gap: 0.5rem !important;
-            padding: 0.75rem 1rem !important;
+            gap: 0.75rem !important;
+            padding: 1rem 1.25rem !important;
           }
         }
       `}</style>

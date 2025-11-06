@@ -66,7 +66,18 @@ export default function About() {
             letterSpacing: "-0.02em",
             lineHeight: "1.1",
           }}>
-            About <span style={{ color: "#2A4CFF" }}>Sound Light</span>
+            About <span style={{
+              display: "inline-block",
+              padding: "0.5rem 1.5rem",
+              borderRadius: "16px",
+              background: "rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+            }}>
+              <span style={{ color: "#000" }}>Sound</span>
+              <span style={{ color: "#2A4CFF" }}>Light</span>
+            </span>
           </h1>
           <p style={{
             fontSize: "clamp(1rem, 3vw, 1.25rem)",
