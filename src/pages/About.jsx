@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Sparkles, GitBranch, SearchCheck, Zap, Eye, Target, Layers } from "lucide-react";
+import { Sparkles, GitBranch, SearchCheck, Zap } from "lucide-react";
 
 export default function About() {
   return (
@@ -10,25 +10,16 @@ export default function About() {
         background: "linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #2d1b4e 50%, #1a1f3a 75%, #0a0e27 100%)",
         position: "relative",
         overflow: "hidden",
-        padding: "4rem 2rem",
+        padding: "3rem 2rem",
       }}
     >
-      {/* Animated gradient overlay */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        background: "radial-gradient(circle at 30% 40%, rgba(124, 58, 237, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(168, 85, 247, 0.1) 0%, transparent 50%)",
-        pointerEvents: "none",
-        animation: "pulse 8s ease-in-out infinite",
-      }} />
-
       {/* Main Content */}
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1400px", margin: "0 auto" }}>
-        {/* Bento Grid - Using absolute positioning for overlapping effect */}
+        {/* Bento Grid with Absolute Positioning */}
         <div style={{ 
           position: "relative",
           width: "100%",
-          height: "900px",
+          height: "1000px",
         }}>
           
           {/* Top Left - Effortless Prompt Perfection */}
@@ -37,77 +28,58 @@ export default function About() {
               position: "absolute",
               left: "0",
               top: "0",
-              width: "280px",
-              height: "240px",
-              background: "rgba(30, 35, 60, 0.6)",
+              width: "290px",
+              height: "420px",
+              background: "rgba(40, 45, 70, 0.7)",
               backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(124, 58, 237, 0.2)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(124, 58, 237, 0.15)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "all 0.3s ease",
-              zIndex: 2,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(124, 58, 237, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(124, 58, 237, 0.2)";
+              zIndex: 3,
             }}
           >
-            {/* Subtle glow effect */}
-            <div style={{
-              position: "absolute",
-              top: "-50%",
-              left: "-50%",
-              width: "200%",
-              height: "200%",
-              background: "radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-            
-            <div style={{ position: "relative", zIndex: 1 }}>
+            <div>
               <div style={{
-                width: "48px",
-                height: "48px",
-                borderRadius: "12px",
+                width: "56px",
+                height: "56px",
+                borderRadius: "14px",
                 background: "linear-gradient(135deg, #7C3AED, #A855F7)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginBottom: "1rem",
+                marginBottom: "1.5rem",
                 boxShadow: "0 8px 24px rgba(124, 58, 237, 0.3)",
               }}>
-                <Sparkles size={24} color="#fff" />
+                <Sparkles size={28} color="#fff" />
               </div>
               
               <h3 style={{
-                fontSize: "1.5rem",
+                fontSize: "2rem",
                 fontWeight: "300",
                 color: "#fff",
-                marginBottom: "0.75rem",
-                lineHeight: "1.2",
+                marginBottom: "1rem",
+                lineHeight: "1.15",
               }}>
                 Effortless<br/>Prompt<br/>Perfection
               </h3>
             </div>
 
-            <div style={{ position: "relative", zIndex: 1 }}>
+            <div>
               <p style={{
-                fontSize: "0.875rem",
-                color: "rgba(255, 255, 255, 0.8)",
-                marginBottom: "0.25rem",
+                fontSize: "1rem",
+                color: "rgba(255, 255, 255, 0.9)",
+                marginBottom: "0.5rem",
                 fontWeight: "500",
               }}>
                 14 days trial
               </p>
               <p style={{
-                fontSize: "0.75rem",
+                fontSize: "0.875rem",
                 color: "rgba(255, 255, 255, 0.5)",
               }}>
                 after - $5/month
@@ -115,100 +87,40 @@ export default function About() {
             </div>
           </div>
 
-          {/* Top Right - Sparkles Icon */}
-          <div 
-            style={{
-              position: "absolute",
-              right: "0",
-              top: "0",
-              width: "280px",
-              height: "180px",
-              background: "rgba(30, 35, 60, 0.6)",
-              backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(249, 115, 22, 0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              overflow: "hidden",
-              transition: "all 0.3s ease",
-              zIndex: 2,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.2)";
-            }}
-          >
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at center, rgba(249, 115, 22, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-            
-            <div style={{
-              width: "72px",
-              height: "72px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #F97316, #FB923C)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-              zIndex: 1,
-              boxShadow: "0 8px 24px rgba(249, 115, 22, 0.4)",
-            }}>
-              <Sparkles size={36} color="#fff" />
-            </div>
-          </div>
-
-          {/* Center - Main Hero Card with Glowing Orb - HIGHEST Z-INDEX */}
+          {/* Center - Main Hero Card with Glowing Orb */}
           <div 
             style={{
               position: "absolute",
               left: "50%",
               top: "50%",
               transform: "translate(-50%, -50%)",
-              width: "580px",
-              height: "650px",
-              background: "linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(168, 85, 247, 0.8) 100%)",
+              width: "550px",
+              height: "750px",
+              background: "linear-gradient(135deg, rgba(124, 58, 237, 0.95) 0%, rgba(168, 85, 247, 0.85) 100%)",
               borderRadius: "32px",
               padding: "3rem 2rem",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "flex-start",
               textAlign: "center",
-              overflow: "hidden",
+              overflow: "visible",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               zIndex: 10,
             }}
           >
-            {/* Animated background pattern */}
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              opacity: 0.05,
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }} />
-
             <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
               {/* PromptPal branding */}
               <div style={{ 
-                marginBottom: "1rem",
+                marginBottom: "1.5rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "0.75rem",
               }}>
-                <Sparkles size={20} color="#fff" style={{ opacity: 0.9 }} />
+                <Sparkles size={22} color="#fff" style={{ opacity: 0.9 }} />
                 <span style={{
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   fontWeight: "600",
                   color: "#fff",
                   letterSpacing: "0.05em",
@@ -218,10 +130,10 @@ export default function About() {
               </div>
 
               <h1 style={{
-                fontSize: "3rem",
+                fontSize: "3.5rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "1.5rem",
+                marginBottom: "2rem",
                 lineHeight: "1.1",
                 letterSpacing: "-0.02em",
               }}>
@@ -230,9 +142,9 @@ export default function About() {
 
               {/* Glowing Cosmic Orb with Logo */}
               <div style={{
-                width: "320px",
-                height: "320px",
-                margin: "1.5rem auto",
+                width: "380px",
+                height: "380px",
+                margin: "0 auto",
                 borderRadius: "50%",
                 position: "relative",
                 display: "flex",
@@ -242,17 +154,17 @@ export default function About() {
                 {/* Outer glow rings */}
                 <div style={{
                   position: "absolute",
-                  inset: "-20px",
+                  inset: "-30px",
                   borderRadius: "50%",
-                  background: "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%)",
+                  background: "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)",
                   animation: "pulse 4s ease-in-out infinite",
                 }} />
                 
                 <div style={{
                   position: "absolute",
-                  inset: "-10px",
+                  inset: "-15px",
                   borderRadius: "50%",
-                  background: "radial-gradient(circle, rgba(168, 85, 247, 0.3) 0%, transparent 60%)",
+                  background: "radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 60%)",
                   animation: "pulse 3s ease-in-out infinite 0.5s",
                 }} />
 
@@ -261,40 +173,37 @@ export default function About() {
                   width: "100%",
                   height: "100%",
                   borderRadius: "50%",
-                  background: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%)",
+                  background: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0.5) 100%)",
                   border: "2px solid rgba(255, 255, 255, 0.2)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   position: "relative",
                   overflow: "hidden",
-                  boxShadow: "0 0 60px rgba(168, 85, 247, 0.6), inset 0 0 40px rgba(255, 255, 255, 0.1)",
+                  boxShadow: "0 0 80px rgba(168, 85, 247, 0.7), inset 0 0 60px rgba(255, 255, 255, 0.15)",
                 }}>
                   {/* Cosmic swirl effect */}
                   <div style={{
                     position: "absolute",
                     inset: 0,
                     borderRadius: "50%",
-                    background: "conic-gradient(from 0deg, transparent 0%, rgba(249, 115, 22, 0.3) 25%, rgba(168, 85, 247, 0.3) 50%, rgba(59, 130, 246, 0.3) 75%, transparent 100%)",
+                    background: "conic-gradient(from 0deg, transparent 0%, rgba(249, 115, 22, 0.4) 25%, rgba(168, 85, 247, 0.4) 50%, rgba(59, 130, 246, 0.4) 75%, transparent 100%)",
                     animation: "rotate 20s linear infinite",
                   }} />
 
                   {/* Binary code ring */}
                   <div style={{
                     position: "absolute",
-                    inset: "10px",
+                    inset: "15px",
                     borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
                   }}>
-                    <svg width="100%" height="100%" viewBox="0 0 300 300" style={{ position: "absolute" }}>
+                    <svg width="100%" height="100%" viewBox="0 0 350 350" style={{ position: "absolute" }}>
                       <defs>
-                        <path id="circlePath" d="M 150, 150 m -120, 0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0" />
+                        <path id="circlePath" d="M 175, 175 m -140, 0 a 140,140 0 1,1 280,0 a 140,140 0 1,1 -280,0" />
                       </defs>
-                      <text fill="rgba(255, 255, 255, 0.3)" fontSize="10" fontFamily="monospace" letterSpacing="2">
+                      <text fill="rgba(255, 255, 255, 0.35)" fontSize="11" fontFamily="monospace" letterSpacing="2.5">
                         <textPath href="#circlePath">
-                          1001 1001010110 010 001 1001 1101 0110 1001 010 1101 0110 1001
+                          1001 1001010110 010 001 1001 1101 0110 1001 010 1101
                         </textPath>
                       </text>
                     </svg>
@@ -305,9 +214,9 @@ export default function About() {
                     src="/gallery-images/logoo.png" 
                     alt="SoundLight Logo"
                     style={{
-                      width: "160px",
+                      width: "180px",
                       height: "auto",
-                      filter: "brightness(0) invert(1) drop-shadow(0 0 40px rgba(255, 255, 255, 0.8))",
+                      filter: "brightness(0) invert(1) drop-shadow(0 0 50px rgba(255, 255, 255, 0.9))",
                       position: "relative",
                       zIndex: 2,
                       animation: "float 6s ease-in-out infinite",
@@ -315,18 +224,18 @@ export default function About() {
                   />
 
                   {/* Inner sparkle particles */}
-                  {[...Array(8)].map((_, i) => (
+                  {[...Array(12)].map((_, i) => (
                     <div
                       key={i}
                       style={{
                         position: "absolute",
-                        width: "4px",
-                        height: "4px",
+                        width: "5px",
+                        height: "5px",
                         borderRadius: "50%",
                         background: "#fff",
-                        top: `${20 + Math.random() * 60}%`,
-                        left: `${20 + Math.random() * 60}%`,
-                        opacity: 0.6,
+                        top: `${15 + Math.random() * 70}%`,
+                        left: `${15 + Math.random() * 70}%`,
+                        opacity: 0.7,
                         animation: `twinkle ${2 + Math.random() * 3}s ease-in-out infinite ${Math.random() * 2}s`,
                       }}
                     />
@@ -335,7 +244,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Add keyframe animations */}
             <style>{`
               @keyframes pulse {
                 0%, 100% { opacity: 0.6; transform: scale(1); }
@@ -347,7 +255,7 @@ export default function About() {
               }
               @keyframes float {
                 0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
+                50% { transform: translateY(-12px); }
               }
               @keyframes twinkle {
                 0%, 100% { opacity: 0.3; transform: scale(1); }
@@ -356,53 +264,71 @@ export default function About() {
             `}</style>
           </div>
 
+          {/* Top Right - Sparkles Icon */}
+          <div 
+            style={{
+              position: "absolute",
+              right: "0",
+              top: "0",
+              width: "290px",
+              height: "190px",
+              background: "rgba(40, 45, 70, 0.7)",
+              backdropFilter: "blur(20px)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(249, 115, 22, 0.15)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "visible",
+              transition: "all 0.3s ease",
+              zIndex: 3,
+            }}
+          >
+            <div style={{
+              width: "80px",
+              height: "80px",
+              borderRadius: "50%",
+              background: "linear-gradient(135deg, #F97316, #FB923C)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 10px 30px rgba(249, 115, 22, 0.4)",
+            }}>
+              <Sparkles size={40} color="#fff" />
+            </div>
+          </div>
+
           {/* Middle Right - 25M Stats */}
           <div 
             style={{
               position: "absolute",
               right: "0",
-              top: "200px",
-              width: "280px",
-              height: "280px",
-              background: "rgba(30, 35, 60, 0.6)",
+              top: "210px",
+              width: "290px",
+              height: "300px",
+              background: "rgba(40, 45, 70, 0.7)",
               backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(168, 85, 247, 0.2)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(168, 85, 247, 0.15)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "all 0.3s ease",
-              zIndex: 2,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(168, 85, 247, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(168, 85, 247, 0.2)";
+              zIndex: 3,
             }}
           >
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at center, rgba(168, 85, 247, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
             <h2 style={{
-              fontSize: "5rem",
+              fontSize: "6rem",
               fontWeight: "300",
               background: "linear-gradient(135deg, #A855F7, #EC4899)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              marginBottom: "1rem",
-              position: "relative",
-              zIndex: 1,
+              marginBottom: "1.5rem",
               lineHeight: "1",
             }}>
               25M
@@ -412,25 +338,23 @@ export default function About() {
               display: "flex",
               alignItems: "center",
               gap: "0.75rem",
-              position: "relative",
-              zIndex: 1,
             }}>
               <div style={{
-                width: "32px",
+                width: "40px",
                 height: "2px",
-                background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.6))",
+                background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.7))",
               }} />
               <p style={{
-                fontSize: "0.95rem",
-                color: "rgba(255, 255, 255, 0.8)",
+                fontSize: "1rem",
+                color: "rgba(255, 255, 255, 0.85)",
                 fontWeight: "400",
               }}>
                 created prompts
               </p>
               <div style={{
-                width: "32px",
+                width: "40px",
                 height: "2px",
-                background: "linear-gradient(to left, transparent, rgba(168, 85, 247, 0.6))",
+                background: "linear-gradient(to left, transparent, rgba(168, 85, 247, 0.7))",
               }} />
             </div>
           </div>
@@ -440,40 +364,25 @@ export default function About() {
             style={{
               position: "absolute",
               left: "0",
-              top: "260px",
-              width: "280px",
-              height: "280px",
-              background: "rgba(30, 35, 60, 0.6)",
+              top: "440px",
+              width: "290px",
+              height: "270px",
+              background: "rgba(40, 45, 70, 0.7)",
               backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(249, 115, 22, 0.2)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(249, 115, 22, 0.15)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "all 0.3s ease",
-              zIndex: 2,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.2)";
+              zIndex: 3,
             }}
           >
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
-            <div style={{ position: "relative", zIndex: 1 }}>
+            <div>
               <h2 style={{
-                fontSize: "3.5rem",
+                fontSize: "4rem",
                 fontWeight: "300",
                 background: "linear-gradient(135deg, #F97316, #FB923C)",
                 WebkitBackgroundClip: "text",
@@ -484,8 +393,8 @@ export default function About() {
                 12K
               </h2>
               <p style={{
-                fontSize: "0.95rem",
-                color: "rgba(255, 255, 255, 0.8)",
+                fontSize: "1rem",
+                color: "rgba(255, 255, 255, 0.85)",
                 marginBottom: "2rem",
                 fontWeight: "400",
               }}>
@@ -494,97 +403,80 @@ export default function About() {
 
               <div style={{ display: "flex", gap: "0.5rem" }}>
                 <div style={{
-                  width: "52px",
-                  height: "52px",
+                  width: "56px",
+                  height: "56px",
                   borderRadius: "50%",
                   background: "linear-gradient(135deg, #F97316, #FB923C)",
-                  border: "3px solid rgba(30, 35, 60, 0.8)",
+                  border: "3px solid rgba(40, 45, 70, 0.9)",
                   boxShadow: "0 4px 12px rgba(249, 115, 22, 0.3)",
                 }} />
                 <div style={{
-                  width: "52px",
-                  height: "52px",
+                  width: "56px",
+                  height: "56px",
                   borderRadius: "50%",
                   background: "linear-gradient(135deg, #EC4899, #F472B6)",
-                  border: "3px solid rgba(30, 35, 60, 0.8)",
-                  marginLeft: "-16px",
+                  border: "3px solid rgba(40, 45, 70, 0.9)",
+                  marginLeft: "-18px",
                   boxShadow: "0 4px 12px rgba(236, 72, 153, 0.3)",
                 }} />
                 <div style={{
-                  width: "52px",
-                  height: "52px",
+                  width: "56px",
+                  height: "56px",
                   borderRadius: "50%",
                   background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-                  border: "3px solid rgba(30, 35, 60, 0.8)",
-                  marginLeft: "-16px",
+                  border: "3px solid rgba(40, 45, 70, 0.9)",
+                  marginLeft: "-18px",
                   boxShadow: "0 4px 12px rgba(124, 58, 237, 0.3)",
                 }} />
               </div>
             </div>
           </div>
 
-          {/* Left Middle - Branching Paths (partially cut by orb) */}
+          {/* Left Bottom - Branching Paths (BEHIND orb) */}
           <div 
             style={{
               position: "absolute",
-              left: "300px",
-              top: "560px",
-              width: "240px",
-              height: "200px",
-              background: "rgba(30, 35, 60, 0.6)",
+              left: "310px",
+              top: "630px",
+              width: "270px",
+              height: "230px",
+              background: "rgba(40, 45, 70, 0.7)",
               backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(249, 115, 22, 0.2)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(249, 115, 22, 0.15)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "all 0.3s ease",
               zIndex: 1,
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.2)";
-            }}
           >
             <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at top left, rgba(249, 115, 22, 0.08) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
-            <div style={{
-              width: "56px",
-              height: "56px",
+              width: "64px",
+              height: "64px",
               borderRadius: "50%",
               background: "linear-gradient(135deg, #F97316, #FB923C)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              position: "relative",
-              zIndex: 1,
               boxShadow: "0 8px 24px rgba(249, 115, 22, 0.3)",
             }}>
-              <GitBranch size={28} color="#fff" />
+              <GitBranch size={32} color="#fff" />
             </div>
 
-            <div style={{ position: "relative", zIndex: 1 }}>
+            <div>
               <h3 style={{
-                fontSize: "1.25rem",
+                fontSize: "1.5rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "0.5rem",
+                marginBottom: "0.75rem",
               }}>
                 Branching paths
               </h3>
               <p style={{
-                fontSize: "0.85rem",
+                fontSize: "0.95rem",
                 color: "rgba(255, 255, 255, 0.7)",
                 lineHeight: "1.5",
               }}>
@@ -593,68 +485,51 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Middle - Keyword Enhancer (partially cut by orb) */}
+          {/* Right Bottom - Keyword Enhancer (BEHIND orb) */}
           <div 
             style={{
               position: "absolute",
-              right: "300px",
-              top: "560px",
-              width: "240px",
-              height: "200px",
-              background: "rgba(30, 35, 60, 0.6)",
+              right: "310px",
+              top: "630px",
+              width: "270px",
+              height: "230px",
+              background: "rgba(40, 45, 70, 0.7)",
               backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(124, 58, 237, 0.2)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(124, 58, 237, 0.15)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "all 0.3s ease",
               zIndex: 1,
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(124, 58, 237, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(124, 58, 237, 0.2)";
-            }}
           >
             <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at top right, rgba(124, 58, 237, 0.08) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
-            <div style={{
-              width: "56px",
-              height: "56px",
+              width: "64px",
+              height: "64px",
               borderRadius: "50%",
               background: "linear-gradient(135deg, #7C3AED, #A855F7)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              position: "relative",
-              zIndex: 1,
               boxShadow: "0 8px 24px rgba(124, 58, 237, 0.3)",
             }}>
-              <SearchCheck size={28} color="#fff" />
+              <SearchCheck size={32} color="#fff" />
             </div>
 
-            <div style={{ position: "relative", zIndex: 1 }}>
+            <div>
               <h3 style={{
-                fontSize: "1.25rem",
+                fontSize: "1.5rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "0.5rem",
+                marginBottom: "0.75rem",
               }}>
                 Keyword enhancer
               </h3>
               <p style={{
-                fontSize: "0.85rem",
+                fontSize: "0.95rem",
                 color: "rgba(255, 255, 255, 0.7)",
                 lineHeight: "1.5",
               }}>
@@ -669,49 +544,34 @@ export default function About() {
               position: "absolute",
               right: "0",
               bottom: "0",
-              width: "280px",
-              height: "340px",
-              background: "rgba(30, 35, 60, 0.6)",
+              width: "290px",
+              height: "360px",
+              background: "rgba(40, 45, 70, 0.7)",
               backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(168, 85, 247, 0.2)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(168, 85, 247, 0.15)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "all 0.3s ease",
-              zIndex: 2,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(168, 85, 247, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(168, 85, 247, 0.2)";
+              zIndex: 3,
             }}
           >
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.08) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
-            <div style={{ position: "relative", zIndex: 1 }}>
+            <div>
               <h3 style={{
-                fontSize: "1.25rem",
+                fontSize: "1.35rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "0.5rem",
+                marginBottom: "0.75rem",
               }}>
                 Prompt templates
               </h3>
               <p style={{
-                fontSize: "0.8rem",
+                fontSize: "0.9rem",
                 color: "rgba(255, 255, 255, 0.7)",
-                lineHeight: "1.5",
+                lineHeight: "1.6",
                 marginBottom: "1.5rem",
               }}>
                 Use pre-made templates to jumpstart creativity.
@@ -721,8 +581,8 @@ export default function About() {
                 style={{
                   background: "linear-gradient(135deg, #F97316, #FB923C)",
                   color: "#fff",
-                  padding: "0.5rem 1rem",
-                  fontSize: "0.7rem",
+                  padding: "0.6rem 1.25rem",
+                  fontSize: "0.75rem",
                   fontWeight: "500",
                   border: "none",
                   borderRadius: "20px",
@@ -737,32 +597,41 @@ export default function About() {
               display: "flex",
               gap: "0.75rem",
               flexWrap: "wrap",
-              position: "relative",
-              zIndex: 1,
             }}>
-              {[
-                { icon: <Zap size={18} />, bg: "linear-gradient(135deg, #7C3AED, #A855F7)" },
-                { icon: <Eye size={18} />, bg: "linear-gradient(135deg, #F97316, #FB923C)" },
-                { icon: <Target size={18} />, bg: "linear-gradient(135deg, #EC4899, #F472B6)" },
-                { icon: <Layers size={18} />, bg: "linear-gradient(135deg, #3B82F6, #60A5FA)" },
-              ].map((item, i) => (
-                <div 
-                  key={i}
-                  style={{
-                    width: "48px",
-                    height: "48px",
-                    borderRadius: "50%",
-                    background: item.bg,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#fff",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-                  }}
-                >
-                  {item.icon}
-                </div>
-              ))}
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #7C3AED, #A855F7)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                boxShadow: "0 4px 12px rgba(124, 58, 237, 0.3)",
+              }}>
+                <Zap size={24} />
+              </div>
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #F97316, #FB923C)",
+                boxShadow: "0 4px 12px rgba(249, 115, 22, 0.3)",
+              }} />
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #EC4899, #F472B6)",
+                boxShadow: "0 4px 12px rgba(236, 72, 153, 0.3)",
+              }} />
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #3B82F6, #60A5FA)",
+                boxShadow: "0 4px 12px rgba(59, 130, 246, 0.3)",
+              }} />
             </div>
           </div>
 
@@ -772,64 +641,39 @@ export default function About() {
               position: "absolute",
               left: "0",
               bottom: "0",
-              width: "280px",
-              height: "200px",
-              background: "rgba(30, 35, 60, 0.6)",
+              width: "290px",
+              height: "230px",
+              background: "rgba(40, 45, 70, 0.7)",
               backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(124, 58, 237, 0.2)",
+              borderRadius: "28px",
+              padding: "2.5rem",
+              border: "1px solid rgba(124, 58, 237, 0.15)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              overflow: "hidden",
+              overflow: "visible",
               transition: "all 0.3s ease",
-              zIndex: 2,
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(124, 58, 237, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(124, 58, 237, 0.2)";
+              zIndex: 3,
             }}
           >
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at center, rgba(124, 58, 237, 0.08) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
             <Button
               style={{
                 background: "linear-gradient(135deg, #7C3AED, #A855F7)",
                 color: "#fff",
-                padding: "1.5rem 3.5rem",
-                fontSize: "1.1rem",
+                padding: "1.75rem 4rem",
+                fontSize: "1.15rem",
                 fontWeight: "500",
                 border: "none",
-                borderRadius: "32px",
+                borderRadius: "40px",
                 display: "flex",
                 alignItems: "center",
                 gap: "0.75rem",
                 cursor: "pointer",
-                position: "relative",
-                zIndex: 1,
-                boxShadow: "0 8px 24px rgba(124, 58, 237, 0.4)",
+                boxShadow: "0 10px 30px rgba(124, 58, 237, 0.4)",
                 transition: "all 0.3s ease",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-2px)";
-                e.currentTarget.style.boxShadow = "0 12px 32px rgba(124, 58, 237, 0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "0 8px 24px rgba(124, 58, 237, 0.4)";
-              }}
             >
-              <Sparkles size={22} />
+              <Sparkles size={24} />
               Generate
             </Button>
           </div>
