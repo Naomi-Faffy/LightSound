@@ -94,12 +94,12 @@ export default function Contact() {
             style={{
               gridColumn: "1 / 5",
               gridRow: "1 / 3",
-              background: "rgba(42, 76, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.08)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(42, 76, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -109,12 +109,12 @@ export default function Contact() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(42, 76, 255, 0.2)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.1)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.3)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -140,14 +140,17 @@ export default function Contact() {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "#2A4CFF",
+                background: "rgba(255, 255, 255, 0.15)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: "1.5rem",
-                boxShadow: "0 8px 24px rgba(42, 76, 255, 0.3)",
+                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.1)",
               }}>
-                <Phone size={32} color="#FFFFFF" strokeWidth={2} />
+                <Phone size={32} color="#2A4CFF" strokeWidth={2} />
               </div>
               
               <h3 style={{
@@ -183,12 +186,12 @@ export default function Contact() {
             style={{
               gridColumn: "5 / 9",
               gridRow: "1 / 3",
-              background: "rgba(42, 76, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.08)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(42, 76, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -198,12 +201,12 @@ export default function Contact() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(42, 76, 255, 0.2)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.1)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.3)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -212,14 +215,17 @@ export default function Contact() {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "#2A4CFF",
+                background: "rgba(255, 255, 255, 0.15)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: "1.5rem",
-                boxShadow: "0 8px 24px rgba(42, 76, 255, 0.3)",
+                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.1)",
               }}>
-                <Mail size={32} color="#FFFFFF" strokeWidth={2} />
+                <Mail size={32} color="#2A4CFF" strokeWidth={2} />
               </div>
               
               <h3 style={{
@@ -255,12 +261,12 @@ export default function Contact() {
             style={{
               gridColumn: "9 / 13",
               gridRow: "1 / 3",
-              background: "rgba(42, 76, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.08)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(42, 76, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -270,12 +276,12 @@ export default function Contact() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(42, 76, 255, 0.2)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.1)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.3)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -284,14 +290,17 @@ export default function Contact() {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "#2A4CFF",
+                background: "rgba(255, 255, 255, 0.15)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                border: "1px solid rgba(255, 255, 255, 0.3)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: "1.5rem",
-                boxShadow: "0 8px 24px rgba(42, 76, 255, 0.3)",
+                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.1)",
               }}>
-                <MapPin size={32} color="#FFFFFF" strokeWidth={2} />
+                <MapPin size={32} color="#2A4CFF" strokeWidth={2} />
               </div>
               
               <h3 style={{
@@ -437,7 +446,9 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <select
+                  <input
+                    type="text"
+                    placeholder="Event Type"
                     required
                     style={{
                       width: "100%",
@@ -458,13 +469,7 @@ export default function Contact() {
                       e.target.style.background = "rgba(255, 255, 255, 0.05)";
                       e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
                     }}
-                  >
-                    <option value="" style={{ background: "#1A1A2E", color: "#fff" }}>Event Type</option>
-                    <option value="corporate" style={{ background: "#1A1A2E", color: "#fff" }}>Corporate Event</option>
-                    <option value="wedding" style={{ background: "#1A1A2E", color: "#fff" }}>Wedding</option>
-                    <option value="private" style={{ background: "#1A1A2E", color: "#fff" }}>Private Celebration</option>
-                    <option value="social" style={{ background: "#1A1A2E", color: "#fff" }}>Social Event</option>
-                  </select>
+                  />
                 </div>
 
                 <div>
@@ -598,16 +603,8 @@ export default function Contact() {
             <div style={{ position: "relative", zIndex: 1 }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Monday - Friday</span>
-                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>9AM - 7PM</span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Saturday</span>
-                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>10AM - 6PM</span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Sunday</span>
-                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>By Appointment</span>
+                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Everyday</span>
+                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>8AM - 8PM</span>
                 </div>
               </div>
             </div>
@@ -737,8 +734,7 @@ export default function Contact() {
 
           <div style={{ display: "flex", gap: "1rem" }}>
             {[
-              { Icon: Instagram, color: "#2A4CFF", href: "https://www.instagram.com/soundlight.zw/" },
-              { Icon: Twitter, color: "#2A4CFF", href: "https://www.threads.com/@soundlight.zw?xmt=AQF0llt6nKMpZ2_3YwyhVxkbumThNJCT0fvGvYy1V3-iHYE" },
+              { Icon: Instagram, color: "#2A4CFF", href: "https://www.threads.com/@soundlight.zw?xmt=AQF0llt6nKMpZ2_3YwyhVxkbumThNJCT0fvGvYy1V3-iHYE" },
             ].map(({ Icon, color, href }, i) => (
               <a
                 key={i}

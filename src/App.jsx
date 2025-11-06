@@ -50,7 +50,7 @@ export default function App() {
 
         <div className="hero-content" style={{opacity: 1, transform: 'none'}}>
           <div className="hero-text">
-            <h1 className="hero-title">
+            <h1 className="hero-title" style={{fontSize: 'clamp(2.5rem, 6vw, 5rem)'}}>
               <span className="hero-line-1" style={{opacity: 1, animation: 'none'}}>Premium Sound.</span>
               <span className="hero-line-2" style={{opacity: 1, animation: 'none'}}>World-Class Lighting.</span>
             </h1>
@@ -100,7 +100,6 @@ export default function App() {
             </nav>
 
             <div className="footer-social">
-              <a href="https://www.instagram.com/soundlight.zw/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
               <a href="https://www.threads.com/@soundlight.zw?xmt=AQF0llt6nKMpZ2_3YwyhVxkbumThNJCT0fvGvYy1V3-iHYE" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i className="fab fa-threads"></i></a>
             </div>
           </div>
