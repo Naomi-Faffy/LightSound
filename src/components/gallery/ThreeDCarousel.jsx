@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 
 export default function ThreeDCarousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [thumbnailStartIndex, setThumbnailStartIndex] = useState(0);
-  const THUMBNAILS_PER_VIEW = 5;
 
   const getVisibleImages = () => {
     const visible = [];
@@ -30,29 +28,9 @@ export default function ThreeDCarousel({ images }) {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  const handleThumbnailClick = (index) => {
+  const handleDotClick = (index) => {
     setCurrentIndex(index);
   };
-
-  const handleThumbnailPrev = () => {
-    if (thumbnailStartIndex > 0) {
-      setThumbnailStartIndex(thumbnailStartIndex - 1);
-    }
-  };
-
-  const handleThumbnailNext = () => {
-    if (thumbnailStartIndex < images.length - THUMBNAILS_PER_VIEW) {
-      setThumbnailStartIndex(thumbnailStartIndex + 1);
-    }
-  };
-
-  useEffect(() => {
-    if (currentIndex < thumbnailStartIndex) {
-      setThumbnailStartIndex(currentIndex);
-    } else if (currentIndex >= thumbnailStartIndex + THUMBNAILS_PER_VIEW) {
-      setThumbnailStartIndex(currentIndex - THUMBNAILS_PER_VIEW + 1);
-    }
-  }, [currentIndex, thumbnailStartIndex]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -235,87 +213,79 @@ export default function ThreeDCarousel({ images }) {
 
       <div style={{
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: "1rem",
+        gap: "1.5rem",
         marginTop: "3rem"
       }}>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleThumbnailPrev}
-          disabled={thumbnailStartIndex === 0}
-          style={{
-            color: "white",
-            opacity: thumbnailStartIndex === 0 ? 0.3 : 1,
-            cursor: thumbnailStartIndex === 0 ? "not-allowed" : "pointer"
-          }}
-          className="hover:bg-white/10"
-        >
-          <ChevronLeft style={{ width: "1.25rem", height: "1.25rem" }} />
-        </Button>
-
-        <div style={{ display: "flex", gap: "0.75rem" }}>
-          {images
-            .slice(thumbnailStartIndex, thumbnailStartIndex + THUMBNAILS_PER_VIEW)
-            .map((image, idx) => {
-              const actualIndex = thumbnailStartIndex + idx;
-              const isActive = actualIndex === currentIndex;
-
-              return (
-                <motion.button
-                  key={image.id}
-                  onClick={() => handleThumbnailClick(actualIndex)}
-                  style={{
-                    position: "relative",
-                    overflow: "hidden",
-                    borderRadius: "0.75rem",
-                    flexShrink: 0,
-                    width: isActive ? "6rem" : "5rem",
-                    height: isActive ? "6rem" : "5rem",
-                    border: isActive ? "4px solid white" : "2px solid rgba(255, 255, 255, 0.3)",
-                    cursor: "pointer",
-                    transition: "all 0.3s",
-                    transform: isActive ? "scale(1.1)" : "scale(1)"
-                  }}
-                  whileHover={{ scale: isActive ? 1.1 : 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <img
-                    src={image.thumb}
-                    alt={`Thumbnail ${actualIndex + 1}`}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover"
-                    }}
-                  />
-                  {!isActive && (
-                    <div style={{
-                      position: "absolute",
-                      inset: 0,
-                      backgroundColor: "rgba(0, 0, 0, 0.5)"
-                    }} />
-                  )}
-                </motion.button>
-              );
-            })}
+        {/* Dot Indicators */}
+        <div style={{
+          display: "flex",
+          gap: "0.5rem",
+          alignItems: "center",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          maxWidth: "600px"
+        }}>
+          {images.map((image, index) => {
+            const isActive = index === currentIndex;
+            const distance = Math.abs(index - currentIndex);
+            const isNearby = distance <= 2;
+            
+            return (
+              <motion.button
+                key={image.id}
+                onClick={() => handleDotClick(index)}
+                style={{
+                  width: isActive ? "3rem" : isNearby ? "0.75rem" : "0.5rem",
+                  height: isActive ? "0.75rem" : "0.5rem",
+                  borderRadius: "9999px",
+                  background: isActive 
+                    ? "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)"
+                    : isNearby
+                    ? "rgba(255, 255, 255, 0.5)"
+                    : "rgba(255, 255, 255, 0.3)",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  boxShadow: isActive 
+                    ? "0 0 20px rgba(59, 130, 246, 0.6), 0 0 40px rgba(59, 130, 246, 0.3)"
+                    : "none",
+                  opacity: isNearby ? 1 : 0.5
+                }}
+                whileHover={{ 
+                  scale: 1.2,
+                  opacity: 1
+                }}
+                whileTap={{ scale: 0.9 }}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            );
+          })}
         </div>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleThumbnailNext}
-          disabled={thumbnailStartIndex >= images.length - THUMBNAILS_PER_VIEW}
-          style={{
+        {/* Counter Display */}
+        <div style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "1rem",
+          padding: "0.75rem 1.5rem",
+          borderRadius: "9999px",
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(10px)",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)"
+        }}>
+          <span style={{
             color: "white",
-            opacity: thumbnailStartIndex >= images.length - THUMBNAILS_PER_VIEW ? 0.3 : 1,
-            cursor: thumbnailStartIndex >= images.length - THUMBNAILS_PER_VIEW ? "not-allowed" : "pointer"
-          }}
-          className="hover:bg-white/10"
-        >
-          <ChevronRight style={{ width: "1.25rem", height: "1.25rem" }} />
-        </Button>
+            fontSize: "0.875rem",
+            fontWeight: "600",
+            letterSpacing: "0.05em"
+          }}>
+            {currentIndex + 1} / {images.length}
+          </span>
+        </div>
       </div>
     </div>
   );
