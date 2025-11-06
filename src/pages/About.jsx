@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Music, Lightbulb, Zap, Users } from "lucide-react";
+import { Music, Lightbulb, Zap, Users, Award, Target, Heart } from "lucide-react";
 
 export default function About() {
   return (
@@ -10,617 +10,379 @@ export default function About() {
         background: "linear-gradient(180deg, #000000 0%, #0a0e1f 50%, #000000 100%)",
         position: "relative",
         overflow: "hidden",
-        padding: "2rem 1.5rem",
+        padding: "clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
       }}
     >
+      {/* Decorative Glowing Orbs */}
+      <div style={{ 
+        position: "absolute", 
+        top: "-10%", 
+        left: "-5%", 
+        width: "500px", 
+        height: "500px", 
+        borderRadius: "50%", 
+        opacity: 0.15, 
+        background: "radial-gradient(circle, #2A4CFF 0%, transparent 70%)", 
+        filter: "blur(100px)",
+        pointerEvents: "none",
+        zIndex: 0
+      }} />
+
+      <div style={{ 
+        position: "absolute", 
+        bottom: "-15%", 
+        right: "-8%", 
+        width: "500px", 
+        height: "500px", 
+        borderRadius: "50%", 
+        opacity: 0.15, 
+        background: "radial-gradient(circle, #2A4CFF 0%, transparent 70%)", 
+        filter: "blur(100px)",
+        pointerEvents: "none",
+        zIndex: 0
+      }} />
+
       {/* Main Content Container */}
       <div style={{ 
         position: "relative", 
         width: "100%", 
         maxWidth: "1200px",
-        height: "700px",
+        zIndex: 1
       }}>
         
-        {/* Top Left - Our Mission */}
-        <div 
-          style={{
-            position: "absolute",
-            left: "0",
-            top: "0",
-            width: "145px",
-            height: "260px",
-            background: "rgba(0, 0, 0, 0.6)",
+        {/* Header Section */}
+        <div style={{
+          textAlign: "center",
+          marginBottom: "4rem"
+        }}>
+          <h1 style={{
+            fontSize: "clamp(2.5rem, 8vw, 4rem)",
+            fontWeight: "400",
+            color: "#fff",
+            marginBottom: "1rem",
+            letterSpacing: "-0.02em",
+            lineHeight: "1.1",
+          }}>
+            About <span style={{ color: "#2A4CFF" }}>Sound Light</span>
+          </h1>
+          <p style={{
+            fontSize: "clamp(1rem, 3vw, 1.25rem)",
+            color: "rgba(255, 255, 255, 0.7)",
+            maxWidth: "700px",
+            margin: "0 auto",
+          }}>
+            Transforming events with cutting-edge audio-visual excellence
+          </p>
+        </div>
+
+        {/* Main Content Grid */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "2rem",
+          marginBottom: "3rem"
+        }}>
+          
+          {/* Mission Card */}
+          <div style={{
+            background: "rgba(255, 255, 255, 0.05)",
             backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(42, 76, 255, 0.3)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            zIndex: 5,
+            WebkitBackdropFilter: "blur(20px)",
+            borderRadius: "24px",
+            padding: "2.5rem",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            transition: "all 0.3s ease",
           }}
-        >
-          <div>
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-8px)";
+            e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+          }}>
             <div style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "10px",
-              background: "#2A4CFF",
+              width: "64px",
+              height: "64px",
+              borderRadius: "50%",
+              background: "rgba(42, 76, 255, 0.2)",
+              border: "1px solid rgba(42, 76, 255, 0.5)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              marginBottom: "1rem",
+              marginBottom: "1.5rem",
             }}>
-              <Zap size={20} color="#fff" />
+              <Target size={32} color="#2A4CFF" strokeWidth={2} />
             </div>
             
             <h3 style={{
-              fontSize: "1.1rem",
-              fontWeight: "400",
-              color: "#fff",
-              lineHeight: "1.2",
-              marginBottom: "0.5rem",
-            }}>
-              Precision<br/>Passion<br/>Excellence
-            </h3>
-          </div>
-
-          <div>
-            <p style={{
-              fontSize: "0.75rem",
-              color: "rgba(255, 255, 255, 0.9)",
-              marginBottom: "0.25rem",
-            }}>
-              Every Event
-            </p>
-            <p style={{
-              fontSize: "0.65rem",
-              color: "rgba(255, 255, 255, 0.5)",
-            }}>
-              Flawlessly Executed
-            </p>
-          </div>
-        </div>
-
-        {/* Center - Main Card with Logo */}
-        <div 
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "445px",
-            height: "520px",
-            background: "#2A4CFF",
-            borderRadius: "28px",
-            padding: "2rem 1.5rem",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            overflow: "visible",
-            zIndex: 10,
-            boxShadow: "0 20px 60px rgba(42, 76, 255, 0.4)",
-          }}
-        >
-          {/* Sound Light branding */}
-          <div style={{ 
-            marginBottom: "1rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-          }}>
-            <Music size={16} color="#fff" />
-            <span style={{
-              fontSize: "0.85rem",
+              fontSize: "1.5rem",
               fontWeight: "600",
               color: "#fff",
-              letterSpacing: "0.05em",
+              marginBottom: "1rem",
             }}>
-              Sound Light
-            </span>
+              Our Mission
+            </h3>
+            
+            <p style={{
+              fontSize: "1rem",
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "1.6",
+            }}>
+              To deliver world-class sound and lighting solutions that elevate every event into an unforgettable experience.
+            </p>
           </div>
 
-          <h1 style={{
-            fontSize: "2.5rem",
-            fontWeight: "400",
-            color: "#fff",
-            marginBottom: "1.5rem",
-            lineHeight: "1.1",
-          }}>
-            Where Sound<br/>Meets Light
-          </h1>
-
-          {/* Glowing Cosmic Orb */}
+          {/* Vision Card */}
           <div style={{
-            width: "280px",
-            height: "280px",
-            margin: "0 auto",
-            borderRadius: "50%",
-            position: "relative",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            background: "rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            borderRadius: "24px",
+            padding: "2.5rem",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-8px)";
+            e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
           }}>
-            {/* Outer glow */}
             <div style={{
-              position: "absolute",
-              inset: "-20px",
+              width: "64px",
+              height: "64px",
               borderRadius: "50%",
-              background: "radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%)",
-              animation: "pulse 4s ease-in-out infinite",
-            }} />
-
-            {/* Main orb */}
-            <div style={{
-              width: "100%",
-              height: "100%",
-              borderRadius: "50%",
-              background: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%)",
-              border: "2px solid rgba(255, 255, 255, 0.2)",
+              background: "rgba(42, 76, 255, 0.2)",
+              border: "1px solid rgba(42, 76, 255, 0.5)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              position: "relative",
-              overflow: "hidden",
-              boxShadow: "0 0 60px rgba(42, 76, 255, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.2)",
+              marginBottom: "1.5rem",
             }}>
-              {/* Cosmic swirl */}
-              <div style={{
-                position: "absolute",
-                inset: 0,
-                borderRadius: "50%",
-                background: "conic-gradient(from 0deg, transparent 0%, rgba(42, 76, 255, 0.5) 25%, rgba(42, 76, 255, 0.5) 50%, rgba(42, 76, 255, 0.5) 75%, transparent 100%)",
-                animation: "rotate 20s linear infinite",
-              }} />
-
-              {/* Binary code ring */}
-              <svg width="100%" height="100%" viewBox="0 0 280 280" style={{ position: "absolute" }}>
-                <defs>
-                  <path id="circlePath" d="M 140, 140 m -110, 0 a 110,110 0 1,1 220,0 a 110,110 0 1,1 -220,0" />
-                </defs>
-                <text fill="rgba(255, 255, 255, 0.4)" fontSize="9" fontFamily="monospace" letterSpacing="2">
-                  <textPath href="#circlePath">
-                    1001 1001010110 010 001 1001 1101 0110 1001
-                  </textPath>
-                </text>
-              </svg>
-
-              {/* Logo */}
-              <img 
-                src="/gallery-images/logoo.png" 
-                alt="Sound Light Logo"
-                style={{
-                  width: "140px",
-                  height: "auto",
-                  filter: "brightness(0) invert(1) drop-shadow(0 0 30px rgba(255, 255, 255, 0.9))",
-                  position: "relative",
-                  zIndex: 2,
-                  animation: "float 6s ease-in-out infinite",
-                }}
-              />
-
-              {/* Sparkles */}
-              {[...Array(8)].map((_, i) => (
-                <div
-                  key={i}
-                  style={{
-                    position: "absolute",
-                    width: "3px",
-                    height: "3px",
-                    borderRadius: "50%",
-                    background: "#fff",
-                    top: `${20 + Math.random() * 60}%`,
-                    left: `${20 + Math.random() * 60}%`,
-                    opacity: 0.7,
-                    animation: `twinkle ${2 + Math.random() * 2}s ease-in-out infinite ${Math.random() * 2}s`,
-                  }}
-                />
-              ))}
+              <Lightbulb size={32} color="#2A4CFF" strokeWidth={2} />
             </div>
-          </div>
-
-          <style>{`
-            @keyframes pulse {
-              0%, 100% { opacity: 0.6; transform: scale(1); }
-              50% { opacity: 1; transform: scale(1.05); }
-            }
-            @keyframes rotate {
-              from { transform: rotate(0deg); }
-              to { transform: rotate(360deg); }
-            }
-            @keyframes float {
-              0%, 100% { transform: translateY(0px); }
-              50% { transform: translateY(-8px); }
-            }
-            @keyframes twinkle {
-              0%, 100% { opacity: 0.3; }
-              50% { opacity: 1; }
-            }
-          `}</style>
-        </div>
-
-        {/* Top Right - Music Icon */}
-        <div 
-          style={{
-            position: "absolute",
-            right: "0",
-            top: "0",
-            width: "145px",
-            height: "130px",
-            background: "rgba(35, 40, 65, 0.8)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(80, 80, 120, 0.3)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 5,
-          }}
-        >
-          <div style={{
-            width: "64px",
-            height: "64px",
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-            <Music size={32} color="#fff" />
-          </div>
-        </div>
-
-        {/* Right - Events Stats */}
-        <div 
-          style={{
-            position: "absolute",
-            right: "0",
-            top: "150px",
-            width: "145px",
-            height: "200px",
-            background: "rgba(35, 40, 65, 0.8)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(80, 80, 120, 0.3)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            zIndex: 5,
-          }}
-        >
-          <h2 style={{
-            fontSize: "4rem",
-            fontWeight: "300",
-            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            marginBottom: "0.5rem",
-            lineHeight: "1",
-          }}>
-            500+
-          </h2>
-          
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-          }}>
-            <div style={{
-              width: "20px",
-              height: "1px",
-              background: "linear-gradient(to right, transparent, rgba(42, 76, 255, 0.7))",
-            }} />
-            <p style={{
-              fontSize: "0.7rem",
-              color: "rgba(255, 255, 255, 0.8)",
-            }}>
-              events powered
-            </p>
-            <div style={{
-              width: "20px",
-              height: "1px",
-              background: "linear-gradient(to left, transparent, rgba(42, 76, 255, 0.7))",
-            }} />
-          </div>
-        </div>
-
-        {/* Left - Happy Clients */}
-        <div 
-          style={{
-            position: "absolute",
-            left: "0",
-            top: "280px",
-            width: "145px",
-            height: "180px",
-            background: "rgba(35, 40, 65, 0.8)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(80, 80, 120, 0.3)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            zIndex: 5,
-          }}
-        >
-          <div>
-            <h2 style={{
-              fontSize: "2.5rem",
-              fontWeight: "300",
-              background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              marginBottom: "0.5rem",
-              lineHeight: "1",
-            }}>
-              200+
-            </h2>
-            <p style={{
-              fontSize: "0.75rem",
-              color: "rgba(255, 255, 255, 0.8)",
+            
+            <h3 style={{
+              fontSize: "1.5rem",
+              fontWeight: "600",
+              color: "#fff",
               marginBottom: "1rem",
             }}>
-              happy clients
-            </p>
-
-            <div style={{ display: "flex", gap: "0.25rem" }}>
-              <div style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-                border: "2px solid rgba(35, 40, 65, 0.9)",
-              }} />
-              <div style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                background: "linear-gradient(135deg, #5B6FE8, #7C3AED)",
-                border: "2px solid rgba(35, 40, 65, 0.9)",
-                marginLeft: "-12px",
-              }} />
-              <div style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-                border: "2px solid rgba(35, 40, 65, 0.9)",
-                marginLeft: "-12px",
-              }} />
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Left - Professional DJs */}
-        <div 
-          style={{
-            position: "absolute",
-            left: "165px",
-            bottom: "80px",
-            width: "190px",
-            height: "160px",
-            background: "rgba(35, 40, 65, 0.8)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(80, 80, 120, 0.3)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            zIndex: 1,
-          }}
-        >
-          <div style={{
-            width: "48px",
-            height: "48px",
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-            <Music size={24} color="#fff" />
-          </div>
-
-          <div>
-            <h3 style={{
-              fontSize: "0.95rem",
-              fontWeight: "400",
-              color: "#fff",
-              marginBottom: "0.5rem",
-            }}>
-              Professional DJs
+              Our Vision
             </h3>
+            
             <p style={{
-              fontSize: "0.7rem",
+              fontSize: "1rem",
               color: "rgba(255, 255, 255, 0.7)",
-              lineHeight: "1.4",
+              lineHeight: "1.6",
             }}>
-              Top-tier talent for unforgettable experiences
+              To be Zimbabwe's leading provider of premium audio-visual services, setting the standard for excellence in event production.
             </p>
           </div>
-        </div>
 
-        {/* Bottom Right - Lighting Design */}
-        <div 
-          style={{
-            position: "absolute",
-            right: "165px",
-            bottom: "80px",
-            width: "190px",
-            height: "160px",
-            background: "rgba(35, 40, 65, 0.8)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(80, 80, 120, 0.3)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            zIndex: 1,
-          }}
-        >
+          {/* Values Card */}
           <div style={{
-            width: "48px",
-            height: "48px",
-            borderRadius: "50%",
-            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-            <Lightbulb size={24} color="#fff" />
-          </div>
-
-          <div>
-            <h3 style={{
-              fontSize: "0.95rem",
-              fontWeight: "400",
-              color: "#fff",
-              marginBottom: "0.5rem",
-            }}>
-              Lighting Design
-            </h3>
-            <p style={{
-              fontSize: "0.7rem",
-              color: "rgba(255, 255, 255, 0.7)",
-              lineHeight: "1.4",
-            }}>
-              Stunning visuals that transform spaces
-            </p>
-          </div>
-        </div>
-
-        {/* Bottom Right - Event Types */}
-        <div 
-          style={{
-            position: "absolute",
-            right: "0",
-            bottom: "0",
-            width: "145px",
-            height: "240px",
-            background: "rgba(35, 40, 65, 0.8)",
+            background: "rgba(255, 255, 255, 0.05)",
             backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(80, 80, 120, 0.3)",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            zIndex: 5,
+            WebkitBackdropFilter: "blur(20px)",
+            borderRadius: "24px",
+            padding: "2.5rem",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            transition: "all 0.3s ease",
           }}
-        >
-          <div>
-            <h3 style={{
-              fontSize: "0.9rem",
-              fontWeight: "400",
-              color: "#fff",
-              marginBottom: "0.5rem",
-            }}>
-              Event Types
-            </h3>
-            <p style={{
-              fontSize: "0.65rem",
-              color: "rgba(255, 255, 255, 0.7)",
-              lineHeight: "1.4",
-              marginBottom: "1rem",
-            }}>
-              Corporate, Private & Social Events
-            </p>
-
-            <Badge 
-              style={{
-                background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-                color: "#fff",
-                padding: "0.4rem 0.8rem",
-                fontSize: "0.6rem",
-                fontWeight: "500",
-                border: "none",
-                borderRadius: "12px",
-              }}
-            >
-              Zimbabwe Based
-            </Badge>
-          </div>
-
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "0.5rem",
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-8px)";
+            e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
           }}>
             <div style={{
-              width: "40px",
-              height: "40px",
+              width: "64px",
+              height: "64px",
               borderRadius: "50%",
-              background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-            }} />
-            <div style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #5B6FE8, #7C3AED)",
-            }} />
-            <div style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-            }} />
-            <div style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #3B82F6, #60A5FA)",
-            }} />
-          </div>
-        </div>
-
-        {/* Bottom Left - Contact Button */}
-        <div 
-          style={{
-            position: "absolute",
-            left: "0",
-            bottom: "0",
-            width: "145px",
-            height: "140px",
-            background: "rgba(35, 40, 65, 0.8)",
-            backdropFilter: "blur(20px)",
-            borderRadius: "20px",
-            padding: "1.5rem",
-            border: "1px solid rgba(80, 80, 120, 0.3)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 5,
-          }}
-        >
-          <Button
-            style={{
-              background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
-              color: "#fff",
-              padding: "1rem 2rem",
-              fontSize: "0.85rem",
-              fontWeight: "500",
-              border: "none",
-              borderRadius: "24px",
+              background: "rgba(42, 76, 255, 0.2)",
+              border: "1px solid rgba(42, 76, 255, 0.5)",
               display: "flex",
               alignItems: "center",
-              gap: "0.5rem",
-              cursor: "pointer",
-              boxShadow: "0 8px 20px rgba(42, 76, 255, 0.4)",
+              justifyContent: "center",
+              marginBottom: "1.5rem",
+            }}>
+              <Heart size={32} color="#2A4CFF" strokeWidth={2} />
+            </div>
+            
+            <h3 style={{
+              fontSize: "1.5rem",
+              fontWeight: "600",
+              color: "#fff",
+              marginBottom: "1rem",
+            }}>
+              Our Values
+            </h3>
+            
+            <p style={{
+              fontSize: "1rem",
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "1.6",
+            }}>
+              Excellence, innovation, and customer satisfaction drive everything we do. We're passionate about creating magic.
+            </p>
+          </div>
+        </div>
+
+        {/* Feature Highlights */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "1.5rem",
+          marginBottom: "3rem"
+        }}>
+          
+          {[
+            { icon: Music, title: "Premium Equipment", desc: "State-of-the-art sound and lighting gear" },
+            { icon: Users, title: "Expert Team", desc: "Skilled professionals with years of experience" },
+            { icon: Award, title: "Proven Track Record", desc: "Hundreds of successful events delivered" },
+            { icon: Zap, title: "Quick Setup", desc: "Efficient installation and breakdown" }
+          ].map((item, index) => (
+            <div key={index} style={{
+              background: "rgba(0, 0, 0, 0.4)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              borderRadius: "20px",
+              padding: "2rem",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              transition: "all 0.3s ease",
             }}
-          >
-            <Users size={16} />
-            Contact Us
-          </Button>
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            }}>
+              <div style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "50%",
+                background: "rgba(42, 76, 255, 0.15)",
+                border: "1px solid rgba(42, 76, 255, 0.3)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: "1rem",
+              }}>
+                <item.icon size={28} color="#2A4CFF" strokeWidth={2} />
+              </div>
+              
+              <h4 style={{
+                fontSize: "1.1rem",
+                fontWeight: "600",
+                color: "#fff",
+                marginBottom: "0.5rem",
+              }}>
+                {item.title}
+              </h4>
+              
+              <p style={{
+                fontSize: "0.9rem",
+                color: "rgba(255, 255, 255, 0.6)",
+                lineHeight: "1.5",
+              }}>
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Company Info Section */}
+        <div style={{
+          background: "rgba(42, 76, 255, 0.1)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderRadius: "24px",
+          padding: "clamp(2rem, 5vw, 3rem)",
+          border: "1px solid rgba(42, 76, 255, 0.3)",
+          textAlign: "center"
+        }}>
+          <h2 style={{
+            fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+            fontWeight: "600",
+            color: "#fff",
+            marginBottom: "1.5rem",
+          }}>
+            Why Choose Sound Light?
+          </h2>
+          
+          <p style={{
+            fontSize: "clamp(1rem, 2.5vw, 1.1rem)",
+            color: "rgba(255, 255, 255, 0.8)",
+            lineHeight: "1.8",
+            maxWidth: "800px",
+            margin: "0 auto 2rem",
+          }}>
+            We combine cutting-edge technology with creative expertise to transform your vision into reality. 
+            From intimate gatherings to large-scale productions, our team ensures every detail is perfect. 
+            With premium equipment, professional service, and a passion for excellence, we make your events shine.
+          </p>
+
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "3rem",
+            flexWrap: "wrap",
+            marginTop: "2rem"
+          }}>
+            <div>
+              <div style={{
+                fontSize: "clamp(2rem, 5vw, 3rem)",
+                fontWeight: "700",
+                color: "#2A4CFF",
+                marginBottom: "0.5rem"
+              }}>500+</div>
+              <div style={{
+                fontSize: "1rem",
+                color: "rgba(255, 255, 255, 0.7)"
+              }}>Events Completed</div>
+            </div>
+            
+            <div>
+              <div style={{
+                fontSize: "clamp(2rem, 5vw, 3rem)",
+                fontWeight: "700",
+                color: "#2A4CFF",
+                marginBottom: "0.5rem"
+              }}>10+</div>
+              <div style={{
+                fontSize: "1rem",
+                color: "rgba(255, 255, 255, 0.7)"
+              }}>Years Experience</div>
+            </div>
+            
+            <div>
+              <div style={{
+                fontSize: "clamp(2rem, 5vw, 3rem)",
+                fontWeight: "700",
+                color: "#2A4CFF",
+                marginBottom: "0.5rem"
+              }}>100%</div>
+              <div style={{
+                fontSize: "1rem",
+                color: "rgba(255, 255, 255, 0.7)"
+              }}>Client Satisfaction</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

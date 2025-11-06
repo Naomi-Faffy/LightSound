@@ -198,6 +198,7 @@ body {
         flex-direction: column;
         cursor: pointer;
         gap: 5px;
+        z-index: 1000;
     }
     
     .hamburger span {
@@ -205,6 +206,13 @@ body {
         height: 3px;
         background: var(--pearl-white);
         transition: 0.3s;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 100vh;
+        min-height: -webkit-fill-available;
     }
 }
 
@@ -306,7 +314,8 @@ body {
 
 @media (max-width: 768px) {
     .hero {
-        height: 80vh;
+        height: 100vh;
+        min-height: -webkit-fill-available;
     }
     
     .hero-content {
@@ -330,6 +339,13 @@ body {
     .cta-button {
         width: 100%;
         text-align: center;
+    }
+    
+    .nav-menu {
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 
@@ -425,7 +441,7 @@ body {
 .cta-button.primary {
     background: transparent;
     color: var(--cool-white);
-    border-color: var(--cool-white);
+    border-color: #2A4CFF;
 }
 
 .cta-button.primary:hover,

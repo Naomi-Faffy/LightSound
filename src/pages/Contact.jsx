@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Clock, Instagram, Twitter, Send, ArrowRight, Calendar } from "lucide-react";
+import { Phone, Mail, MapPin, Send, ArrowRight } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -328,258 +328,32 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Form and Additional Info Grid */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "2rem",
-          marginBottom: "3rem",
-        }}>
-          {/* Contact Form Card - Large */}
-          <div 
-            style={{
-              gridColumn: "span 2",
-              background: "rgba(0, 0, 0, 0.4)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "3rem",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              position: "relative",
-              overflow: "hidden",
-              transition: "all 0.3s ease",
-            }}
-          >
-            <div style={{
-              position: "absolute",
-              top: "-50%",
-              right: "-20%",
-              width: "60%",
-              height: "100%",
-              background: "radial-gradient(circle, rgba(42, 76, 255, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
+        {/* Contact Form Card - Full Width */}
+        <div 
+          style={{
+            background: "rgba(0, 0, 0, 0.4)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            borderRadius: "24px",
+            padding: "clamp(2rem, 5vw, 3rem)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            position: "relative",
+            overflow: "hidden",
+            transition: "all 0.3s ease",
+          }}
+        >
+          <div style={{
+            position: "absolute",
+            top: "-50%",
+            right: "-20%",
+            width: "60%",
+            height: "100%",
+            background: "radial-gradient(circle, rgba(42, 76, 255, 0.1) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }} />
 
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <div style={{ marginBottom: "2rem" }}>
-                <div style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "rgba(255, 255, 255, 0.08)",
-                  backdropFilter: "blur(10px)",
-                  WebkitBackdropFilter: "blur(10px)",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: "1.5rem",
-                  boxShadow: "0 8px 24px rgba(255, 255, 255, 0.05)",
-                }}>
-                  <Send size={28} color="#2A4CFF" strokeWidth={2} />
-                </div>
-
-                <h3 style={{
-                  fontSize: "2rem",
-                  fontWeight: "400",
-                  color: "#fff",
-                  marginBottom: "0.75rem",
-                }}>
-                  Send us a message
-                </h3>
-                <p style={{
-                  fontSize: "1rem",
-                  color: "rgba(255, 255, 255, 0.6)",
-                }}>
-                  Fill out the form below and we'll get back to you shortly
-                </p>
-              </div>
-
-              <form style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      required
-                      style={{
-                        width: "100%",
-                        padding: "1rem 1.25rem",
-                        background: "rgba(255, 255, 255, 0.05)",
-                        border: "1px solid rgba(255, 255, 255, 0.1)",
-                        borderRadius: "12px",
-                        color: "#fff",
-                        fontSize: "1rem",
-                        outline: "none",
-                        transition: "all 0.3s ease",
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.background = "rgba(255, 255, 255, 0.08)";
-                        e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                        e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      required
-                      style={{
-                        width: "100%",
-                        padding: "1rem 1.25rem",
-                        background: "rgba(255, 255, 255, 0.05)",
-                        border: "1px solid rgba(255, 255, 255, 0.1)",
-                        borderRadius: "12px",
-                        color: "#fff",
-                        fontSize: "1rem",
-                        outline: "none",
-                        transition: "all 0.3s ease",
-                      }}
-                      onFocus={(e) => {
-                        e.target.style.background = "rgba(255, 255, 255, 0.08)";
-                        e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                        e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                      }}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Event Type"
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "1rem 1.25rem",
-                      background: "rgba(255, 255, 255, 0.05)",
-                      border: "1px solid rgba(255, 255, 255, 0.1)",
-                      borderRadius: "12px",
-                      color: "#fff",
-                      fontSize: "1rem",
-                      outline: "none",
-                      transition: "all 0.3s ease",
-                    }}
-                    onFocus={(e) => {
-                      e.target.style.background = "rgba(255, 255, 255, 0.08)";
-                      e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                      e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <textarea
-                    placeholder="Tell us about your needs..."
-                    rows="5"
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "1rem 1.25rem",
-                      background: "rgba(255, 255, 255, 0.05)",
-                      border: "1px solid rgba(255, 255, 255, 0.1)",
-                      borderRadius: "12px",
-                      color: "#fff",
-                      fontSize: "1rem",
-                      outline: "none",
-                      resize: "vertical",
-                      fontFamily: "inherit",
-                      transition: "all 0.3s ease",
-                    }}
-                    onFocus={(e) => {
-                      e.target.style.background = "rgba(255, 255, 255, 0.08)";
-                      e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.background = "rgba(255, 255, 255, 0.05)";
-                      e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                    }}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  style={{
-                    padding: "1.25rem 2.5rem",
-                    background: "#2A4CFF",
-                    border: "none",
-                    borderRadius: "50px",
-                    color: "#FFFFFF",
-                    fontSize: "1rem",
-                    fontWeight: "600",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "0.75rem",
-                    transition: "all 0.3s ease",
-                    boxShadow: "0 8px 24px rgba(42, 76, 255, 0.3)",
-                    width: "fit-content",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow = "0 12px 32px rgba(42, 76, 255, 0.4)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "0 8px 24px rgba(42, 76, 255, 0.3)";
-                  }}
-                >
-                  <span>Send Message</span>
-                  <ArrowRight size={20} strokeWidth={2.5} />
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Business Hours Card */}
-          <div 
-            style={{
-              background: "rgba(0, 0, 0, 0.4)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2.5rem",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              position: "relative",
-              overflow: "hidden",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.05)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            <div style={{
-              position: "absolute",
-              bottom: "-30%",
-              right: "-20%",
-              width: "80%",
-              height: "80%",
-              background: "radial-gradient(circle, rgba(42, 76, 255, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
-            <div style={{ position: "relative", zIndex: 1 }}>
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <div style={{ marginBottom: "2rem" }}>
               <div style={{
                 width: "56px",
                 height: "56px",
@@ -594,140 +368,172 @@ export default function Contact() {
                 marginBottom: "1.5rem",
                 boxShadow: "0 8px 24px rgba(255, 255, 255, 0.05)",
               }}>
-                <Clock size={28} color="#2A4CFF" strokeWidth={2} />
+                <Send size={28} color="#2A4CFF" strokeWidth={2} />
               </div>
-              
+
               <h3 style={{
-                fontSize: "1.5rem",
-                fontWeight: "400",
-                color: "#fff",
-                marginBottom: "1rem",
-              }}>
-                Business Hours
-              </h3>
-            </div>
-
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Monday - Friday</span>
-                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>8AM - 8PM</span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Saturday</span>
-                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>8AM - 8PM</span>
-                </div>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Sunday</span>
-                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>8AM - 8PM</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Schedule a Call CTA */}
-          <div 
-            style={{
-              background: "rgba(0, 0, 0, 0.4)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2.5rem",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              position: "relative",
-              overflow: "hidden",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.05)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            <div style={{
-              position: "absolute",
-              top: "-30%",
-              left: "-20%",
-              width: "80%",
-              height: "80%",
-              background: "radial-gradient(circle, rgba(42, 76, 255, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-
-            <div style={{ position: "relative", zIndex: 1 }}>
-              <h3 style={{
-                fontSize: "1.5rem",
+                fontSize: "clamp(1.5rem, 4vw, 2rem)",
                 fontWeight: "400",
                 color: "#fff",
                 marginBottom: "0.75rem",
               }}>
-                Schedule a call
+                Send us a message
               </h3>
               <p style={{
-                fontSize: "0.95rem",
+                fontSize: "clamp(0.9rem, 2vw, 1rem)",
                 color: "rgba(255, 255, 255, 0.6)",
-                marginBottom: "2rem",
-                lineHeight: "1.6",
               }}>
-                Book a consultation with our team to discuss your needs in detail
+                Fill out the form below and we'll get back to you shortly
               </p>
+            </div>
+
+            <form style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.5rem" }}>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "1rem 1.25rem",
+                      background: "rgba(255, 255, 255, 0.05)",
+                      border: "1px solid rgba(255, 255, 255, 0.1)",
+                      borderRadius: "12px",
+                      color: "#fff",
+                      fontSize: "1rem",
+                      outline: "none",
+                      transition: "all 0.3s ease",
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.background = "rgba(255, 255, 255, 0.08)";
+                      e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.background = "rgba(255, 255, 255, 0.05)";
+                      e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                    }}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "1rem 1.25rem",
+                      background: "rgba(255, 255, 255, 0.05)",
+                      border: "1px solid rgba(255, 255, 255, 0.1)",
+                      borderRadius: "12px",
+                      color: "#fff",
+                      fontSize: "1rem",
+                      outline: "none",
+                      transition: "all 0.3s ease",
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.background = "rgba(255, 255, 255, 0.08)";
+                      e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.background = "rgba(255, 255, 255, 0.05)";
+                      e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  placeholder="Event Type"
+                  required
+                  style={{
+                    width: "100%",
+                    padding: "1rem 1.25rem",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    borderRadius: "12px",
+                    color: "#fff",
+                    fontSize: "1rem",
+                    outline: "none",
+                    transition: "all 0.3s ease",
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.background = "rgba(255, 255, 255, 0.08)";
+                    e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.background = "rgba(255, 255, 255, 0.05)";
+                    e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                  }}
+                />
+              </div>
+
+              <div>
+                <textarea
+                  placeholder="Tell us about your needs..."
+                  rows="5"
+                  required
+                  style={{
+                    width: "100%",
+                    padding: "1rem 1.25rem",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    borderRadius: "12px",
+                    color: "#fff",
+                    fontSize: "1rem",
+                    outline: "none",
+                    resize: "vertical",
+                    fontFamily: "inherit",
+                    transition: "all 0.3s ease",
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.background = "rgba(255, 255, 255, 0.08)";
+                    e.target.style.borderColor = "rgba(42, 76, 255, 0.4)";
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.background = "rgba(255, 255, 255, 0.05)";
+                    e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                  }}
+                />
+              </div>
 
               <button
+                type="submit"
                 style={{
-                  padding: "1rem 2rem",
-                  background: "transparent",
-                  border: "2px solid rgba(255, 255, 255, 0.3)",
+                  padding: "1.25rem 2.5rem",
+                  background: "#2A4CFF",
+                  border: "none",
                   borderRadius: "50px",
-                  color: "#fff",
-                  fontSize: "0.95rem",
-                  fontWeight: "500",
+                  color: "#FFFFFF",
+                  fontSize: "1rem",
+                  fontWeight: "600",
                   cursor: "pointer",
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "center",
                   gap: "0.75rem",
                   transition: "all 0.3s ease",
-                  width: "100%",
-                  justifyContent: "center",
+                  boxShadow: "0 8px 24px rgba(42, 76, 255, 0.3)",
+                  width: "fit-content",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
-                  e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.5)";
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 12px 32px rgba(42, 76, 255, 0.4)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.3)";
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 8px 24px rgba(42, 76, 255, 0.3)";
                 }}
               >
-                <Calendar size={20} strokeWidth={2} />
-                <span>Book a Call</span>
-                <ArrowRight size={20} strokeWidth={2} />
+                <span>Send Message</span>
+                <ArrowRight size={20} strokeWidth={2.5} />
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 1200px) {
-          div[style*="gridColumn: span 2"] {
-            grid-column: span 1 !important;
-          }
-        }
-        
-        @media (max-width: 768px) {
-          form > div[style*="gridTemplateColumns"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </div>
   );
 }

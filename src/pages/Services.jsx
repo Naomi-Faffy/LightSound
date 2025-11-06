@@ -47,8 +47,8 @@ export default function Services() {
       description: "Professional stage design and setup for flawless performances. Complete with backdrops, platforms, and technical infrastructure for seamless event execution.",
       collection: "Event Production",
       imageUrl: "/gallery-images/Stage Setup.jpg",
-      gradientFrom: "#2A4CFF",
-      gradientTo: "#000000",
+      gradientFrom: "#FFFFFF",
+      gradientTo: "#2A4CFF",
     },
   ];
 

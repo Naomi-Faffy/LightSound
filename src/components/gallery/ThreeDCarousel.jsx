@@ -97,10 +97,10 @@ export default function ThreeDCarousel({ images }) {
   };
 
   return (
-    <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+    <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1rem" }}>
       <div style={{ 
         position: "relative", 
-        height: "500px", 
+        height: "clamp(300px, 60vw, 500px)", 
         marginBottom: "2rem",
         display: "flex",
         alignItems: "center",
@@ -160,7 +160,7 @@ export default function ThreeDCarousel({ images }) {
 
         <div style={{
           position: "absolute",
-          right: "2rem",
+          right: "clamp(0.5rem, 3vw, 2rem)",
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 30
@@ -188,7 +188,7 @@ export default function ThreeDCarousel({ images }) {
 
         <div style={{
           position: "absolute",
-          left: "2rem",
+          left: "clamp(0.5rem, 3vw, 2rem)",
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 30
@@ -221,13 +221,13 @@ export default function ThreeDCarousel({ images }) {
         alignItems: "center",
         justifyContent: "center",
         marginTop: "3rem",
-        padding: "0 2rem"
+        padding: "0 1rem"
       }}>
-        <div style={{
+        <div className="music-bar-responsive" style={{
           display: "flex",
           alignItems: "center",
-          gap: "2rem",
-          padding: "1.25rem 3rem",
+          gap: "clamp(0.5rem, 3vw, 2rem)",
+          padding: "clamp(1rem, 3vw, 1.25rem) clamp(1.5rem, 5vw, 3rem)",
           borderRadius: "9999px",
           background: "rgba(255, 255, 255, 0.05)",
           backdropFilter: "blur(40px)",
@@ -236,13 +236,15 @@ export default function ThreeDCarousel({ images }) {
           boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
           maxWidth: "900px",
           width: "100%",
-          minHeight: "90px"
+          minHeight: "90px",
+          flexWrap: "wrap",
+          justifyContent: "center"
         }}>
           {/* Album Art Thumbnail */}
           <div style={{
             position: "relative",
-            width: "70px",
-            height: "70px",
+            width: "clamp(50px, 15vw, 70px)",
+            height: "clamp(50px, 15vw, 70px)",
             borderRadius: "14px",
             overflow: "hidden",
             flexShrink: 0,
@@ -263,13 +265,13 @@ export default function ThreeDCarousel({ images }) {
           {/* Song Info */}
           <div style={{
             flex: 1,
-            minWidth: 0,
+            minWidth: "120px",
             display: "flex",
             flexDirection: "column",
             gap: "0.35rem"
           }}>
             <div style={{
-              fontSize: "1.1rem",
+              fontSize: "clamp(0.9rem, 2.5vw, 1.1rem)",
               fontWeight: "700",
               whiteSpace: "nowrap",
               overflow: "hidden",
@@ -281,7 +283,7 @@ export default function ThreeDCarousel({ images }) {
             </div>
             <div style={{
               color: "rgba(255, 255, 255, 0.7)",
-              fontSize: "0.9rem",
+              fontSize: "clamp(0.75rem, 2vw, 0.9rem)",
               fontWeight: "500",
               whiteSpace: "nowrap",
               overflow: "hidden",
@@ -292,13 +294,13 @@ export default function ThreeDCarousel({ images }) {
           </div>
 
           {/* Playback Controls */}
-          <div style={{
+          <div className="playback-controls" style={{
             display: "flex",
             alignItems: "center",
-            gap: "0.75rem",
+            gap: "clamp(0.5rem, 2vw, 0.75rem)",
             flexShrink: 0,
-            paddingLeft: "1.5rem",
-            paddingRight: "1.5rem"
+            paddingLeft: "clamp(0.5rem, 3vw, 1.5rem)",
+            paddingRight: "clamp(0.5rem, 3vw, 1.5rem)"
           }}>
             {/* Previous Button */}
             <Button
@@ -306,8 +308,8 @@ export default function ThreeDCarousel({ images }) {
               variant="ghost"
               size="icon"
               style={{
-                width: "3rem",
-                height: "3rem",
+                width: "clamp(2.5rem, 8vw, 3rem)",
+                height: "clamp(2.5rem, 8vw, 3rem)",
                 borderRadius: "9999px",
                 background: "rgba(255, 255, 255, 0.08)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -332,8 +334,8 @@ export default function ThreeDCarousel({ images }) {
               variant="ghost"
               size="icon"
               style={{
-                width: "3.5rem",
-                height: "3.5rem",
+                width: "clamp(3rem, 10vw, 3.5rem)",
+                height: "clamp(3rem, 10vw, 3.5rem)",
                 borderRadius: "9999px",
                 background: "#2A4CFF",
                 color: "#FFFFFF",
@@ -360,8 +362,8 @@ export default function ThreeDCarousel({ images }) {
               variant="ghost"
               size="icon"
               style={{
-                width: "3rem",
-                height: "3rem",
+                width: "clamp(2.5rem, 8vw, 3rem)",
+                height: "clamp(2.5rem, 8vw, 3rem)",
                 borderRadius: "9999px",
                 background: "rgba(255, 255, 255, 0.08)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -382,12 +384,12 @@ export default function ThreeDCarousel({ images }) {
           </div>
 
           {/* Additional Controls */}
-          <div style={{
+          <div className="additional-controls" style={{
             display: "flex",
             alignItems: "center",
-            gap: "1rem",
+            gap: "clamp(0.5rem, 2vw, 1rem)",
             flexShrink: 0,
-            paddingLeft: "1.5rem",
+            paddingLeft: "clamp(0.5rem, 3vw, 1.5rem)",
             borderLeft: "1px solid rgba(255, 255, 255, 0.2)"
           }}>
             {/* Comments/Info Icon */}
@@ -395,8 +397,8 @@ export default function ThreeDCarousel({ images }) {
               variant="ghost"
               size="icon"
               style={{
-                width: "2.75rem",
-                height: "2.75rem",
+                width: "clamp(2.25rem, 7vw, 2.75rem)",
+                height: "clamp(2.25rem, 7vw, 2.75rem)",
                 borderRadius: "9999px",
                 background: "rgba(255, 255, 255, 0.08)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -424,8 +426,8 @@ export default function ThreeDCarousel({ images }) {
               variant="ghost"
               size="icon"
               style={{
-                width: "2.75rem",
-                height: "2.75rem",
+                width: "clamp(2.25rem, 7vw, 2.75rem)",
+                height: "clamp(2.25rem, 7vw, 2.75rem)",
                 borderRadius: "9999px",
                 background: "rgba(255, 255, 255, 0.08)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -458,8 +460,8 @@ export default function ThreeDCarousel({ images }) {
               variant="ghost"
               size="icon"
               style={{
-                width: "2.75rem",
-                height: "2.75rem",
+                width: "clamp(2.25rem, 7vw, 2.75rem)",
+                height: "clamp(2.25rem, 7vw, 2.75rem)",
                 borderRadius: "9999px",
                 background: "rgba(255, 255, 255, 0.08)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -489,8 +491,8 @@ export default function ThreeDCarousel({ images }) {
               variant="ghost"
               size="icon"
               style={{
-                width: "2.75rem",
-                height: "2.75rem",
+                width: "clamp(2.25rem, 7vw, 2.75rem)",
+                height: "clamp(2.25rem, 7vw, 2.75rem)",
                 borderRadius: "9999px",
                 background: "rgba(255, 255, 255, 0.08)",
                 border: "1px solid rgba(255, 255, 255, 0.15)",
@@ -515,6 +517,32 @@ export default function ThreeDCarousel({ images }) {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .music-bar-responsive {
+            gap: 0.75rem !important;
+            padding: 1rem 1.5rem !important;
+            min-height: auto !important;
+          }
+          
+          .additional-controls {
+            display: none !important;
+          }
+          
+          .playback-controls {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .music-bar-responsive {
+            gap: 0.5rem !important;
+            padding: 0.75rem 1rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
