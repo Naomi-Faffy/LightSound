@@ -99,9 +99,6 @@ export default function App() {
               <a href="#contact">Contact</a>
             </nav>
 
-            <div className="footer-social">
-              <a href="https://www.threads.com/@soundlight.zw?xmt=AQF0llt6nKMpZ2_3YwyhVxkbumThNJCT0fvGvYy1V3-iHYE" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i className="fab fa-threads"></i></a>
-            </div>
           </div>
 
           <div className="footer-bottom">

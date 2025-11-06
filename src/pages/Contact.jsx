@@ -61,7 +61,7 @@ export default function Contact() {
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "4rem" }}>
           <h1 style={{
-            fontSize: "4rem",
+            fontSize: "clamp(2.5rem, 8vw, 4rem)",
             fontWeight: "400",
             color: "#fff",
             marginBottom: "1rem",
@@ -71,7 +71,7 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p style={{
-            fontSize: "1.25rem",
+            fontSize: "clamp(1rem, 3vw, 1.25rem)",
             color: "rgba(255, 255, 255, 0.7)",
             maxWidth: "600px",
             margin: "0 auto",
@@ -83,8 +83,7 @@ export default function Contact() {
         {/* Contact Cards Grid */}
         <div style={{ 
           display: "grid", 
-          gridTemplateColumns: "repeat(12, 1fr)",
-          gridTemplateRows: "repeat(6, minmax(120px, auto))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "1.5rem",
           marginBottom: "3rem",
         }}>
@@ -92,29 +91,28 @@ export default function Contact() {
           {/* Phone Card */}
           <div 
             style={{
-              gridColumn: "1 / 5",
-              gridRow: "1 / 3",
-              background: "rgba(255, 255, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              minHeight: "250px",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.1)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.05)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -140,15 +138,15 @@ export default function Contact() {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "rgba(255, 255, 255, 0.15)",
+                background: "rgba(255, 255, 255, 0.08)",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: "1.5rem",
-                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.1)",
+                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.05)",
               }}>
                 <Phone size={32} color="#2A4CFF" strokeWidth={2} />
               </div>
@@ -184,29 +182,28 @@ export default function Contact() {
           {/* Email Card */}
           <div 
             style={{
-              gridColumn: "5 / 9",
-              gridRow: "1 / 3",
-              background: "rgba(255, 255, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              minHeight: "250px",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.1)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.05)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -215,15 +212,15 @@ export default function Contact() {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "rgba(255, 255, 255, 0.15)",
+                background: "rgba(255, 255, 255, 0.08)",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: "1.5rem",
-                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.1)",
+                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.05)",
               }}>
                 <Mail size={32} color="#2A4CFF" strokeWidth={2} />
               </div>
@@ -259,29 +256,28 @@ export default function Contact() {
           {/* Location Card */}
           <div 
             style={{
-              gridColumn: "9 / 13",
-              gridRow: "1 / 3",
-              background: "rgba(255, 255, 255, 0.08)",
+              background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(255, 255, 255, 0.2)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              minHeight: "250px",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.1)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.05)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -290,15 +286,15 @@ export default function Contact() {
                 width: "64px",
                 height: "64px",
                 borderRadius: "50%",
-                background: "rgba(255, 255, 255, 0.15)",
+                background: "rgba(255, 255, 255, 0.08)",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: "1.5rem",
-                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.1)",
+                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.05)",
               }}>
                 <MapPin size={32} color="#2A4CFF" strokeWidth={2} />
               </div>
@@ -330,18 +326,25 @@ export default function Contact() {
               </p>
             </div>
           </div>
+        </div>
 
+        {/* Form and Additional Info Grid */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: "2rem",
+          marginBottom: "3rem",
+        }}>
           {/* Contact Form Card - Large */}
           <div 
             style={{
-              gridColumn: "1 / 9",
-              gridRow: "3 / 7",
-              background: "rgba(0, 0, 0, 0.6)",
+              gridColumn: "span 2",
+              background: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "3rem",
-              border: "1px solid rgba(42, 76, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
               position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
@@ -363,14 +366,17 @@ export default function Contact() {
                   width: "56px",
                   height: "56px",
                   borderRadius: "50%",
-                  background: "#2A4CFF",
+                  background: "rgba(255, 255, 255, 0.08)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: "1.5rem",
-                  boxShadow: "0 8px 24px rgba(42, 76, 255, 0.3)",
+                  boxShadow: "0 8px 24px rgba(255, 255, 255, 0.05)",
                 }}>
-                  <Send size={28} color="#FFFFFF" strokeWidth={2} />
+                  <Send size={28} color="#2A4CFF" strokeWidth={2} />
                 </div>
 
                 <h3 style={{
@@ -390,7 +396,7 @@ export default function Contact() {
               </div>
 
               <form style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem" }}>
                   <div>
                     <input
                       type="text"
@@ -539,14 +545,12 @@ export default function Contact() {
           {/* Business Hours Card */}
           <div 
             style={{
-              gridColumn: "9 / 13",
-              gridRow: "3 / 5",
-              background: "rgba(0, 0, 0, 0.6)",
+              background: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(42, 76, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -556,12 +560,12 @@ export default function Contact() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(42, 76, 255, 0.15)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.05)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.3)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -580,14 +584,17 @@ export default function Contact() {
                 width: "56px",
                 height: "56px",
                 borderRadius: "50%",
-                background: "#2A4CFF",
+                background: "rgba(255, 255, 255, 0.08)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: "1.5rem",
-                boxShadow: "0 8px 24px rgba(42, 76, 255, 0.3)",
+                boxShadow: "0 8px 24px rgba(255, 255, 255, 0.05)",
               }}>
-                <Clock size={28} color="#FFFFFF" strokeWidth={2} />
+                <Clock size={28} color="#2A4CFF" strokeWidth={2} />
               </div>
               
               <h3 style={{
@@ -613,14 +620,12 @@ export default function Contact() {
           {/* Schedule a Call CTA */}
           <div 
             style={{
-              gridColumn: "9 / 13",
-              gridRow: "5 / 7",
-              background: "rgba(0, 0, 0, 0.6)",
+              background: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               borderRadius: "24px",
               padding: "2.5rem",
-              border: "1px solid rgba(42, 76, 255, 0.3)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
@@ -630,12 +635,12 @@ export default function Contact() {
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-8px)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.5)";
-              e.currentTarget.style.boxShadow = "0 20px 40px rgba(42, 76, 255, 0.15)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+              e.currentTarget.style.boxShadow = "0 20px 40px rgba(255, 255, 255, 0.05)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(42, 76, 255, 0.3)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
               e.currentTarget.style.boxShadow = "none";
             }}
           >
@@ -700,76 +705,21 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-        {/* Social Media Section */}
-        <div style={{
-          background: "rgba(0, 0, 0, 0.4)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          borderRadius: "24px",
-          padding: "2.5rem 3rem",
-          border: "1px solid rgba(42, 76, 255, 0.3)",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "2rem",
-        }}>
-          <div>
-            <h3 style={{
-              fontSize: "1.5rem",
-              fontWeight: "400",
-              color: "#fff",
-              marginBottom: "0.5rem",
-            }}>
-              Follow us on social media
-            </h3>
-            <p style={{
-              fontSize: "0.95rem",
-              color: "rgba(255, 255, 255, 0.6)",
-            }}>
-              Stay updated with our latest news and offerings
-            </p>
-          </div>
-
-          <div style={{ display: "flex", gap: "1rem" }}>
-            {[
-              { Icon: Instagram, color: "#2A4CFF", href: "https://www.threads.com/@soundlight.zw?xmt=AQF0llt6nKMpZ2_3YwyhVxkbumThNJCT0fvGvYy1V3-iHYE" },
-            ].map(({ Icon, color, href }, i) => (
-              <a
-                key={i}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  width: "56px",
-                  height: "56px",
-                  borderRadius: "50%",
-                  background: "rgba(255, 255, 255, 0.05)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  transition: "all 0.3s ease",
-                  textDecoration: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = `${color}20`;
-                  e.currentTarget.style.borderColor = `${color}40`;
-                  e.currentTarget.style.transform = "translateY(-4px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
-                  e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                <Icon size={24} color={color} strokeWidth={2} />
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 1200px) {
+          div[style*="gridColumn: span 2"] {
+            grid-column: span 1 !important;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          form > div[style*="gridTemplateColumns"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

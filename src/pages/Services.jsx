@@ -76,7 +76,7 @@ export default function Services() {
 
       {/* Main Content */}
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem", padding: "0 1rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem", padding: "0 1rem" }} className="services-grid-responsive">
           {services.map((service, index) => (
             <div 
               key={index} 
@@ -290,6 +290,26 @@ export default function Services() {
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .services-grid-responsive {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+            padding: 0 0.5rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          h3 {
+            font-size: 1.25rem !important;
+          }
+          
+          p {
+            font-size: 0.7rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
