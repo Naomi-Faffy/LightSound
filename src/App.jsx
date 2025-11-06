@@ -85,24 +85,37 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-logo">
-              <img src="/gallery-images/logoo.png" alt="Sound Light" style={{height: '150px'}} />
-            </div>
-
-            <nav className="footer-nav">
-              <a href="#home">Home</a>
-              <a href="#services">Services</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
-            </nav>
-
-          </div>
-
-          <div className="footer-bottom">
-            <p>&copy; 2024 Sound Light by Mediatainment.zw™️. All rights reserved. | Privacy Policy | Terms of Service</p>
+      <footer className="footer" style={{
+        background: "linear-gradient(180deg, #000000 0%, #0a0e1f 50%, #000000 100%)",
+        padding: "3rem 2rem",
+        borderTop: "none",
+        margin: 0,
+        maxWidth: "100%",
+        borderRadius: 0
+      }}>
+        <div className="container" style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+          <div style={{
+            padding: "1.5rem 3rem",
+            borderRadius: "9999px",
+            background: "rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(40px)",
+            WebkitBackdropFilter: "blur(40px)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+            textAlign: "center"
+          }}>
+            <p style={{
+              color: "rgba(255, 255, 255, 0.8)",
+              fontSize: "0.9rem",
+              margin: 0,
+              fontWeight: "400"
+            }}>
+              &copy; 2024 Sound Light by Mediatainment.zw™️. All rights reserved. | Privacy Policy | Terms of Service
+            </p>
           </div>
         </div>
       </footer>

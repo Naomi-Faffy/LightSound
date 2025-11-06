@@ -610,7 +610,15 @@ export default function Contact() {
             <div style={{ position: "relative", zIndex: 1 }}>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Everyday</span>
+                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Monday - Friday</span>
+                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>8AM - 8PM</span>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Saturday</span>
+                  <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>8AM - 8PM</span>
+                </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span style={{ color: "rgba(255, 255, 255, 0.6)", fontSize: "0.95rem" }}>Sunday</span>
                   <span style={{ color: "#2A4CFF", fontSize: "0.95rem", fontWeight: "500" }}>8AM - 8PM</span>
                 </div>
               </div>

@@ -172,15 +172,15 @@ export default function ThreeDCarousel({ images }) {
               width: "3.5rem",
               height: "3.5rem",
               borderRadius: "9999px",
-              background: "rgba(255, 255, 255, 0.1)",
+              background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(40px)",
               WebkitBackdropFilter: "blur(40px)",
-              boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-              border: "1px solid rgba(42, 76, 255, 0.5)",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
               color: "#2A4CFF",
               transition: "all 0.3s"
             }}
-            className="hover:scale-110 hover:border-[#2A4CFF] hover:bg-white/20"
+            className="hover:scale-110 hover:border-[#2A4CFF] hover:bg-white/10"
           >
             <ChevronRight className="w-7 h-7" />
           </Button>
@@ -200,15 +200,15 @@ export default function ThreeDCarousel({ images }) {
               width: "3.5rem",
               height: "3.5rem",
               borderRadius: "9999px",
-              background: "rgba(255, 255, 255, 0.1)",
+              background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(40px)",
               WebkitBackdropFilter: "blur(40px)",
-              boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
-              border: "1px solid rgba(42, 76, 255, 0.5)",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
               color: "#2A4CFF",
               transition: "all 0.3s"
             }}
-            className="hover:scale-110 hover:border-[#2A4CFF] hover:bg-white/20"
+            className="hover:scale-110 hover:border-[#2A4CFF] hover:bg-white/10"
           >
             <ChevronLeft className="w-7 h-7" />
           </Button>
@@ -229,11 +229,11 @@ export default function ThreeDCarousel({ images }) {
           gap: "2rem",
           padding: "1.25rem 3rem",
           borderRadius: "9999px",
-          background: "rgba(255, 255, 255, 0.08)",
+          background: "rgba(255, 255, 255, 0.05)",
           backdropFilter: "blur(40px)",
           WebkitBackdropFilter: "blur(40px)",
-          border: "1px solid rgba(255, 255, 255, 0.18)",
-          boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2)",
           maxWidth: "900px",
           width: "100%",
           minHeight: "90px"
@@ -276,11 +276,11 @@ export default function ThreeDCarousel({ images }) {
               textOverflow: "ellipsis",
               letterSpacing: "0.02em"
             }}>
-              <span style={{ color: "#000000" }}>Sound</span>
+              <span style={{ color: "#FFFFFF" }}>Sound</span>
               <span style={{ color: "#2A4CFF" }}>Light</span>
             </div>
             <div style={{
-              color: "rgba(0, 0, 0, 0.7)",
+              color: "rgba(255, 255, 255, 0.7)",
               fontSize: "0.9rem",
               fontWeight: "500",
               whiteSpace: "nowrap",
@@ -309,12 +309,12 @@ export default function ThreeDCarousel({ images }) {
                 width: "3rem",
                 height: "3rem",
                 borderRadius: "9999px",
-                background: "rgba(255, 255, 255, 0.2)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                color: "#000000",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                color: "#FFFFFF",
                 transition: "all 0.2s"
               }}
-              className="hover:bg-white/40 hover:scale-110 hover:border-[#2A4CFF]"
+              className="hover:bg-white/15 hover:scale-110 hover:border-[#2A4CFF]"
             >
               <svg
                 width="24"
@@ -363,12 +363,12 @@ export default function ThreeDCarousel({ images }) {
                 width: "3rem",
                 height: "3rem",
                 borderRadius: "9999px",
-                background: "rgba(255, 255, 255, 0.2)",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                color: "#000000",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                color: "#FFFFFF",
                 transition: "all 0.2s"
               }}
-              className="hover:bg-white/40 hover:scale-110 hover:border-[#2A4CFF]"
+              className="hover:bg-white/15 hover:scale-110 hover:border-[#2A4CFF]"
             >
               <svg
                 width="24"
@@ -398,12 +398,12 @@ export default function ThreeDCarousel({ images }) {
                 width: "2.75rem",
                 height: "2.75rem",
                 borderRadius: "9999px",
-                background: "rgba(255, 255, 255, 0.15)",
-                border: "1px solid rgba(255, 255, 255, 0.25)",
-                color: "#000000",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                color: "#FFFFFF",
                 transition: "all 0.2s"
               }}
-              className="hover:bg-white/30 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
+              className="hover:bg-white/15 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
             >
               <svg
                 width="20"
@@ -427,12 +427,12 @@ export default function ThreeDCarousel({ images }) {
                 width: "2.75rem",
                 height: "2.75rem",
                 borderRadius: "9999px",
-                background: "rgba(255, 255, 255, 0.15)",
-                border: "1px solid rgba(255, 255, 255, 0.25)",
-                color: "#000000",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                color: "#FFFFFF",
                 transition: "all 0.2s"
               }}
-              className="hover:bg-white/30 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
+              className="hover:bg-white/15 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
             >
               <svg
                 width="20"
@@ -461,12 +461,12 @@ export default function ThreeDCarousel({ images }) {
                 width: "2.75rem",
                 height: "2.75rem",
                 borderRadius: "9999px",
-                background: "rgba(255, 255, 255, 0.15)",
-                border: "1px solid rgba(255, 255, 255, 0.25)",
-                color: "#000000",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                color: "#FFFFFF",
                 transition: "all 0.2s"
               }}
-              className="hover:bg-white/30 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
+              className="hover:bg-white/15 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
             >
               <svg
                 width="20"
@@ -492,12 +492,12 @@ export default function ThreeDCarousel({ images }) {
                 width: "2.75rem",
                 height: "2.75rem",
                 borderRadius: "9999px",
-                background: "rgba(255, 255, 255, 0.15)",
-                border: "1px solid rgba(255, 255, 255, 0.25)",
-                color: "#000000",
+                background: "rgba(255, 255, 255, 0.08)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                color: "#FFFFFF",
                 transition: "all 0.2s"
               }}
-              className="hover:bg-white/30 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
+              className="hover:bg-white/15 hover:border-[#2A4CFF] hover:text-[#2A4CFF]"
             >
               <svg
                 width="20"
