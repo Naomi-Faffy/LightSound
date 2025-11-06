@@ -73,6 +73,7 @@ export default function ThreeDCarousel({ images }) {
 
   const getCardStyle = (position) => {
     const isCurrent = position === 0;
+    const isMobile = window.innerWidth <= 768;
     
     let transform = "";
     let width = 280;
@@ -81,32 +82,69 @@ export default function ThreeDCarousel({ images }) {
     let zIndex = 10;
     let filter = "brightness(0.7)";
     
-    if (position === 0) {
-      transform = "translateX(-50%) translateY(-50%) translateZ(0px) rotateY(0deg) scale(1)";
-      width = 400;
-      height = 480;
-      zIndex = 20;
-      filter = "brightness(1)";
-    } else if (position === -1) {
-      transform = "translateX(-50%) translateY(-50%) translateX(-250px) translateZ(-400px) rotateY(25deg) scale(0.75)";
-      width = 360;
-      height = 440;
-      zIndex = 15;
-    } else if (position === 1) {
-      transform = "translateX(-50%) translateY(-50%) translateX(250px) translateZ(-400px) rotateY(-25deg) scale(0.75)";
-      width = 360;
-      height = 440;
-      zIndex = 15;
-    } else if (position === -2) {
-      transform = "translateX(-50%) translateY(-50%) translateX(-400px) translateZ(-600px) rotateY(35deg) scale(0.6)";
-      width = 320;
-      height = 400;
-      zIndex = 10;
-    } else if (position === 2) {
-      transform = "translateX(-50%) translateY(-50%) translateX(400px) translateZ(-600px) rotateY(-35deg) scale(0.6)";
-      width = 320;
-      height = 400;
-      zIndex = 10;
+    if (isMobile) {
+      // Mobile: Show cards in a stacked carousel style
+      if (position === 0) {
+        transform = "translateX(-50%) translateY(-50%) translateZ(100px) scale(1.1)";
+        width = Math.min(window.innerWidth * 0.7, 350);
+        height = Math.min(window.innerWidth * 0.85, 420);
+        zIndex = 30;
+        filter = "brightness(1)";
+        opacity = 1;
+      } else if (position === -1) {
+        transform = "translateX(-50%) translateY(-50%) translateX(-60%) translateZ(-50px) scale(0.85)";
+        width = Math.min(window.innerWidth * 0.6, 300);
+        height = Math.min(window.innerWidth * 0.75, 360);
+        zIndex = 20;
+        opacity = 0.7;
+      } else if (position === 1) {
+        transform = "translateX(-50%) translateY(-50%) translateX(60%) translateZ(-50px) scale(0.85)";
+        width = Math.min(window.innerWidth * 0.6, 300);
+        height = Math.min(window.innerWidth * 0.75, 360);
+        zIndex = 20;
+        opacity = 0.7;
+      } else if (position === -2) {
+        transform = "translateX(-50%) translateY(-50%) translateX(-120%) translateZ(-100px) scale(0.7)";
+        width = Math.min(window.innerWidth * 0.5, 250);
+        height = Math.min(window.innerWidth * 0.65, 300);
+        zIndex = 10;
+        opacity = 0.4;
+      } else if (position === 2) {
+        transform = "translateX(-50%) translateY(-50%) translateX(120%) translateZ(-100px) scale(0.7)";
+        width = Math.min(window.innerWidth * 0.5, 250);
+        height = Math.min(window.innerWidth * 0.65, 300);
+        zIndex = 10;
+        opacity = 0.4;
+      }
+    } else {
+      // Desktop: Original 3D carousel
+      if (position === 0) {
+        transform = "translateX(-50%) translateY(-50%) translateZ(0px) rotateY(0deg) scale(1)";
+        width = 400;
+        height = 480;
+        zIndex = 20;
+        filter = "brightness(1)";
+      } else if (position === -1) {
+        transform = "translateX(-50%) translateY(-50%) translateX(-250px) translateZ(-400px) rotateY(25deg) scale(0.75)";
+        width = 360;
+        height = 440;
+        zIndex = 15;
+      } else if (position === 1) {
+        transform = "translateX(-50%) translateY(-50%) translateX(250px) translateZ(-400px) rotateY(-25deg) scale(0.75)";
+        width = 360;
+        height = 440;
+        zIndex = 15;
+      } else if (position === -2) {
+        transform = "translateX(-50%) translateY(-50%) translateX(-400px) translateZ(-600px) rotateY(35deg) scale(0.6)";
+        width = 320;
+        height = 400;
+        zIndex = 10;
+      } else if (position === 2) {
+        transform = "translateX(-50%) translateY(-50%) translateX(400px) translateZ(-600px) rotateY(-35deg) scale(0.6)";
+        width = 320;
+        height = 400;
+        zIndex = 10;
+      }
     }
     
     return {
@@ -129,12 +167,12 @@ export default function ThreeDCarousel({ images }) {
       <div 
         style={{ 
           position: "relative", 
-          height: "clamp(300px, 60vw, 500px)", 
+          height: "clamp(400px, 70vh, 550px)", 
           marginBottom: "2rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          overflow: "hidden"
+          overflow: "visible"
         }}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
@@ -146,7 +184,7 @@ export default function ThreeDCarousel({ images }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          perspective: "2000px",
+          perspective: "1500px",
           perspectiveOrigin: "50% 50%"
         }}>
           <div style={{ 
@@ -529,10 +567,12 @@ export default function ThreeDCarousel({ images }) {
           }
           
           .music-bar-responsive {
-            gap: 1rem !important;
-            padding: 1.5rem 2rem !important;
-            flex-wrap: wrap !important;
-            min-height: 120px !important;
+            gap: 1.25rem !important;
+            padding: 1.75rem 2.5rem !important;
+            flex-wrap: nowrap !important;
+            min-height: auto !important;
+            width: 95% !important;
+            max-width: 95% !important;
           }
           
           .additional-controls {
@@ -542,16 +582,16 @@ export default function ThreeDCarousel({ images }) {
           .playback-controls {
             padding-left: 0 !important;
             padding-right: 0 !important;
-            width: 100% !important;
-            justify-content: center !important;
+            gap: 1rem !important;
           }
         }
         
         @media (max-width: 480px) {
           .music-bar-responsive {
             gap: 1rem !important;
-            padding: 1.25rem 1.5rem !important;
-            min-height: 110px !important;
+            padding: 1.5rem 2rem !important;
+            width: 92% !important;
+            max-width: 92% !important;
           }
         }
       `}</style>
