@@ -89,7 +89,7 @@ export default function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src="/gallery-images/logoo.png" alt="Sound Light" style={{height: '110px'}} />
+              <img src="/gallery-images/logoo.png" alt="Sound Light" style={{height: '150px'}} />
             </div>
 
             <nav className="footer-nav">
