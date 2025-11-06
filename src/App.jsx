@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useExquisiteCarsInteractions } from './script.js';
 import Gallery from './pages/Gallery';
 import Services from './pages/Services';
+import About from './pages/About';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -75,77 +76,9 @@ export default function App() {
         <Services />
       </section>
 
-      {/* Trust & Prestige */}
-      <section className="trust">
-        <div className="trust-overlay">
-          <div className="trust-header">
-            <h2 className="trust-main-title">TRUSTED EXCELLENCE</h2>
-            <p className="trust-subtitle">Endorsed by the world's most prestigious publications and elite clientele</p>
-          </div>
-
-          {/* Media Partners Glass Cards */}
-          <div className="media-partners-glass">
-            <div className="partner-glass-card">
-              <div className="partner-icon">
-                <i className="fas fa-star"></i>
-              </div>
-              <h3 className="partner-title">FORBES</h3>
-              <p className="partner-description">"Setting the standard for luxury automotive excellence"</p>
-            </div>
-
-            <div className="partner-glass-card">
-              <div className="partner-icon">
-                <i className="fas fa-crown"></i>
-              </div>
-              <h3 className="partner-title">BLOOMBERG</h3>
-              <p className="partner-description">"The pinnacle of premium dealership experience"</p>
-            </div>
-
-            <div className="partner-glass-card">
-              <div className="partner-icon">
-                <i className="fas fa-trophy"></i>
-              </div>
-              <h3 className="partner-title">ROBB REPORT</h3>
-              <p className="partner-description">"Curating the world's most exceptional vehicles"</p>
-            </div>
-          </div>
-
-          {/* Testimonials Glass Cards */}
-          <div className="testimonials-glass-grid">
-            <div className="testimonial-glass-card">
-              <div className="testimonial-quote">
-                <i className="fas fa-quote-left"></i>
-              </div>
-              <p className="testimonial-text">"Exquisite Cars transformed my vision into reality. The attention to detail and personalized service exceeded my expectations. Truly a world-class experience."</p>
-              <div className="testimonial-author">
-                <strong>Alexander Rothschild</strong>
-                <span>Private Equity Executive</span>
-              </div>
-            </div>
-
-            <div className="testimonial-glass-card">
-              <div className="testimonial-quote">
-                <i className="fas fa-quote-left"></i>
-              </div>
-              <p className="testimonial-text">"From selection to delivery, every moment was flawless. The team's expertise and dedication to excellence is unmatched in the luxury automotive industry."</p>
-              <div className="testimonial-author">
-                <strong>Victoria Pemberton</strong>
-                <span>Luxury Real Estate Developer</span>
-              </div>
-            </div>
-
-            <div className="testimonial-glass-card">
-              <div className="testimonial-quote">
-                <i className="fas fa-quote-left"></i>
-              </div>
-              <p className="testimonial-text">"Having worked with many luxury dealers worldwide, Exquisite Cars stands alone. Their curated collection and white-glove service are simply extraordinary."</p>
-              <div className="testimonial-author">
-                <strong>Marcus Wellington</strong>
-                <span>Investment Banker</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* About Section */}
+      <section id="about">
+        <About />
       </section>
 
       {/* Contact Section with Glass Morphism */}
