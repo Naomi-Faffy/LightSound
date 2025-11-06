@@ -13,7 +13,7 @@ export default function App() {
     <div className="App">
       {/* WhatsApp Floating Chat */}
       <div className="whatsapp-chat">
-        <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp Chat" rel="noopener noreferrer">
+        <a href="https://wa.me/263772636157" target="_blank" aria-label="WhatsApp Chat" rel="noopener noreferrer">
           <i className="fab fa-whatsapp"></i>
         </a>
       </div>
@@ -22,7 +22,7 @@ export default function App() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="/gallery-images/logoo.png" alt="Exquisite Cars" style={{height: '180px'}} />
+            <img src="/gallery-images/logoo.png" alt="Sound Light" style={{height: '180px'}} />
           </div>
           <ul className="nav-menu">
             <li><a href="#home">Home</a></li>
@@ -51,13 +51,13 @@ export default function App() {
         <div className="hero-content" style={{opacity: 1, transform: 'none'}}>
           <div className="hero-text">
             <h1 className="hero-title">
-              <span className="hero-line-1" style={{opacity: 1, animation: 'none'}}>Drive Prestige.</span>
-              <span className="hero-line-2" style={{opacity: 1, animation: 'none'}}>Live Exquisite.</span>
+              <span className="hero-line-1" style={{opacity: 1, animation: 'none'}}>Premium Sound.</span>
+              <span className="hero-line-2" style={{opacity: 1, animation: 'none'}}>World-Class Lighting.</span>
             </h1>
-            <p className="hero-subtitle" style={{opacity: 1, animation: 'none'}}>Experience the world's most exclusive collection of luxury automobiles</p>
+            <p className="hero-subtitle" style={{opacity: 1, animation: 'none'}}>Cutting-edge lighting and premium sound for every event</p>
             <div className="hero-buttons" style={{opacity: 1, animation: 'none'}}>
-              <a href="#contact" className="cta-button primary">Book a Viewing</a>
-              <Link to="/gallery" className="cta-button secondary">Explore Gallery</Link>
+              <a href="#contact" className="cta-button primary">Book Your Event</a>
+              <Link to="/gallery" className="cta-button secondary">View Our Work</Link>
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src="/gallery-images/logoo.png" alt="Exquisite Cars" style={{height: '110px'}} />
+              <img src="/gallery-images/logoo.png" alt="Sound Light" style={{height: '110px'}} />
             </div>
 
             <nav className="footer-nav">
@@ -100,14 +100,13 @@ export default function App() {
             </nav>
 
             <div className="footer-social">
-              <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-              <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
-              <a href="#" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/soundlight.zw/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.threads.com/@soundlight.zw?xmt=AQF0llt6nKMpZ2_3YwyhVxkbumThNJCT0fvGvYy1V3-iHYE" target="_blank" rel="noopener noreferrer" aria-label="Threads"><i className="fab fa-threads"></i></a>
             </div>
           </div>
 
           <div className="footer-bottom">
-            <p>&copy; 2024 Exquisite Cars. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2024 Sound Light by Mediatainment.zw™️. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>

@@ -97,7 +97,7 @@ export default function Contact() {
             maxWidth: "600px",
             margin: "0 auto",
           }}>
-            Let's discuss how we can bring your vision to life
+            Let's create an unforgettable event experience together
           </p>
         </div>
 
@@ -184,7 +184,7 @@ export default function Contact() {
                 color: "rgba(255, 255, 255, 0.6)",
                 marginBottom: "1.5rem",
               }}>
-                Speak directly with our team
+                Speak directly with our event team
               </p>
             </div>
 
@@ -194,7 +194,7 @@ export default function Contact() {
                 fontWeight: "500",
                 color: "#B8E6C9",
               }}>
-                +1 (555) 123-LUXURY
+                +263 77 263 6157
               </p>
             </div>
           </div>
@@ -266,7 +266,7 @@ export default function Contact() {
                 fontWeight: "500",
                 color: "#D4A5B8",
               }}>
-                concierge@exquisitecars.com
+                info@soundlight.zw
               </p>
             </div>
           </div>
@@ -338,7 +338,7 @@ export default function Contact() {
                 fontWeight: "500",
                 color: "#9B7EDE",
               }}>
-                Beverly Hills, California
+                Harare, Zimbabwe
               </p>
             </div>
           </div>
@@ -480,11 +480,11 @@ export default function Contact() {
                       e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
                     }}
                   >
-                    <option value="" style={{ background: "#1A1A2E", color: "#fff" }}>Service Interest</option>
-                    <option value="purchase" style={{ background: "#1A1A2E", color: "#fff" }}>Luxury Vehicle Purchase</option>
-                    <option value="lease" style={{ background: "#1A1A2E", color: "#fff" }}>Premium Lease Program</option>
-                    <option value="consultation" style={{ background: "#1A1A2E", color: "#fff" }}>Private Consultation</option>
-                    <option value="testdrive" style={{ background: "#1A1A2E", color: "#fff" }}>Exclusive Test Drive</option>
+                    <option value="" style={{ background: "#1A1A2E", color: "#fff" }}>Event Type</option>
+                    <option value="corporate" style={{ background: "#1A1A2E", color: "#fff" }}>Corporate Event</option>
+                    <option value="wedding" style={{ background: "#1A1A2E", color: "#fff" }}>Wedding</option>
+                    <option value="private" style={{ background: "#1A1A2E", color: "#fff" }}>Private Celebration</option>
+                    <option value="social" style={{ background: "#1A1A2E", color: "#fff" }}>Social Event</option>
                   </select>
                 </div>
 
@@ -758,14 +758,14 @@ export default function Contact() {
 
           <div style={{ display: "flex", gap: "1rem" }}>
             {[
-              { Icon: Instagram, color: "#E8B4D4" },
-              { Icon: Linkedin, color: "#9B7EDE" },
-              { Icon: Youtube, color: "#D4A5B8" },
-              { Icon: Twitter, color: "#B8E6C9" },
-            ].map(({ Icon, color }, i) => (
+              { Icon: Instagram, color: "#E8B4D4", href: "https://www.instagram.com/soundlight.zw/" },
+              { Icon: Twitter, color: "#B8E6C9", href: "https://www.threads.com/@soundlight.zw?xmt=AQF0llt6nKMpZ2_3YwyhVxkbumThNJCT0fvGvYy1V3-iHYE" },
+            ].map(({ Icon, color, href }, i) => (
               <a
                 key={i}
-                href="#"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   width: "56px",
                   height: "56px",

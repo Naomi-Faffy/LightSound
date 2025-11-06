@@ -1,54 +1,54 @@
 import { Badge } from "@/components/ui/badge";
 
 export default function Services() {
-  const crystalServices = [
+  const services = [
     {
-      title: "Crystal Card 1",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
-      collection: "NFT Collection 1",
-      imageUrl: "https://images.unsplash.com/photo-1650034605038-c12067e5f299?w=400",
-      gradientFrom: "#5B6FE8",
-      gradientTo: "#4DD4E8",
-    },
-    {
-      title: "Crystal Card 2",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
-      collection: "NFT Collection 1",
-      imageUrl: "https://images.unsplash.com/photo-1650406262076-c3444b5be6f6?w=400",
-      gradientFrom: "#E84D9F",
-      gradientTo: "#F97316",
-    },
-    {
-      title: "Crystal Card 3",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
-      collection: "NFT Collection 1",
-      imageUrl: "https://images.unsplash.com/photo-1641797508847-146a742dbb88?w=400",
-      gradientFrom: "#A855F7",
-      gradientTo: "#E84D9F",
-    },
-    {
-      title: "Crystal Card 4",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
-      collection: "NFT Collection 1",
-      imageUrl: "https://images.unsplash.com/photo-1646829305521-0897a32a6cf1?w=400",
-      gradientFrom: "#4DD4E8",
+      title: "Professional DJs",
+      description: "Top-tier DJ talent bringing energy and expertise to every event. Our DJs read the crowd and create unforgettable musical journeys tailored to your celebration.",
+      collection: "Entertainment",
+      imageUrl: "https://images.unsplash.com/photo-1571266028243-d220c6e87a67?w=400",
+      gradientFrom: "#2A4CFF",
       gradientTo: "#5B6FE8",
     },
     {
-      title: "Crystal Card 5",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
-      collection: "NFT Collection 1",
-      imageUrl: "https://images.unsplash.com/photo-1548504769-900b70ed122e?w=400",
-      gradientFrom: "#F97316",
-      gradientTo: "#FBBF24",
+      title: "Sound Engineering",
+      description: "Crystal-clear audio with state-of-the-art sound systems. Professional mixing and engineering ensures every word and beat is heard perfectly throughout your venue.",
+      collection: "Audio Production",
+      imageUrl: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400",
+      gradientFrom: "#5B6FE8",
+      gradientTo: "#7C3AED",
     },
     {
-      title: "Crystal Card 6",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
-      collection: "NFT Collection 1",
-      imageUrl: "https://images.unsplash.com/photo-1662201966782-395ada85ec09?w=400",
-      gradientFrom: "#10B981",
-      gradientTo: "#4DD4E8",
+      title: "Lighting Design",
+      description: "Transform your space with stunning lighting effects. From elegant ambiance to dynamic stage lighting, we create the perfect atmosphere for your event.",
+      collection: "Visual Production",
+      imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400",
+      gradientFrom: "#7C3AED",
+      gradientTo: "#A855F7",
+    },
+    {
+      title: "LED Screens",
+      description: "High-resolution LED displays for impactful visual presentations. Perfect for corporate events, product launches, and creating immersive visual experiences.",
+      collection: "Visual Technology",
+      imageUrl: "https://images.unsplash.com/photo-1563089145-599997674d42?w=400",
+      gradientFrom: "#A855F7",
+      gradientTo: "#EC4899",
+    },
+    {
+      title: "Special Effects",
+      description: "Elevate your event with spectacular special effects. From fog machines to pyrotechnics, we add that extra wow factor to make your celebration truly memorable.",
+      collection: "Event Enhancement",
+      imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400",
+      gradientFrom: "#EC4899",
+      gradientTo: "#F97316",
+    },
+    {
+      title: "Stage Setup",
+      description: "Professional stage design and setup for flawless performances. Complete with backdrops, platforms, and technical infrastructure for seamless event execution.",
+      collection: "Event Production",
+      imageUrl: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400",
+      gradientFrom: "#F97316",
+      gradientTo: "#2A4CFF",
     },
   ];
 
@@ -62,22 +62,22 @@ export default function Services() {
         padding: "5rem 1.5rem",
       }}
     >
-      {/* Glass morphism overlay effect - matching gallery */}
+      {/* Glass morphism overlay effect */}
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%)",
+        background: "radial-gradient(circle at 20% 50%, rgba(42, 76, 255, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%)",
         pointerEvents: "none"
       }} />
 
       {/* Decorative Glowing Orbs */}
-      <div style={{ position: "absolute", top: "-15%", left: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.4, background: "radial-gradient(circle, #7C3AED 0%, transparent 70%)", filter: "blur(100px)" }} />
-      <div style={{ position: "absolute", bottom: "-15%", right: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.3, background: "radial-gradient(circle, #EC4899 0%, transparent 70%)", filter: "blur(100px)" }} />
+      <div style={{ position: "absolute", top: "-15%", left: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.4, background: "radial-gradient(circle, #2A4CFF 0%, transparent 70%)", filter: "blur(100px)" }} />
+      <div style={{ position: "absolute", bottom: "-15%", right: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.3, background: "radial-gradient(circle, #5B6FE8 0%, transparent 70%)", filter: "blur(100px)" }} />
 
       {/* Main Content */}
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1200px", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem", padding: "0 1rem" }}>
-          {crystalServices.map((service, index) => (
+          {services.map((service, index) => (
             <div 
               key={index} 
               className="group"
@@ -109,7 +109,7 @@ export default function Services() {
                     flexDirection: "column",
                     alignItems: "center",
                     textAlign: "center",
-                    background: "linear-gradient(135deg, rgba(50, 25, 75, 0.96) 0%, rgba(65, 35, 95, 0.94) 50%, rgba(50, 25, 75, 0.96) 100%)",
+                    background: "linear-gradient(135deg, rgba(10, 14, 31, 0.96) 0%, rgba(26, 41, 66, 0.94) 50%, rgba(10, 14, 31, 0.96) 100%)",
                     backdropFilter: "blur(20px)",
                     overflow: "hidden",
                   }}
@@ -127,7 +127,7 @@ export default function Services() {
                     }}
                   />
 
-                  {/* Crystal Image Container with Glassmorphism */}
+                  {/* Service Image Container with Glassmorphism */}
                   <div style={{ 
                     position: "relative", 
                     marginBottom: "1.5rem", 
@@ -138,14 +138,14 @@ export default function Services() {
                     alignItems: "center",
                     justifyContent: "center",
                   }}>
-                    {/* Glassmorphism Square Container for Crystal */}
+                    {/* Glassmorphism Square Container */}
                     <div
                       style={{
                         position: "relative",
                         width: "100%",
                         height: "100%",
                         borderRadius: "24px",
-                        background: "linear-gradient(135deg, rgba(60, 30, 90, 0.4) 0%, rgba(80, 40, 110, 0.3) 100%)",
+                        background: "linear-gradient(135deg, rgba(42, 76, 255, 0.2) 0%, rgba(91, 111, 232, 0.15) 100%)",
                         backdropFilter: "blur(10px)",
                         border: "1px solid rgba(255, 255, 255, 0.1)",
                         display: "flex",
@@ -167,9 +167,9 @@ export default function Services() {
                         }}
                       />
 
-                      {/* Glow behind crystal */}
+                      {/* Glow behind image */}
                       <div 
-                        className="crystal-glow"
+                        className="service-glow"
                         style={{
                           position: "absolute",
                           width: "150px",
@@ -181,16 +181,17 @@ export default function Services() {
                         }}
                       />
                       
-                      {/* Crystal Image */}
+                      {/* Service Image */}
                       <img 
                         src={service.imageUrl}
-                        alt={`Crystal ${index + 1}`}
-                        className="crystal-img"
+                        alt={service.title}
+                        className="service-img"
                         style={{
                           position: "relative",
                           width: "120px",
                           height: "120px",
-                          objectFit: "contain",
+                          objectFit: "cover",
+                          borderRadius: "12px",
                           filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.6))",
                           transition: "transform 0.7s ease",
                           zIndex: 2,
@@ -269,11 +270,11 @@ export default function Services() {
               </div>
 
               <style jsx>{`
-                .group:hover .crystal-glow {
+                .group:hover .service-glow {
                   opacity: 0.85;
                 }
-                .group:hover .crystal-img {
-                  transform: scale(1.1) rotate(6deg);
+                .group:hover .service-img {
+                  transform: scale(1.1) rotate(3deg);
                 }
                 .group:hover .card-title {
                   transform: scale(1.05);

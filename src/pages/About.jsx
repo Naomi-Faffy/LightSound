@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Sparkles, GitBranch, SearchCheck } from "lucide-react";
+import { Music, Lightbulb, Zap, Users } from "lucide-react";
 
 export default function About() {
   return (
@@ -24,7 +24,7 @@ export default function About() {
         height: "700px",
       }}>
         
-        {/* Top Left - Effortless Prompt Perfection */}
+        {/* Top Left - Our Mission */}
         <div 
           style={{
             position: "absolute",
@@ -48,13 +48,13 @@ export default function About() {
               width: "40px",
               height: "40px",
               borderRadius: "10px",
-              background: "linear-gradient(135deg, #7C3AED, #A855F7)",
+              background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               marginBottom: "1rem",
             }}>
-              <Sparkles size={20} color="#fff" />
+              <Zap size={20} color="#fff" />
             </div>
             
             <h3 style={{
@@ -64,7 +64,7 @@ export default function About() {
               lineHeight: "1.2",
               marginBottom: "0.5rem",
             }}>
-              Effortless<br/>Prompt<br/>Perfection
+              Precision<br/>Passion<br/>Excellence
             </h3>
           </div>
 
@@ -74,18 +74,18 @@ export default function About() {
               color: "rgba(255, 255, 255, 0.9)",
               marginBottom: "0.25rem",
             }}>
-              14 days trial
+              Every Event
             </p>
             <p style={{
               fontSize: "0.65rem",
               color: "rgba(255, 255, 255, 0.5)",
             }}>
-              after - $5/month
+              Flawlessly Executed
             </p>
           </div>
         </div>
 
-        {/* Center - Main Purple Card with Orb */}
+        {/* Center - Main Card with Logo */}
         <div 
           style={{
             position: "absolute",
@@ -94,7 +94,7 @@ export default function About() {
             transform: "translate(-50%, -50%)",
             width: "445px",
             height: "520px",
-            background: "linear-gradient(180deg, #7C3AED 0%, #A855F7 100%)",
+            background: "linear-gradient(180deg, #2A4CFF 0%, #5B6FE8 100%)",
             borderRadius: "28px",
             padding: "2rem 1.5rem",
             display: "flex",
@@ -103,24 +103,24 @@ export default function About() {
             textAlign: "center",
             overflow: "visible",
             zIndex: 10,
-            boxShadow: "0 20px 60px rgba(124, 58, 237, 0.4)",
+            boxShadow: "0 20px 60px rgba(42, 76, 255, 0.4)",
           }}
         >
-          {/* PromptPal branding */}
+          {/* Sound Light branding */}
           <div style={{ 
             marginBottom: "1rem",
             display: "flex",
             alignItems: "center",
             gap: "0.5rem",
           }}>
-            <Sparkles size={16} color="#fff" />
+            <Music size={16} color="#fff" />
             <span style={{
               fontSize: "0.85rem",
               fontWeight: "600",
               color: "#fff",
               letterSpacing: "0.05em",
             }}>
-              PromptPal
+              Sound Light
             </span>
           </div>
 
@@ -131,7 +131,7 @@ export default function About() {
             marginBottom: "1.5rem",
             lineHeight: "1.1",
           }}>
-            Your AI Prompt<br/>Companion
+            Where Sound<br/>Meets Light
           </h1>
 
           {/* Glowing Cosmic Orb */}
@@ -166,14 +166,14 @@ export default function About() {
               justifyContent: "center",
               position: "relative",
               overflow: "hidden",
-              boxShadow: "0 0 60px rgba(168, 85, 247, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.2)",
+              boxShadow: "0 0 60px rgba(42, 76, 255, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.2)",
             }}>
               {/* Cosmic swirl */}
               <div style={{
                 position: "absolute",
                 inset: 0,
                 borderRadius: "50%",
-                background: "conic-gradient(from 0deg, transparent 0%, rgba(249, 115, 22, 0.5) 25%, rgba(168, 85, 247, 0.5) 50%, rgba(59, 130, 246, 0.5) 75%, transparent 100%)",
+                background: "conic-gradient(from 0deg, transparent 0%, rgba(42, 76, 255, 0.5) 25%, rgba(91, 111, 232, 0.5) 50%, rgba(59, 130, 246, 0.5) 75%, transparent 100%)",
                 animation: "rotate 20s linear infinite",
               }} />
 
@@ -192,7 +192,7 @@ export default function About() {
               {/* Logo */}
               <img 
                 src="/gallery-images/logoo.png" 
-                alt="Logo"
+                alt="Sound Light Logo"
                 style={{
                   width: "140px",
                   height: "auto",
@@ -243,7 +243,7 @@ export default function About() {
           `}</style>
         </div>
 
-        {/* Top Right - Sparkles Icon */}
+        {/* Top Right - Music Icon */}
         <div 
           style={{
             position: "absolute",
@@ -266,16 +266,16 @@ export default function About() {
             width: "64px",
             height: "64px",
             borderRadius: "50%",
-            background: "linear-gradient(135deg, #F97316, #FB923C)",
+            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}>
-            <Sparkles size={32} color="#fff" />
+            <Music size={32} color="#fff" />
           </div>
         </div>
 
-        {/* Right - 25M Stats */}
+        {/* Right - Events Stats */}
         <div 
           style={{
             position: "absolute",
@@ -299,13 +299,13 @@ export default function About() {
           <h2 style={{
             fontSize: "4rem",
             fontWeight: "300",
-            background: "linear-gradient(135deg, #A855F7, #EC4899)",
+            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             marginBottom: "0.5rem",
             lineHeight: "1",
           }}>
-            25M
+            500+
           </h2>
           
           <div style={{
@@ -316,23 +316,23 @@ export default function About() {
             <div style={{
               width: "20px",
               height: "1px",
-              background: "linear-gradient(to right, transparent, rgba(168, 85, 247, 0.7))",
+              background: "linear-gradient(to right, transparent, rgba(42, 76, 255, 0.7))",
             }} />
             <p style={{
               fontSize: "0.7rem",
               color: "rgba(255, 255, 255, 0.8)",
             }}>
-              created prompts
+              events powered
             </p>
             <div style={{
               width: "20px",
               height: "1px",
-              background: "linear-gradient(to left, transparent, rgba(168, 85, 247, 0.7))",
+              background: "linear-gradient(to left, transparent, rgba(42, 76, 255, 0.7))",
             }} />
           </div>
         </div>
 
-        {/* Left - 12K Happy Users */}
+        {/* Left - Happy Clients */}
         <div 
           style={{
             position: "absolute",
@@ -355,20 +355,20 @@ export default function About() {
             <h2 style={{
               fontSize: "2.5rem",
               fontWeight: "300",
-              background: "linear-gradient(135deg, #F97316, #FB923C)",
+              background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               marginBottom: "0.5rem",
               lineHeight: "1",
             }}>
-              12K
+              200+
             </h2>
             <p style={{
               fontSize: "0.75rem",
               color: "rgba(255, 255, 255, 0.8)",
               marginBottom: "1rem",
             }}>
-              happy users
+              happy clients
             </p>
 
             <div style={{ display: "flex", gap: "0.25rem" }}>
@@ -376,14 +376,14 @@ export default function About() {
                 width: "36px",
                 height: "36px",
                 borderRadius: "50%",
-                background: "linear-gradient(135deg, #F97316, #FB923C)",
+                background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
                 border: "2px solid rgba(35, 40, 65, 0.9)",
               }} />
               <div style={{
                 width: "36px",
                 height: "36px",
                 borderRadius: "50%",
-                background: "linear-gradient(135deg, #EC4899, #F472B6)",
+                background: "linear-gradient(135deg, #5B6FE8, #7C3AED)",
                 border: "2px solid rgba(35, 40, 65, 0.9)",
                 marginLeft: "-12px",
               }} />
@@ -399,7 +399,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Bottom Left - Branching Paths (BEHIND orb) */}
+        {/* Bottom Left - Professional DJs */}
         <div 
           style={{
             position: "absolute",
@@ -422,12 +422,12 @@ export default function About() {
             width: "48px",
             height: "48px",
             borderRadius: "50%",
-            background: "linear-gradient(135deg, #F97316, #FB923C)",
+            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}>
-            <GitBranch size={24} color="#fff" />
+            <Music size={24} color="#fff" />
           </div>
 
           <div>
@@ -437,19 +437,19 @@ export default function About() {
               color: "#fff",
               marginBottom: "0.5rem",
             }}>
-              Branching paths
+              Professional DJs
             </h3>
             <p style={{
               fontSize: "0.7rem",
               color: "rgba(255, 255, 255, 0.7)",
               lineHeight: "1.4",
             }}>
-              Explore multiple prompt directions with branching.
+              Top-tier talent for unforgettable experiences
             </p>
           </div>
         </div>
 
-        {/* Bottom Right - Keyword Enhancer (BEHIND orb) */}
+        {/* Bottom Right - Lighting Design */}
         <div 
           style={{
             position: "absolute",
@@ -472,12 +472,12 @@ export default function About() {
             width: "48px",
             height: "48px",
             borderRadius: "50%",
-            background: "linear-gradient(135deg, #7C3AED, #A855F7)",
+            background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
           }}>
-            <SearchCheck size={24} color="#fff" />
+            <Lightbulb size={24} color="#fff" />
           </div>
 
           <div>
@@ -487,19 +487,19 @@ export default function About() {
               color: "#fff",
               marginBottom: "0.5rem",
             }}>
-              Keyword enhancer
+              Lighting Design
             </h3>
             <p style={{
               fontSize: "0.7rem",
               color: "rgba(255, 255, 255, 0.7)",
               lineHeight: "1.4",
             }}>
-              Boost your prompt precision with keywords.
+              Stunning visuals that transform spaces
             </p>
           </div>
         </div>
 
-        {/* Bottom Right - Prompt Templates */}
+        {/* Bottom Right - Event Types */}
         <div 
           style={{
             position: "absolute",
@@ -525,7 +525,7 @@ export default function About() {
               color: "#fff",
               marginBottom: "0.5rem",
             }}>
-              Prompt templates
+              Event Types
             </h3>
             <p style={{
               fontSize: "0.65rem",
@@ -533,12 +533,12 @@ export default function About() {
               lineHeight: "1.4",
               marginBottom: "1rem",
             }}>
-              Use pre-made templates to jumpstart creativity.
+              Corporate, Private & Social Events
             </p>
 
             <Badge 
               style={{
-                background: "linear-gradient(135deg, #F97316, #FB923C)",
+                background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
                 color: "#fff",
                 padding: "0.4rem 0.8rem",
                 fontSize: "0.6rem",
@@ -547,7 +547,7 @@ export default function About() {
                 borderRadius: "12px",
               }}
             >
-              14 days trial
+              Zimbabwe Based
             </Badge>
           </div>
 
@@ -560,19 +560,19 @@ export default function About() {
               width: "40px",
               height: "40px",
               borderRadius: "50%",
+              background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
+            }} />
+            <div style={{
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              background: "linear-gradient(135deg, #5B6FE8, #7C3AED)",
+            }} />
+            <div style={{
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
               background: "linear-gradient(135deg, #7C3AED, #A855F7)",
-            }} />
-            <div style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #F97316, #FB923C)",
-            }} />
-            <div style={{
-              width: "40px",
-              height: "40px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #EC4899, #F472B6)",
             }} />
             <div style={{
               width: "40px",
@@ -583,7 +583,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Bottom Left - Generate Button */}
+        {/* Bottom Left - Contact Button */}
         <div 
           style={{
             position: "absolute",
@@ -604,7 +604,7 @@ export default function About() {
         >
           <Button
             style={{
-              background: "linear-gradient(135deg, #7C3AED, #A855F7)",
+              background: "linear-gradient(135deg, #2A4CFF, #5B6FE8)",
               color: "#fff",
               padding: "1rem 2rem",
               fontSize: "0.85rem",
@@ -615,11 +615,11 @@ export default function About() {
               alignItems: "center",
               gap: "0.5rem",
               cursor: "pointer",
-              boxShadow: "0 8px 20px rgba(124, 58, 237, 0.4)",
+              boxShadow: "0 8px 20px rgba(42, 76, 255, 0.4)",
             }}
           >
-            <Sparkles size={16} />
-            Generate
+            <Users size={16} />
+            Contact Us
           </Button>
         </div>
       </div>
