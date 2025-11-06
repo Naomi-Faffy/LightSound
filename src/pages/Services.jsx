@@ -92,98 +92,127 @@ export default function Services() {
               <div 
                 style={{
                   position: "relative",
-                  borderRadius: "32px",
+                  borderRadius: "28px",
                   padding: "2px",
                   background: `linear-gradient(135deg, ${service.gradientFrom}, ${service.gradientTo})`,
-                  overflow: "hidden",
+                  overflow: "visible",
                 }}
               >
                 {/* Inner Card with Coarse Texture */}
                 <div 
                   style={{
                     position: "relative",
-                    borderRadius: "30px",
+                    borderRadius: "26px",
                     padding: "2.5rem 2rem",
-                    minHeight: "520px",
+                    minHeight: "540px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
                     textAlign: "center",
-                    background: "linear-gradient(135deg, rgba(45, 20, 70, 0.95) 0%, rgba(60, 30, 90, 0.92) 50%, rgba(45, 20, 70, 0.95) 100%)",
+                    background: "linear-gradient(135deg, rgba(50, 25, 75, 0.96) 0%, rgba(65, 35, 95, 0.94) 50%, rgba(50, 25, 75, 0.96) 100%)",
                     backdropFilter: "blur(20px)",
+                    overflow: "hidden",
                   }}
                 >
-                  {/* Coarse Grain Texture Overlay - High Opacity */}
+                  {/* Heavy Coarse Grain Texture Overlay */}
                   <div 
                     style={{
                       position: "absolute",
                       inset: 0,
-                      opacity: 0.15,
+                      opacity: 0.25,
                       mixBlendMode: "overlay",
                       pointerEvents: "none",
-                      borderRadius: "30px",
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-                      backgroundSize: "200px 200px",
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+                      backgroundSize: "150px 150px",
                     }}
                   />
 
-                  {/* Additional Fine Grain Layer */}
-                  <div 
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      opacity: 0.08,
-                      pointerEvents: "none",
-                      borderRadius: "30px",
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='2' result='turbulence'/%3E%3CfeColorMatrix in='turbulence' type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.5'/%3E%3C/svg%3E")`,
-                    }}
-                  />
-
-                  {/* Crystal Image with Glow */}
-                  <div style={{ position: "relative", marginBottom: "2rem", zIndex: 10 }}>
-                    {/* Glow behind crystal */}
-                    <div 
-                      className="crystal-glow"
-                      style={{
-                        position: "absolute",
-                        inset: "-20px",
-                        filter: "blur(40px)",
-                        opacity: 0.7,
-                        background: `radial-gradient(circle, ${service.gradientFrom}, transparent)`,
-                        transition: "opacity 0.7s ease",
-                      }}
-                    />
-                    
-                    {/* Crystal Image */}
-                    <img 
-                      src={service.imageUrl}
-                      alt={`Crystal ${index + 1}`}
-                      className="crystal-img"
+                  {/* Crystal Image Container with Glassmorphism */}
+                  <div style={{ 
+                    position: "relative", 
+                    marginBottom: "1.75rem", 
+                    zIndex: 10,
+                    width: "240px",
+                    height: "240px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}>
+                    {/* Glassmorphism Square Container for Crystal */}
+                    <div
                       style={{
                         position: "relative",
-                        width: "160px",
-                        height: "160px",
-                        objectFit: "contain",
-                        filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.5))",
-                        transition: "transform 0.7s ease",
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "24px",
+                        background: "linear-gradient(135deg, rgba(60, 30, 90, 0.4) 0%, rgba(80, 40, 110, 0.3) 100%)",
+                        backdropFilter: "blur(10px)",
+                        border: "1px solid rgba(255, 255, 255, 0.1)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        overflow: "hidden",
                       }}
-                    />
+                    >
+                      {/* Coarse Texture on Glass Container */}
+                      <div 
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          opacity: 0.2,
+                          mixBlendMode: "overlay",
+                          pointerEvents: "none",
+                          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain2)'/%3E%3C/svg%3E")`,
+                          backgroundSize: "120px 120px",
+                        }}
+                      />
+
+                      {/* Glow behind crystal */}
+                      <div 
+                        className="crystal-glow"
+                        style={{
+                          position: "absolute",
+                          width: "180px",
+                          height: "180px",
+                          filter: "blur(50px)",
+                          opacity: 0.6,
+                          background: `radial-gradient(circle, ${service.gradientFrom}, transparent)`,
+                          transition: "opacity 0.7s ease",
+                        }}
+                      />
+                      
+                      {/* Crystal Image */}
+                      <img 
+                        src={service.imageUrl}
+                        alt={`Crystal ${index + 1}`}
+                        className="crystal-img"
+                        style={{
+                          position: "relative",
+                          width: "140px",
+                          height: "140px",
+                          objectFit: "contain",
+                          filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.6))",
+                          transition: "transform 0.7s ease",
+                          zIndex: 2,
+                        }}
+                      />
+                    </div>
                   </div>
 
                   {/* Decorative Lines */}
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.25rem", width: "100%", justifyContent: "center" }}>
-                    <div style={{ height: "1px", width: "4rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)" }} />
-                    <div style={{ height: "1px", width: "4rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)" }} />
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem", width: "100%", justifyContent: "center" }}>
+                    <div style={{ height: "1px", width: "3.5rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent)" }} />
+                    <div style={{ height: "1px", width: "3.5rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent)" }} />
                   </div>
 
                   {/* Title with Gradient */}
                   <h3 
                     className="card-title"
                     style={{
-                      fontSize: "1.875rem",
+                      fontSize: "1.75rem",
                       fontWeight: "300",
-                      marginBottom: "1.25rem",
-                      letterSpacing: "0.05em",
+                      marginBottom: "1rem",
+                      letterSpacing: "0.03em",
                       background: `linear-gradient(135deg, ${service.gradientFrom}, ${service.gradientTo})`,
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
@@ -196,20 +225,21 @@ export default function Services() {
 
                   {/* Decorative Lines */}
                   <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem", width: "100%", justifyContent: "center" }}>
-                    <div style={{ height: "1px", width: "4rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)" }} />
-                    <div style={{ height: "1px", width: "4rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)" }} />
+                    <div style={{ height: "1px", width: "3.5rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent)" }} />
+                    <div style={{ height: "1px", width: "3.5rem", background: "linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent)" }} />
                   </div>
 
                   {/* Description */}
                   <p 
                     className="card-desc"
                     style={{
-                      fontSize: "0.875rem",
-                      color: "rgba(255, 255, 255, 0.7)",
-                      lineHeight: "1.6",
+                      fontSize: "0.8125rem",
+                      color: "rgba(255, 255, 255, 0.65)",
+                      lineHeight: "1.65",
                       fontWeight: "300",
-                      marginBottom: "2rem",
+                      marginBottom: "1.75rem",
                       transition: "color 0.7s ease",
+                      maxWidth: "90%",
                     }}
                   >
                     {service.description}
@@ -222,12 +252,12 @@ export default function Services() {
                       style={{
                         background: "rgba(255, 255, 255, 0.05)",
                         backdropFilter: "blur(10px)",
-                        border: "1px solid rgba(255, 255, 255, 0.1)",
-                        padding: "0.5rem 1.5rem",
-                        fontSize: "0.75rem",
+                        border: "1px solid rgba(255, 255, 255, 0.12)",
+                        padding: "0.45rem 1.5rem",
+                        fontSize: "0.7rem",
                         fontWeight: "300",
                         textTransform: "uppercase",
-                        letterSpacing: "0.15em",
+                        letterSpacing: "0.18em",
                         color: service.gradientFrom,
                         transition: "border-color 0.7s ease",
                       }}
@@ -240,7 +270,7 @@ export default function Services() {
 
               <style jsx>{`
                 .group:hover .crystal-glow {
-                  opacity: 0.9;
+                  opacity: 0.85;
                 }
                 .group:hover .crystal-img {
                   transform: scale(1.1) rotate(6deg);
@@ -249,7 +279,7 @@ export default function Services() {
                   transform: scale(1.05);
                 }
                 .group:hover .card-desc {
-                  color: rgba(255, 255, 255, 0.9);
+                  color: rgba(255, 255, 255, 0.85);
                 }
                 .group:hover .card-badge {
                   border-color: rgba(255, 255, 255, 0.3);
