@@ -4,6 +4,7 @@ import { useExquisiteCarsInteractions } from './script.js';
 import Gallery from './pages/Gallery';
 import Services from './pages/Services';
 import About from './pages/About';
+import Contact from './pages/Contact';
 
 export default function App() {
   useExquisiteCarsInteractions();
@@ -81,138 +82,9 @@ export default function App() {
         <About />
       </section>
 
-      {/* Contact Section with Glass Morphism */}
-      <section id="contact" className="contact">
-        <div className="contact-overlay">
-          <div className="contact-header" style={{opacity: 1}}>
-            <h2 className="contact-main-title">BEGIN YOUR JOURNEY</h2>
-            <p className="contact-subtitle">Experience the pinnacle of automotive luxury with personalized service</p>
-          </div>
-
-          <div className="contact-glass-grid">
-            {/* Contact Information Glass Card */}
-            <div className="contact-info-glass">
-              <div className="contact-glass-header">
-                <div className="contact-icon">
-                  <i className="fas fa-concierge-bell"></i>
-                </div>
-                <h3 className="contact-glass-title">LUXURY CONCIERGE SERVICE</h3>
-                <p className="contact-glass-description">Our dedicated team provides white-glove service tailored to your discerning preferences</p>
-              </div>
-
-              <div className="contact-details-glass">
-                <div className="contact-item-glass">
-                  <div className="contact-item-icon">
-                    <i className="fas fa-phone"></i>
-                  </div>
-                  <div className="contact-item-content">
-                    <span className="contact-label">Exclusive Hotline</span>
-                    <span className="contact-value">+1 (555) 123-LUXURY</span>
-                  </div>
-                </div>
-
-                <div className="contact-item-glass">
-                  <div className="contact-item-icon">
-                    <i className="fas fa-envelope"></i>
-                  </div>
-                  <div className="contact-item-content">
-                    <span className="contact-label">Private Email</span>
-                    <span className="contact-value">concierge@exquisitecars.com</span>
-                  </div>
-                </div>
-
-                <div className="contact-item-glass">
-                  <div className="contact-item-icon">
-                    <i className="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div className="contact-item-content">
-                    <span className="contact-label">Premier Location</span>
-                    <span className="contact-value">Beverly Hills, California</span>
-                  </div>
-                </div>
-
-                <div className="contact-item-glass">
-                  <div className="contact-item-icon">
-                    <i className="fas fa-clock"></i>
-                  </div>
-                  <div className="contact-item-content">
-                    <span className="contact-label">Available Hours</span>
-                    <span className="contact-value">Mon-Sat: 9AM-7PM | Sun: By Appointment</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="social-links-glass">
-                <a href="#" aria-label="Instagram" className="social-glass-link">
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn" className="social-glass-link">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href="#" aria-label="YouTube" className="social-glass-link">
-                  <i className="fab fa-youtube"></i>
-                </a>
-                <a href="#" aria-label="Twitter" className="social-glass-link">
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </div>
-            </div>
-
-            {/* Contact Form Glass Card */}
-            <div className="contact-form-glass" style={{opacity: 1}}>
-              <div className="form-glass-header" style={{opacity: 1}}>
-                <div className="form-icon">
-                  <i className="fas fa-paper-plane"></i>
-                </div>
-                <h3 className="form-glass-title">PRIVATE CONSULTATION REQUEST</h3>
-                <p className="form-glass-description">Share your vision and we'll curate the perfect luxury automotive experience</p>
-              </div>
-
-              <form className="contact-form" id="contactForm">
-                <div className="form-group-glass">
-                  <div className="input-glass-container">
-                    <i className="fas fa-user input-icon"></i>
-                    <input type="text" id="name" name="name" placeholder="Full Name" required />
-                  </div>
-                </div>
-
-                <div className="form-group-glass">
-                  <div className="input-glass-container">
-                    <i className="fas fa-envelope input-icon"></i>
-                    <input type="email" id="email" name="email" placeholder="Email Address" required />
-                  </div>
-                </div>
-
-                <div className="form-group-glass">
-                  <div className="input-glass-container">
-                    <i className="fas fa-car input-icon"></i>
-                    <select id="interest" name="interest" required>
-                      <option value="">Service Interest</option>
-                      <option value="purchase">Luxury Vehicle Purchase</option>
-                      <option value="lease">Premium Lease Program</option>
-                      <option value="consultation">Private Consultation</option>
-                      <option value="testdrive">Exclusive Test Drive Experience</option>
-                      <option value="collection">Private Collection Viewing</option>
-                      <option value="customization">Bespoke Customization</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="form-group-glass">
-                  <div className="input-glass-container">
-                    <i className="fas fa-comment-dots input-icon"></i>
-                    <textarea id="message" name="message" placeholder="Tell us about your luxury automotive vision..." rows="4"></textarea>
-                  </div>
-                </div>
-
-                <button type="submit" className="glass-submit-button">
-                  <i className="fas fa-paper-plane"></i>
-                  <span>SUBMIT EXCLUSIVE INQUIRY</span>
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+      {/* Contact Section */}
+      <section id="contact">
+        <Contact />
       </section>
 
       {/* Footer */}
