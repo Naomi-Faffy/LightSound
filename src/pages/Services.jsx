@@ -75,8 +75,8 @@ export default function Services() {
       <div style={{ position: "absolute", bottom: "-15%", right: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.3, background: "radial-gradient(circle, #EC4899 0%, transparent 70%)", filter: "blur(100px)" }} />
 
       {/* Main Content */}
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "1400px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "3rem", padding: "0 1rem" }}>
+      <div style={{ position: "relative", zIndex: 1, maxWidth: "1200px", margin: "0 auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2.5rem", padding: "0 1rem" }}>
           {crystalServices.map((service, index) => (
             <div 
               key={index} 
@@ -103,8 +103,8 @@ export default function Services() {
                   style={{
                     position: "relative",
                     borderRadius: "26px",
-                    padding: "2.5rem 2rem",
-                    minHeight: "540px",
+                    padding: "2rem 1.75rem",
+                    minHeight: "480px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -130,10 +130,10 @@ export default function Services() {
                   {/* Crystal Image Container with Glassmorphism */}
                   <div style={{ 
                     position: "relative", 
-                    marginBottom: "1.75rem", 
+                    marginBottom: "1.5rem", 
                     zIndex: 10,
-                    width: "240px",
-                    height: "240px",
+                    width: "200px",
+                    height: "200px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -172,8 +172,8 @@ export default function Services() {
                         className="crystal-glow"
                         style={{
                           position: "absolute",
-                          width: "180px",
-                          height: "180px",
+                          width: "150px",
+                          height: "150px",
                           filter: "blur(50px)",
                           opacity: 0.6,
                           background: `radial-gradient(circle, ${service.gradientFrom}, transparent)`,
@@ -188,8 +188,8 @@ export default function Services() {
                         className="crystal-img"
                         style={{
                           position: "relative",
-                          width: "140px",
-                          height: "140px",
+                          width: "120px",
+                          height: "120px",
                           objectFit: "contain",
                           filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.6))",
                           transition: "transform 0.7s ease",
@@ -209,7 +209,7 @@ export default function Services() {
                   <h3 
                     className="card-title"
                     style={{
-                      fontSize: "1.75rem",
+                      fontSize: "1.5rem",
                       fontWeight: "300",
                       marginBottom: "1rem",
                       letterSpacing: "0.03em",
@@ -233,7 +233,7 @@ export default function Services() {
                   <p 
                     className="card-desc"
                     style={{
-                      fontSize: "0.8125rem",
+                      fontSize: "0.75rem",
                       color: "rgba(255, 255, 255, 0.65)",
                       lineHeight: "1.65",
                       fontWeight: "300",
@@ -253,8 +253,8 @@ export default function Services() {
                         background: "rgba(255, 255, 255, 0.05)",
                         backdropFilter: "blur(10px)",
                         border: "1px solid rgba(255, 255, 255, 0.12)",
-                        padding: "0.45rem 1.5rem",
-                        fontSize: "0.7rem",
+                        padding: "0.4rem 1.25rem",
+                        fontSize: "0.65rem",
                         fontWeight: "300",
                         textTransform: "uppercase",
                         letterSpacing: "0.18em",
