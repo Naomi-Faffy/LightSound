@@ -1,61 +1,107 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-  Music,
-  Lightbulb,
-  Zap,
-  Users,
-  Volume2,
-  Tv
-} from "lucide-react";
+import CrystalCard from "@/components/CrystalCard";
 
 export default function Services() {
-  const services = [
+  const crystalServices = [
     {
-      icon: Music,
-      title: "Pro Lit DJs",
-      description: "Professional DJs with extensive music libraries and crowd-reading expertise to keep your guests dancing all night long"
+      title: "Crystal Card 1",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
+      collection: "NFT Collection 1",
+      imageUrl: "https://images.unsplash.com/photo-1650034605038-c12067e5f299?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxjcnlzdGFsJTIwZ2VtJTIwYmx1ZSUyMDNEJTIwZ2VvbWV0cmljfGVufDB8Mnx8Ymx1ZXwxNzYyNDI0MTcyfDA&ixlib=rb-4.1.0&q=85",
+      imageAlt: "Blue crystal cluster - Daniele Levis Pelusi on Unsplash",
+      gradientFrom: "#4F46E5",
+      gradientTo: "#06B6D4",
     },
     {
-      icon: Volume2,
-      title: "Premium Sound Systems",
-      description: "Crystal-clear audio with state-of-the-art speakers and sound equipment for perfect acoustics at any venue"
+      title: "Crystal Card 2",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
+      collection: "NFT Collection 1",
+      imageUrl: "https://images.unsplash.com/photo-1650406262076-c3444b5be6f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjcnlzdGFsJTIwZ2VtJTIwcHVycGxlJTIwM0QlMjBnZW9tZXRyaWN8ZW58MHwyfHxwdXJwbGV8MTc2MjQyNDE3Mnww&ixlib=rb-4.1.0&q=85",
+      imageAlt: "Pink crystal cluster - engin akyurt on Unsplash",
+      gradientFrom: "#EC4899",
+      gradientTo: "#F97316",
     },
     {
-      icon: Lightbulb,
-      title: "Dynamic Lighting",
-      description: "Stunning lighting effects including intelligent lights, uplighting, and custom color schemes to transform any space"
+      title: "Crystal Card 3",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
+      collection: "NFT Collection 1",
+      imageUrl: "https://images.unsplash.com/photo-1641797508847-146a742dbb88?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw0fHxjcnlzdGFsJTIwZ2VtJTIwcHVycGxlJTIwM0QlMjBnZW9tZXRyaWN8ZW58MHwyfHxwdXJwbGV8MTc2MjQyNDE3Mnww&ixlib=rb-4.1.0&q=85",
+      imageAlt: "Purple crystal cluster - Dynamic Wang on Unsplash",
+      gradientFrom: "#A855F7",
+      gradientTo: "#EC4899",
     },
     {
-      icon: Zap,
-      title: "Special Effects",
-      description: "Spectacular effects including fog machines, confetti cannons, sparklers, and CO2 jets for unforgettable moments"
+      title: "Crystal Card 4",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
+      collection: "NFT Collection 1",
+      imageUrl: "https://images.unsplash.com/photo-1646829305521-0897a32a6cf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxjcnlzdGFsJTIwZ2VtJTIwdGVhbCUyMDNEJTIwZ2VvbWV0cmljfGVufDB8Mnx8dGVhbHwxNzYyNDI0MTcyfDA&ixlib=rb-4.1.0&q=85",
+      imageAlt: "Teal crystal cluster - Rick Rothenberg on Unsplash",
+      gradientFrom: "#06B6D4",
+      gradientTo: "#3B82F6",
     },
     {
-      icon: Tv,
-      title: "LED Screens",
-      description: "High-resolution LED displays for presentations, live feeds, custom graphics, and immersive visual experiences"
+      title: "Crystal Card 5",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
+      collection: "NFT Collection 1",
+      imageUrl: "https://images.unsplash.com/photo-1548504769-900b70ed122e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwzfHxjcnlzdGFsJTIwZ2VtJTIwb3JhbmdlJTIwM0QlMjBnZW9tZXRyaWN8ZW58MHwyfHxvcmFuZ2V8MTc2MjQyNDE3Mnww&ixlib=rb-4.1.0&q=85",
+      imageAlt: "Orange crystal cluster - from nio on Unsplash",
+      gradientFrom: "#F97316",
+      gradientTo: "#FBBF24",
     },
     {
-      icon: Users,
-      title: "Event Coordination",
-      description: "Professional event management ensuring seamless execution from setup to teardown for stress-free celebrations"
-    }
+      title: "Crystal Card 6",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit morbi tristique a duis congue. Sollicitudin purus sed pellentesque a duis.",
+      collection: "NFT Collection 1",
+      imageUrl: "https://images.unsplash.com/photo-1662201966782-395ada85ec09?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxjcnlzdGFsJTIwZ2VtJTIwZ3JlZW4lMjAzRCUyMGdlb21ldHJpY3xlbnwwfDJ8fGdyZWVufDE3NjI0MjQxNzJ8MA&ixlib=rb-4.1.0&q=85",
+      imageAlt: "Green crystal cluster - Deep on Unsplash",
+      gradientFrom: "#10B981",
+      gradientTo: "#06B6D4",
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-[#000000] relative overflow-hidden flex items-center py-20 md:py-24 lg:py-32">
-      {/* Luxury Background Effects */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#2A4CFF]/20 rounded-full filter blur-[120px] animate-pulse" />
-        <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[#2A4CFF]/15 rounded-full filter blur-[140px] animate-pulse delay-1000" />
-        <div className="absolute bottom-0 left-1/2 w-[550px] h-[550px] bg-[#2A4CFF]/10 rounded-full filter blur-[130px] animate-pulse delay-2000" />
+    <div className="min-h-screen relative overflow-hidden flex items-center py-20 md:py-24 lg:py-32" 
+      style={{
+        background: 'linear-gradient(135deg, #0f0428 0%, #1a0a2e 25%, #2d1b4e 50%, #1a0a2e 75%, #0f0428 100%)',
+      }}
+    >
+      {/* Decorative Glowing Orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {/* Top Left Orb */}
+        <div 
+          className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full opacity-40 animate-pulse"
+          style={{
+            background: 'radial-gradient(circle, #7C3AED 0%, transparent 70%)',
+            filter: 'blur(80px)',
+            animationDuration: '4s',
+          }}
+        />
+        
+        {/* Top Right Orb */}
+        <div 
+          className="absolute top-[10%] right-[-5%] w-[350px] h-[350px] rounded-full opacity-30 animate-pulse"
+          style={{
+            background: 'radial-gradient(circle, #EC4899 0%, transparent 70%)',
+            filter: 'blur(70px)',
+            animationDuration: '5s',
+            animationDelay: '1s',
+          }}
+        />
+
+        {/* Bottom Center Orb */}
+        <div 
+          className="absolute bottom-[-10%] left-[40%] w-[450px] h-[450px] rounded-full opacity-35 animate-pulse"
+          style={{
+            background: 'radial-gradient(circle, #3B82F6 0%, transparent 70%)',
+            filter: 'blur(90px)',
+            animationDuration: '6s',
+            animationDelay: '2s',
+          }}
+        />
       </div>
 
       {/* Services Section */}
-      <div className="relative w-full max-w-[1500px] mx-auto px-6 lg:px-10 xl:px-12">
+      <div className="relative w-full max-w-[1600px] mx-auto px-6 lg:px-10 xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,57 +109,24 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#F5F5F5] mb-6 tracking-wide">
-            Our Premium Services
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 tracking-wide">
+            Crystal Collection
           </h2>
-          <Badge className="bg-white/5 backdrop-blur-xl text-[#2A4CFF] border border-white/10 px-8 py-3 text-sm font-light uppercase tracking-[0.3em]">
-            Excellence in Every Detail
-          </Badge>
+          <p className="text-lg text-white/60 font-light max-w-2xl mx-auto">
+            Discover our exclusive collection of premium NFT crystals
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 xl:gap-12">
-          {services.map((service, index) => (
-            <motion.div
+          {crystalServices.map((service, index) => (
+            <CrystalCard
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.8 }}
-              whileHover={{ y: -8 }}
-            >
-              <Card className="group h-full bg-white/5 backdrop-blur-2xl border border-white/10 hover:border-[#2A4CFF]/60 transition-all duration-700 overflow-hidden shadow-2xl shadow-[#2A4CFF]/10 hover:shadow-[#2A4CFF]/40 rounded-3xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                
-                <CardContent className="relative p-8 lg:p-10 xl:p-12 flex flex-col items-center text-center h-full justify-center">
-                  {/* Icon with luxury styling */}
-                  <div className="relative mb-7 lg:mb-8">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#2A4CFF]/30 to-[#2A4CFF]/50 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700" />
-                    <div className="relative w-24 h-24 lg:w-28 lg:h-28 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-700 shadow-lg">
-                      <service.icon className="w-12 h-12 lg:w-14 lg:h-14 text-[#2A4CFF] group-hover:text-[#F5F5F5] transition-colors duration-700" strokeWidth={1.5} />
-                    </div>
-                  </div>
-
-                  <h3 className="text-2xl lg:text-3xl font-light text-[#F5F5F5] mb-5 lg:mb-6 tracking-wide group-hover:text-[#2A4CFF] transition-colors duration-700">
-                    {service.title}
-                  </h3>
-                  <p className="text-base lg:text-lg text-[#F5F5F5]/70 leading-relaxed font-light group-hover:text-[#F5F5F5]/90 transition-colors duration-700">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
+              {...service}
+              index={index}
+            />
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .delay-1000 {
-          animation-delay: 1s;
-        }
-        .delay-2000 {
-          animation-delay: 2s;
-        }
-      `}</style>
     </div>
   );
 }
