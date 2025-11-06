@@ -341,16 +341,18 @@ body {
 }
 
 .cta-button.primary {
-    background: var(--brand-blue);
+    background: transparent;
     color: var(--cool-white);
-    border-color: var(--brand-blue);
+    border-color: var(--cool-white);
 }
 
-.cta-button.primary:hover {
-    background: transparent;
-    color: var(--brand-blue);
+.cta-button.primary:hover,
+.cta-button.primary:active {
+    background: var(--cool-white);
+    color: var(--jet-black);
+    border-color: var(--cool-white);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(42, 76, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
 .cta-button.secondary {
