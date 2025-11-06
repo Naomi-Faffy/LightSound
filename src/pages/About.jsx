@@ -24,19 +24,21 @@ export default function About() {
 
       {/* Main Content */}
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1400px", margin: "0 auto" }}>
-        {/* Bento Grid */}
+        {/* Bento Grid - Using absolute positioning for overlapping effect */}
         <div style={{ 
-          display: "grid", 
-          gridTemplateColumns: "repeat(12, 1fr)",
-          gridTemplateRows: "repeat(8, minmax(100px, auto))",
-          gap: "1rem",
+          position: "relative",
+          width: "100%",
+          height: "900px",
         }}>
           
           {/* Top Left - Effortless Prompt Perfection */}
           <div 
             style={{
-              gridColumn: "1 / 4",
-              gridRow: "1 / 3",
+              position: "absolute",
+              left: "0",
+              top: "0",
+              width: "280px",
+              height: "240px",
               background: "rgba(30, 35, 60, 0.6)",
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
@@ -45,9 +47,9 @@ export default function About() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              zIndex: 2,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)";
@@ -71,24 +73,24 @@ export default function About() {
             
             <div style={{ position: "relative", zIndex: 1 }}>
               <div style={{
-                width: "56px",
-                height: "56px",
-                borderRadius: "16px",
+                width: "48px",
+                height: "48px",
+                borderRadius: "12px",
                 background: "linear-gradient(135deg, #7C3AED, #A855F7)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginBottom: "1.5rem",
+                marginBottom: "1rem",
                 boxShadow: "0 8px 24px rgba(124, 58, 237, 0.3)",
               }}>
-                <Sparkles size={28} color="#fff" />
+                <Sparkles size={24} color="#fff" />
               </div>
               
               <h3 style={{
-                fontSize: "1.75rem",
+                fontSize: "1.5rem",
                 fontWeight: "300",
                 color: "#fff",
-                marginBottom: "1rem",
+                marginBottom: "0.75rem",
                 lineHeight: "1.2",
               }}>
                 Effortless<br/>Prompt<br/>Perfection
@@ -97,15 +99,15 @@ export default function About() {
 
             <div style={{ position: "relative", zIndex: 1 }}>
               <p style={{
-                fontSize: "0.95rem",
+                fontSize: "0.875rem",
                 color: "rgba(255, 255, 255, 0.8)",
-                marginBottom: "0.5rem",
+                marginBottom: "0.25rem",
                 fontWeight: "500",
               }}>
                 14 days trial
               </p>
               <p style={{
-                fontSize: "0.8rem",
+                fontSize: "0.75rem",
                 color: "rgba(255, 255, 255, 0.5)",
               }}>
                 after - $5/month
@@ -113,11 +115,67 @@ export default function About() {
             </div>
           </div>
 
-          {/* Center - Main Hero Card with Glowing Orb */}
+          {/* Top Right - Sparkles Icon */}
           <div 
             style={{
-              gridColumn: "4 / 10",
-              gridRow: "1 / 6",
+              position: "absolute",
+              right: "0",
+              top: "0",
+              width: "280px",
+              height: "180px",
+              background: "rgba(30, 35, 60, 0.6)",
+              backdropFilter: "blur(20px)",
+              borderRadius: "24px",
+              padding: "2rem",
+              border: "1px solid rgba(249, 115, 22, 0.2)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "hidden",
+              transition: "all 0.3s ease",
+              zIndex: 2,
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-4px)";
+              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.4)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.2)";
+            }}
+          >
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              background: "radial-gradient(circle at center, rgba(249, 115, 22, 0.1) 0%, transparent 70%)",
+              pointerEvents: "none",
+            }} />
+            
+            <div style={{
+              width: "72px",
+              height: "72px",
+              borderRadius: "50%",
+              background: "linear-gradient(135deg, #F97316, #FB923C)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              position: "relative",
+              zIndex: 1,
+              boxShadow: "0 8px 24px rgba(249, 115, 22, 0.4)",
+            }}>
+              <Sparkles size={36} color="#fff" />
+            </div>
+          </div>
+
+          {/* Center - Main Hero Card with Glowing Orb - HIGHEST Z-INDEX */}
+          <div 
+            style={{
+              position: "absolute",
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "580px",
+              height: "650px",
               background: "linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(168, 85, 247, 0.8) 100%)",
               borderRadius: "32px",
               padding: "3rem 2rem",
@@ -126,9 +184,9 @@ export default function About() {
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              position: "relative",
               overflow: "hidden",
               border: "1px solid rgba(255, 255, 255, 0.1)",
+              zIndex: 10,
             }}
           >
             {/* Animated background pattern */}
@@ -142,15 +200,15 @@ export default function About() {
             <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
               {/* PromptPal branding */}
               <div style={{ 
-                marginBottom: "1.5rem",
+                marginBottom: "1rem",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "0.75rem",
               }}>
-                <Sparkles size={24} color="#fff" style={{ opacity: 0.9 }} />
+                <Sparkles size={20} color="#fff" style={{ opacity: 0.9 }} />
                 <span style={{
-                  fontSize: "1.1rem",
+                  fontSize: "0.95rem",
                   fontWeight: "600",
                   color: "#fff",
                   letterSpacing: "0.05em",
@@ -160,10 +218,10 @@ export default function About() {
               </div>
 
               <h1 style={{
-                fontSize: "3.5rem",
+                fontSize: "3rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "2rem",
+                marginBottom: "1.5rem",
                 lineHeight: "1.1",
                 letterSpacing: "-0.02em",
               }}>
@@ -174,7 +232,7 @@ export default function About() {
               <div style={{
                 width: "320px",
                 height: "320px",
-                margin: "2rem auto",
+                margin: "1.5rem auto",
                 borderRadius: "50%",
                 position: "relative",
                 display: "flex",
@@ -298,60 +356,14 @@ export default function About() {
             `}</style>
           </div>
 
-          {/* Top Right - Sparkles Icon */}
-          <div 
-            style={{
-              gridColumn: "10 / 13",
-              gridRow: "1 / 2",
-              background: "rgba(30, 35, 60, 0.6)",
-              backdropFilter: "blur(20px)",
-              borderRadius: "24px",
-              padding: "2rem",
-              border: "1px solid rgba(249, 115, 22, 0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-              overflow: "hidden",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.borderColor = "rgba(249, 115, 22, 0.2)";
-            }}
-          >
-            <div style={{
-              position: "absolute",
-              inset: 0,
-              background: "radial-gradient(circle at center, rgba(249, 115, 22, 0.1) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }} />
-            
-            <div style={{
-              width: "72px",
-              height: "72px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #F97316, #FB923C)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "relative",
-              zIndex: 1,
-              boxShadow: "0 8px 24px rgba(249, 115, 22, 0.4)",
-            }}>
-              <Sparkles size={36} color="#fff" />
-            </div>
-          </div>
-
           {/* Middle Right - 25M Stats */}
           <div 
             style={{
-              gridColumn: "10 / 13",
-              gridRow: "2 / 5",
+              position: "absolute",
+              right: "0",
+              top: "200px",
+              width: "280px",
+              height: "280px",
               background: "rgba(30, 35, 60, 0.6)",
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
@@ -362,9 +374,9 @@ export default function About() {
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
-              position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              zIndex: 2,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)";
@@ -426,8 +438,11 @@ export default function About() {
           {/* Bottom Left - 12K Happy Users */}
           <div 
             style={{
-              gridColumn: "1 / 4",
-              gridRow: "3 / 6",
+              position: "absolute",
+              left: "0",
+              top: "260px",
+              width: "280px",
+              height: "280px",
               background: "rgba(30, 35, 60, 0.6)",
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
@@ -436,9 +451,9 @@ export default function About() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              zIndex: 2,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)";
@@ -508,11 +523,14 @@ export default function About() {
             </div>
           </div>
 
-          {/* Center Bottom Left - Branching Paths */}
+          {/* Left Middle - Branching Paths (partially cut by orb) */}
           <div 
             style={{
-              gridColumn: "4 / 7",
-              gridRow: "6 / 8",
+              position: "absolute",
+              left: "300px",
+              top: "560px",
+              width: "240px",
+              height: "200px",
               background: "rgba(30, 35, 60, 0.6)",
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
@@ -521,9 +539,9 @@ export default function About() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              zIndex: 1,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)";
@@ -542,8 +560,8 @@ export default function About() {
             }} />
 
             <div style={{
-              width: "64px",
-              height: "64px",
+              width: "56px",
+              height: "56px",
               borderRadius: "50%",
               background: "linear-gradient(135deg, #F97316, #FB923C)",
               display: "flex",
@@ -553,33 +571,36 @@ export default function About() {
               zIndex: 1,
               boxShadow: "0 8px 24px rgba(249, 115, 22, 0.3)",
             }}>
-              <GitBranch size={32} color="#fff" />
+              <GitBranch size={28} color="#fff" />
             </div>
 
             <div style={{ position: "relative", zIndex: 1 }}>
               <h3 style={{
-                fontSize: "1.5rem",
+                fontSize: "1.25rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "0.75rem",
+                marginBottom: "0.5rem",
               }}>
                 Branching paths
               </h3>
               <p style={{
-                fontSize: "0.9rem",
+                fontSize: "0.85rem",
                 color: "rgba(255, 255, 255, 0.7)",
-                lineHeight: "1.6",
+                lineHeight: "1.5",
               }}>
                 Explore multiple prompt directions with branching.
               </p>
             </div>
           </div>
 
-          {/* Center Bottom Right - Keyword Enhancer */}
+          {/* Right Middle - Keyword Enhancer (partially cut by orb) */}
           <div 
             style={{
-              gridColumn: "7 / 10",
-              gridRow: "6 / 8",
+              position: "absolute",
+              right: "300px",
+              top: "560px",
+              width: "240px",
+              height: "200px",
               background: "rgba(30, 35, 60, 0.6)",
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
@@ -588,9 +609,9 @@ export default function About() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              zIndex: 1,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)";
@@ -609,8 +630,8 @@ export default function About() {
             }} />
 
             <div style={{
-              width: "64px",
-              height: "64px",
+              width: "56px",
+              height: "56px",
               borderRadius: "50%",
               background: "linear-gradient(135deg, #7C3AED, #A855F7)",
               display: "flex",
@@ -620,22 +641,22 @@ export default function About() {
               zIndex: 1,
               boxShadow: "0 8px 24px rgba(124, 58, 237, 0.3)",
             }}>
-              <SearchCheck size={32} color="#fff" />
+              <SearchCheck size={28} color="#fff" />
             </div>
 
             <div style={{ position: "relative", zIndex: 1 }}>
               <h3 style={{
-                fontSize: "1.5rem",
+                fontSize: "1.25rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "0.75rem",
+                marginBottom: "0.5rem",
               }}>
                 Keyword enhancer
               </h3>
               <p style={{
-                fontSize: "0.9rem",
+                fontSize: "0.85rem",
                 color: "rgba(255, 255, 255, 0.7)",
-                lineHeight: "1.6",
+                lineHeight: "1.5",
               }}>
                 Boost your prompt precision with keywords.
               </p>
@@ -645,8 +666,11 @@ export default function About() {
           {/* Bottom Right - Prompt Templates */}
           <div 
             style={{
-              gridColumn: "10 / 13",
-              gridRow: "5 / 8",
+              position: "absolute",
+              right: "0",
+              bottom: "0",
+              width: "280px",
+              height: "340px",
               background: "rgba(30, 35, 60, 0.6)",
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
@@ -655,9 +679,9 @@ export default function About() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              zIndex: 2,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)";
@@ -677,17 +701,17 @@ export default function About() {
 
             <div style={{ position: "relative", zIndex: 1 }}>
               <h3 style={{
-                fontSize: "1.35rem",
+                fontSize: "1.25rem",
                 fontWeight: "400",
                 color: "#fff",
-                marginBottom: "0.75rem",
+                marginBottom: "0.5rem",
               }}>
                 Prompt templates
               </h3>
               <p style={{
-                fontSize: "0.85rem",
+                fontSize: "0.8rem",
                 color: "rgba(255, 255, 255, 0.7)",
-                lineHeight: "1.6",
+                lineHeight: "1.5",
                 marginBottom: "1.5rem",
               }}>
                 Use pre-made templates to jumpstart creativity.
@@ -697,8 +721,8 @@ export default function About() {
                 style={{
                   background: "linear-gradient(135deg, #F97316, #FB923C)",
                   color: "#fff",
-                  padding: "0.6rem 1.25rem",
-                  fontSize: "0.75rem",
+                  padding: "0.5rem 1rem",
+                  fontSize: "0.7rem",
                   fontWeight: "500",
                   border: "none",
                   borderRadius: "20px",
@@ -725,8 +749,8 @@ export default function About() {
                 <div 
                   key={i}
                   style={{
-                    width: "52px",
-                    height: "52px",
+                    width: "48px",
+                    height: "48px",
                     borderRadius: "50%",
                     background: item.bg,
                     display: "flex",
@@ -742,11 +766,14 @@ export default function About() {
             </div>
           </div>
 
-          {/* Bottom - Generate Button */}
+          {/* Bottom Left - Generate Button */}
           <div 
             style={{
-              gridColumn: "1 / 4",
-              gridRow: "6 / 8",
+              position: "absolute",
+              left: "0",
+              bottom: "0",
+              width: "280px",
+              height: "200px",
               background: "rgba(30, 35, 60, 0.6)",
               backdropFilter: "blur(20px)",
               borderRadius: "24px",
@@ -755,9 +782,9 @@ export default function About() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              position: "relative",
               overflow: "hidden",
               transition: "all 0.3s ease",
+              zIndex: 2,
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-4px)";
