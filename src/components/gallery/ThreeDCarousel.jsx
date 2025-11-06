@@ -568,11 +568,11 @@ export default function ThreeDCarousel({ images }) {
           
           .music-bar-responsive {
             gap: 1.25rem !important;
-            padding: 1.75rem 2.5rem !important;
-            flex-wrap: nowrap !important;
+            padding: 2rem 2.5rem !important;
+            flex-wrap: wrap !important;
             min-height: auto !important;
-            width: 95% !important;
-            max-width: 95% !important;
+            width: calc(100% - 2rem) !important;
+            max-width: calc(100% - 2rem) !important;
           }
           
           .additional-controls {
@@ -583,15 +583,17 @@ export default function ThreeDCarousel({ images }) {
             padding-left: 0 !important;
             padding-right: 0 !important;
             gap: 1rem !important;
+            width: 100% !important;
+            justify-content: center !important;
           }
         }
         
         @media (max-width: 480px) {
           .music-bar-responsive {
             gap: 1rem !important;
-            padding: 1.5rem 2rem !important;
-            width: 92% !important;
-            max-width: 92% !important;
+            padding: 1.75rem 2rem !important;
+            width: calc(100% - 1.5rem) !important;
+            max-width: calc(100% - 1.5rem) !important;
           }
         }
       `}</style>
