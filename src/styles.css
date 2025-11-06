@@ -6,28 +6,28 @@
 }
 
 :root {
-    /* SOUNDLIGHT Mediatainment Brand Colors */
+    /* SOUNDLIGHT Mediatainment Brand Colors - ONLY THESE THREE */
     --brand-black: #000000;
     --brand-blue: #2A4CFF;
     --brand-light: #F5F5F5;
     --brand-white: #FFFFFF;
     
-    /* Legacy mappings updated to brand colors */
+    /* Legacy mappings - all using brand colors only */
     --exquisite-green: #2A4CFF;
     --luxury-navy: #000000;
     --cool-white: #FFFFFF;
-    --metallic-gray: #C5CDD7;
+    --metallic-gray: #F5F5F5;
     --sleek-black: #000000;
     --jet-black: #000000;
     --pearl-white: #F5F5F5;
     --pure-white: #FFFFFF;
     --carbon-gray: #000000;
 
-    /* Additional Shades */
+    /* Additional Shades - using brand colors only */
     --soft-green: rgba(42, 76, 255, 0.1);
     --soft-navy: rgba(0, 0, 0, 0.1);
     --deep-black: rgba(0, 0, 0, 0.95);
-    --light-gray: rgba(197, 205, 215, 0.3);
+    --light-gray: rgba(245, 245, 245, 0.3);
 
     /* Typography */
     --font-serif: 'Playfair Display', serif;
@@ -307,12 +307,13 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 17px;
+    font-size: 15px;
     color: var(--cool-white);
     margin-bottom: 50px;
     font-weight: 400;
     opacity: 0;
     animation: fadeInUp 1s ease 1.5s forwards;
+    padding-top: 10px;
 }
 
 .hero-buttons {

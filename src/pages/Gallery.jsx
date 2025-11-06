@@ -29,7 +29,7 @@ export default function Gallery() {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "linear-gradient(135deg, #000000 0%, #0a1628 25%, #1a2942 50%, #0a1628 75%, #000000 100%)",
+      background: "linear-gradient(180deg, #000000 0%, #0a0e1f 50%, #000000 100%)",
       position: "relative",
       overflow: "hidden"
     }}>
@@ -37,7 +37,7 @@ export default function Gallery() {
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%)",
+        background: "radial-gradient(circle at 20% 50%, rgba(42, 76, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(42, 76, 255, 0.08) 0%, transparent 50%)",
         pointerEvents: "none"
       }} />
 

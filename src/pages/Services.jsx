@@ -8,47 +8,47 @@ export default function Services() {
       collection: "Entertainment",
       imageUrl: "https://images.unsplash.com/photo-1571266028243-d220c6e87a67?w=400",
       gradientFrom: "#2A4CFF",
-      gradientTo: "#5B6FE8",
+      gradientTo: "#2A4CFF",
     },
     {
       title: "Sound Engineering",
       description: "Crystal-clear audio with state-of-the-art sound systems. Professional mixing and engineering ensures every word and beat is heard perfectly throughout your venue.",
       collection: "Audio Production",
       imageUrl: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400",
-      gradientFrom: "#5B6FE8",
-      gradientTo: "#7C3AED",
+      gradientFrom: "#2A4CFF",
+      gradientTo: "#000000",
     },
     {
       title: "Lighting Design",
       description: "Transform your space with stunning lighting effects. From elegant ambiance to dynamic stage lighting, we create the perfect atmosphere for your event.",
       collection: "Visual Production",
       imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400",
-      gradientFrom: "#7C3AED",
-      gradientTo: "#A855F7",
+      gradientFrom: "#000000",
+      gradientTo: "#2A4CFF",
     },
     {
       title: "LED Screens",
       description: "High-resolution LED displays for impactful visual presentations. Perfect for corporate events, product launches, and creating immersive visual experiences.",
       collection: "Visual Technology",
       imageUrl: "https://images.unsplash.com/photo-1563089145-599997674d42?w=400",
-      gradientFrom: "#A855F7",
-      gradientTo: "#EC4899",
+      gradientFrom: "#2A4CFF",
+      gradientTo: "#2A4CFF",
     },
     {
       title: "Special Effects",
       description: "Elevate your event with spectacular special effects. From fog machines to pyrotechnics, we add that extra wow factor to make your celebration truly memorable.",
       collection: "Event Enhancement",
       imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400",
-      gradientFrom: "#EC4899",
-      gradientTo: "#F97316",
+      gradientFrom: "#000000",
+      gradientTo: "#2A4CFF",
     },
     {
       title: "Stage Setup",
       description: "Professional stage design and setup for flawless performances. Complete with backdrops, platforms, and technical infrastructure for seamless event execution.",
       collection: "Event Production",
       imageUrl: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=400",
-      gradientFrom: "#F97316",
-      gradientTo: "#2A4CFF",
+      gradientFrom: "#2A4CFF",
+      gradientTo: "#000000",
     },
   ];
 
@@ -56,7 +56,7 @@ export default function Services() {
     <div 
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #000000 0%, #0a1628 25%, #1a2942 50%, #0a1628 75%, #000000 100%)",
+        background: "linear-gradient(180deg, #000000 0%, #0a0e1f 50%, #000000 100%)",
         position: "relative",
         overflow: "hidden",
         padding: "5rem 1.5rem",
@@ -66,13 +66,13 @@ export default function Services() {
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "radial-gradient(circle at 20% 50%, rgba(42, 76, 255, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%)",
+        background: "radial-gradient(circle at 20% 50%, rgba(42, 76, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(42, 76, 255, 0.08) 0%, transparent 50%)",
         pointerEvents: "none"
       }} />
 
       {/* Decorative Glowing Orbs */}
-      <div style={{ position: "absolute", top: "-15%", left: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.4, background: "radial-gradient(circle, #2A4CFF 0%, transparent 70%)", filter: "blur(100px)" }} />
-      <div style={{ position: "absolute", bottom: "-15%", right: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.3, background: "radial-gradient(circle, #5B6FE8 0%, transparent 70%)", filter: "blur(100px)" }} />
+      <div style={{ position: "absolute", top: "-15%", left: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.3, background: "radial-gradient(circle, #2A4CFF 0%, transparent 70%)", filter: "blur(100px)" }} />
+      <div style={{ position: "absolute", bottom: "-15%", right: "-10%", width: "500px", height: "500px", borderRadius: "50%", opacity: 0.3, background: "radial-gradient(circle, #2A4CFF 0%, transparent 70%)", filter: "blur(100px)" }} />
 
       {/* Main Content */}
       <div style={{ position: "relative", zIndex: 1, maxWidth: "1200px", margin: "0 auto" }}>
@@ -109,7 +109,7 @@ export default function Services() {
                     flexDirection: "column",
                     alignItems: "center",
                     textAlign: "center",
-                    background: "linear-gradient(135deg, rgba(10, 14, 31, 0.96) 0%, rgba(26, 41, 66, 0.94) 50%, rgba(10, 14, 31, 0.96) 100%)",
+                    background: "linear-gradient(135deg, rgba(0, 0, 0, 0.96) 0%, rgba(10, 14, 31, 0.94) 50%, rgba(0, 0, 0, 0.96) 100%)",
                     backdropFilter: "blur(20px)",
                     overflow: "hidden",
                   }}

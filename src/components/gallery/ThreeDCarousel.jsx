@@ -172,13 +172,15 @@ export default function ThreeDCarousel({ images }) {
               width: "3.5rem",
               height: "3.5rem",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.3)",
-              border: "2px solid rgba(255, 255, 255, 0.2)",
-              color: "white",
-              backdropFilter: "blur(10px)"
+              background: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(40px)",
+              WebkitBackdropFilter: "blur(40px)",
+              boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(42, 76, 255, 0.5)",
+              color: "#2A4CFF",
+              transition: "all 0.3s"
             }}
-            className="hover:scale-110 transition-transform duration-300"
+            className="hover:scale-110 hover:border-[#2A4CFF] hover:bg-white/20"
           >
             <ChevronRight className="w-7 h-7" />
           </Button>
@@ -198,13 +200,15 @@ export default function ThreeDCarousel({ images }) {
               width: "3.5rem",
               height: "3.5rem",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)",
-              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4), 0 0 20px rgba(59, 130, 246, 0.3)",
-              border: "2px solid rgba(255, 255, 255, 0.2)",
-              color: "white",
-              backdropFilter: "blur(10px)"
+              background: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(40px)",
+              WebkitBackdropFilter: "blur(40px)",
+              boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(42, 76, 255, 0.5)",
+              color: "#2A4CFF",
+              transition: "all 0.3s"
             }}
-            className="hover:scale-110 transition-transform duration-300"
+            className="hover:scale-110 hover:border-[#2A4CFF] hover:bg-white/20"
           >
             <ChevronLeft className="w-7 h-7" />
           </Button>
