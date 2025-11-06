@@ -3,31 +3,47 @@ import { Button } from "@/components/ui/button";
 import { Music, Lightbulb, Zap, Users, Award, Target, Heart } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
-function useCountUp(end, duration = 2000, shouldStart = false) {
+function useCountUp(end, duration = 2000, pauseDuration = 3000, shouldStart = false) {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (!shouldStart || hasAnimated) return;
+    if (!shouldStart) return;
 
-    setHasAnimated(true);
-    let startTime;
-    const startValue = 0;
+    let animationFrameId;
+    let timeoutId;
 
-    const animate = (currentTime) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(easeOutQuart * (end - startValue) + startValue));
+    const runAnimation = () => {
+      let startTime;
+      const startValue = 0;
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
+      const animate = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        setCount(Math.floor(easeOutQuart * (end - startValue) + startValue));
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(animate);
+        } else {
+          // After animation completes, wait for pauseDuration then restart
+          timeoutId = setTimeout(() => {
+            setCount(0);
+            runAnimation();
+          }, pauseDuration);
+        }
+      };
+
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    requestAnimationFrame(animate);
-  }, [end, duration, shouldStart, hasAnimated]);
+    runAnimation();
+
+    return () => {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
+  }, [end, duration, pauseDuration, shouldStart]);
 
   return count;
 }
@@ -35,7 +51,7 @@ function useCountUp(end, duration = 2000, shouldStart = false) {
 function AnimatedStat({ value, label, suffix = "" }) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
-  const count = useCountUp(value, 2000, isVisible);
+  const count = useCountUp(value, 2000, 3000, isVisible);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

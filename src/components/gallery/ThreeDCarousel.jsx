@@ -310,7 +310,7 @@ export default function ThreeDCarousel({ images }) {
               textOverflow: "ellipsis",
               letterSpacing: "0.02em"
             }}>
-              <span style={{ color: "#FFFFFF" }}>Sound</span>
+              <span style={{ color: "#000000" }}>Sound</span>
               <span style={{ color: "#2A4CFF" }}>Light</span>
             </div>
             <div style={{
@@ -357,34 +357,6 @@ export default function ThreeDCarousel({ images }) {
                 fill="currentColor"
               >
                 <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
-              </svg>
-            </Button>
-
-            {/* Play/Pause Button (Center) */}
-            <Button
-              onClick={() => {}}
-              variant="ghost"
-              size="icon"
-              style={{
-                width: "clamp(3rem, 10vw, 3.5rem)",
-                height: "clamp(3rem, 10vw, 3.5rem)",
-                borderRadius: "9999px",
-                background: "#2A4CFF",
-                color: "#FFFFFF",
-                transition: "all 0.2s",
-                boxShadow: "0 4px 20px rgba(42, 76, 255, 0.4)",
-                border: "1px solid rgba(255, 255, 255, 0.3)"
-              }}
-              className="hover:scale-110 hover:shadow-[0_6px_30px_rgba(42,76,255,0.6)]"
-            >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style={{ marginLeft: "2px" }}
-              >
-                <path d="M8 5v14l11-7z" />
               </svg>
             </Button>
 
@@ -558,8 +530,9 @@ export default function ThreeDCarousel({ images }) {
           
           .music-bar-responsive {
             gap: 1rem !important;
-            padding: 1.25rem 1.5rem !important;
+            padding: 1.5rem 2rem !important;
             flex-wrap: wrap !important;
+            min-height: 120px !important;
           }
           
           .additional-controls {
@@ -567,15 +540,18 @@ export default function ThreeDCarousel({ images }) {
           }
           
           .playback-controls {
-            padding-left: 0.5rem !important;
-            padding-right: 0.5rem !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+            justify-content: center !important;
           }
         }
         
         @media (max-width: 480px) {
           .music-bar-responsive {
-            gap: 0.75rem !important;
-            padding: 1rem 1.25rem !important;
+            gap: 1rem !important;
+            padding: 1.25rem 1.5rem !important;
+            min-height: 110px !important;
           }
         }
       `}</style>

@@ -44,7 +44,7 @@ export default function Gallery() {
       <div style={{ 
         position: "relative", 
         zIndex: 1,
-        padding: "3rem 1.5rem"
+        padding: "clamp(1.5rem, 4vw, 3rem) 1.5rem"
       }}>
 
         <ThreeDCarousel images={images} />
