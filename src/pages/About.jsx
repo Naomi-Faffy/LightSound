@@ -1,6 +1,80 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Music, Lightbulb, Zap, Users, Award, Target, Heart } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+
+function useCountUp(end, duration = 2000, shouldStart = false) {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (!shouldStart || hasAnimated) return;
+
+    setHasAnimated(true);
+    let startTime;
+    const startValue = 0;
+
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeOutQuart * (end - startValue) + startValue));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [end, duration, shouldStart, hasAnimated]);
+
+  return count;
+}
+
+function AnimatedStat({ value, label, suffix = "" }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+  const count = useCountUp(value, 2000, isVisible);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div ref={ref}>
+      <div style={{
+        fontSize: "clamp(2rem, 5vw, 3rem)",
+        fontWeight: "700",
+        color: "#2A4CFF",
+        marginBottom: "0.5rem"
+      }}>
+        {count}{suffix}
+      </div>
+      <div style={{
+        fontSize: "1rem",
+        color: "rgba(255, 255, 255, 0.7)"
+      }}>{label}</div>
+    </div>
+  );
+}
 
 export default function About() {
   return (
@@ -66,14 +140,14 @@ export default function About() {
             letterSpacing: "-0.02em",
             lineHeight: "1.1",
           }}>
-            About <span style={{
+            <span style={{
               display: "inline-block",
               padding: "0.5rem 1.5rem",
               borderRadius: "16px",
-              background: "rgba(255, 255, 255, 0.05)",
+              background: "rgba(255, 255, 255, 0.15)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
             }}>
               <span style={{ color: "#000" }}>Sound</span>
               <span style={{ color: "#2A4CFF" }}>Light</span>
@@ -333,7 +407,7 @@ export default function About() {
             color: "#fff",
             marginBottom: "1.5rem",
           }}>
-            Why Choose Sound Light?
+            Why Choose <span style={{ color: "#000" }}>Sound</span><span style={{ color: "#2A4CFF" }}>Light</span>?
           </h2>
           
           <p style={{
@@ -355,44 +429,9 @@ export default function About() {
             flexWrap: "wrap",
             marginTop: "2rem"
           }}>
-            <div>
-              <div style={{
-                fontSize: "clamp(2rem, 5vw, 3rem)",
-                fontWeight: "700",
-                color: "#2A4CFF",
-                marginBottom: "0.5rem"
-              }}>500+</div>
-              <div style={{
-                fontSize: "1rem",
-                color: "rgba(255, 255, 255, 0.7)"
-              }}>Events Completed</div>
-            </div>
-            
-            <div>
-              <div style={{
-                fontSize: "clamp(2rem, 5vw, 3rem)",
-                fontWeight: "700",
-                color: "#2A4CFF",
-                marginBottom: "0.5rem"
-              }}>10+</div>
-              <div style={{
-                fontSize: "1rem",
-                color: "rgba(255, 255, 255, 0.7)"
-              }}>Years Experience</div>
-            </div>
-            
-            <div>
-              <div style={{
-                fontSize: "clamp(2rem, 5vw, 3rem)",
-                fontWeight: "700",
-                color: "#2A4CFF",
-                marginBottom: "0.5rem"
-              }}>100%</div>
-              <div style={{
-                fontSize: "1rem",
-                color: "rgba(255, 255, 255, 0.7)"
-              }}>Client Satisfaction</div>
-            </div>
+            <AnimatedStat value={500} label="Events Completed" suffix="+" />
+            <AnimatedStat value={10} label="Years Experience" suffix="+" />
+            <AnimatedStat value={100} label="Client Satisfaction" suffix="%" />
           </div>
         </div>
       </div>

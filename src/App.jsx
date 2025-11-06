@@ -114,7 +114,7 @@ export default function App() {
               margin: 0,
               fontWeight: "400"
             }}>
-              &copy; 2024 Sound Light by Mediatainment.zw™️. All rights reserved. | Privacy Policy | Terms of Service
+              &copy; 2025 Sound Light by Mediatainment.zw™️. All rights reserved. | Privacy Policy | Terms of Service
             </p>
           </div>
         </div>
