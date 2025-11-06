@@ -1,7 +1,7 @@
-import React from "react";
+import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
-const Badge = React.forwardRef(({ className, variant, ...props }, ref) => {
+const Badge = forwardRef(({ className, variant, ...props }, ref) => {
   return (
     <div
       ref={ref}
